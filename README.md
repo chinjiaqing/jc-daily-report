@@ -6,7 +6,11 @@
 
 - 立即访问：**[https://chinjiaqing.github.io/jc-daily-report/](https://chinjiaqing.github.io/jc-daily-report/)**
 - 每日自动更新，历史日期归档，随时回看
+<<<<<<< HEAD
 - 已完赛 **23** 场，累计推荐命中 **17/23 = 73.9%**
+=======
+- 已完赛 **28** 场，累计推荐命中 **20/28 = 71.4%**
+>>>>>>> 0785f90 (build: 2026-08-12 每日报告)
 
 ## 走了一圈弯路
 

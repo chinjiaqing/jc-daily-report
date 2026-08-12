@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>周一004 巴竞技 vs 维多利亚 · Football Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #f4f8f5; color: #1e293b; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+  .bg-layer { position: fixed; inset: 0; z-index: -10; pointer-events: none;
+    background: radial-gradient(1100px 560px at 50% -12%, rgba(16,185,129,.09), transparent 62%), radial-gradient(900px 480px at 92% 108%, rgba(251,191,36,.06), transparent 60%), repeating-linear-gradient(90deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), repeating-linear-gradient(0deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), #f4f8f5; }
+  .text-gradient { background: linear-gradient(100deg,#065f46 15%,#059669 55%,#0d9488 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  .rise-in { animation: rise-in .9s cubic-bezier(.22,1,.36,1) both; }
+  .rise-in-1 { animation-delay: .08s; } .rise-in-2 { animation-delay: .18s; } .rise-in-3 { animation-delay: .28s; } .rise-in-4 { animation-delay: .38s; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.07); }
+  .panel-head { letter-spacing: .22em; font-size: 11px; font-weight: 700; color: rgba(5,150,105,.85); }
+  .day-card { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.08); transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+  .day-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,.55); box-shadow: 0 20px 44px -14px rgba(16,185,129,.30); }
+  .day-card.is-today { background: linear-gradient(160deg, rgba(209,250,229,.7), rgba(255,255,255,.95)); border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 16px 40px -14px rgba(16,185,129,.28); }
+  .month-pill { border: 1px solid rgba(226,232,240,.95); background: rgba(255,255,255,.85); box-shadow: 0 1px 4px -1px rgba(15,118,110,.08); transition: all .25s; }
+  .month-pill:hover { border-color: rgba(16,185,129,.5); color: #047857; }
+  .month-pill.is-active { background: linear-gradient(120deg,#059669,#10b981); border-color: #059669; color: #fff; box-shadow: 0 8px 20px -6px rgba(5,150,105,.45); }
+  .tag-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid; box-shadow: 0 1px 3px -1px rgba(15,23,42,.06); cursor: default; transition: transform .15s, box-shadow .15s; }
+  .tag-chip::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--dot, currentColor); flex-shrink: 0; }
+  .tag-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px -4px rgba(15,23,42,.16); }
+  .nice-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  .nice-scroll::-webkit-scrollbar { width: 4px; }
+  .nice-scroll::-webkit-scrollbar-track { background: transparent; }
+  .nice-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  @keyframes dot-blink { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+  .dot-blink { animation: dot-blink 2.6s ease-in-out infinite; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #f4f8f5; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; border: 2px solid #f4f8f5; }
+  ::selection { background: rgba(16,185,129,.25); color: #064e3b; }
+  /* 侧边锚点导航：仅超宽屏（>1300px）显示 */
+  .side-nav { position: fixed; right: 14px; top: 50%; z-index: 40; display: none; flex-direction: column; gap: 2px;
+    transform: translateY(-50%); width: 108px; padding: 8px 6px; border-radius: 16px;
+    background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9);
+    box-shadow: 0 12px 36px -12px rgba(15,118,110,.18); backdrop-filter: blur(8px); }
+  @media (min-width: 1301px) { .side-nav { display: flex; } }
+  .nav-item { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px;
+    font-size: 12px; color: #64748b; transition: all .15s; white-space: nowrap; }
+  .nav-item:hover { color: #047857; background: rgba(209,250,229,.6); }
+  .nav-item.is-active { color: #047857; background: rgba(209,250,229,.85); font-weight: 700; }
+  .nav-back { margin-top: 4px; border-top: 1px solid rgba(226,232,240,.8); padding-top: 8px; font-weight: 700; color: #0f766e; }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="top"></div>
+<div class="bg-layer"></div>
+<!-- 通用顶栏 -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="group flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-emerald-600">
+      <svg class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      返回上一页</button>
+    <a href="../index.html" class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 text-sm text-white shadow-md shadow-emerald-500/25">⚽</span>
+      <span class="text-sm font-bold tracking-wide text-slate-800">FOOTBALL REPORT</span></a>
+    <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+      <span>数据更新：2026-08-10 15:18</span>
+      </div>
+  </div>
+</header>
+
+<style>
+  /* 锚点目标偏移：补偿固定顶栏，且不影响 URL 历史 */
+  main section[id], main div[id] { scroll-margin-top: 6rem; }
+</style>
+<!-- 侧边锚点导航：仅 >1300px 屏幕显示（CSS 控制），菜单末为返回上一页 -->
+<nav class="side-nav" aria-label="页面导航">
+  <a href="#match" onclick="navAnchor(event)" class="nav-item">比赛信息</a>
+  <a href="#profile" onclick="navAnchor(event)" class="nav-item">球队画像</a>
+  <a href="#trend" onclick="navAnchor(event)" class="nav-item">欧赔走势</a>
+  <a href="#signals" onclick="navAnchor(event)" class="nav-item">欧赔信号</a>
+  <a href="#asian" onclick="navAnchor(event)" class="nav-item">亚盘分析</a>
+  <a href="#script" onclick="navAnchor(event)" class="nav-item">剧本预测</a>
+  <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="nav-item nav-back w-full">← 返回上一页</button>
+</nav>
+<main class="mx-auto max-w-7xl px-5 pb-24 pt-28">
+  <!-- 比赛头卡 v3：信息条 → 对垒区 → 市场概率（三段堆叠条 + 三列明细） -->
+<section id="match" class="rise-in panel relative overflow-hidden rounded-3xl p-8 md:p-10">
+  <!-- 顶部信息条 -->
+  <div class="flex items-center justify-between gap-3 border-b border-slate-100 pb-5">
+    <div class="flex items-center gap-2.5">
+      <span class="rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700 ring-1 ring-emerald-100">巴西杯</span>
+      <span class="tnum text-xs font-semibold text-slate-400">周一004</span>
+    </div>
+    
+    <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>已完赛</span>
+    
+  </div>
+
+  <!-- 对垒区：居中 -->
+  <div class="mt-8 text-center md:mt-10">
+    <div class="flex items-center justify-center gap-x-5 md:gap-x-8">
+      <div class="min-w-0 flex-1 text-right">
+        <div class="truncate text-2xl font-black leading-tight text-slate-800 md:text-4xl">巴竞技<span class="tnum text-base font-bold text-sky-600 md:text-xl">(-1)</span></div>
+        <div class="mt-1.5 text-[11px] font-bold text-emerald-600">主队 · 让球</div>
+      </div>
+      <div class="shrink-0">
+        
+        <div class="tnum text-3xl font-black tracking-tight text-slate-800 md:text-5xl">
+          <span>2</span><span class="mx-1 text-slate-300">:</span><span>0</span>
+        </div>
+        <div class="mt-1 text-[11px] text-slate-400">半场 1 : 0</div>
+        
+      </div>
+      <div class="min-w-0 flex-1 text-left">
+        <div class="truncate text-2xl font-black leading-tight text-slate-800 md:text-4xl">维多利亚</div>
+        <div class="mt-1.5 text-[11px] font-bold text-sky-600">客队</div>
+      </div>
+    </div>
+    <div class="tnum mt-5 inline-flex items-center gap-2 rounded-full bg-slate-50 px-4 py-1.5 text-sm font-semibold text-slate-600 ring-1 ring-slate-100">2026-08-04 08:00</div>
+  </div>
+
+  <!-- 市场胜平负概率 -->
+  
+  <div class="mt-9 border-t border-slate-100 pt-7">
+    <div class="flex items-center justify-between gap-2">
+      <h3 class="panel-head">市场胜平负概率</h3>
+      <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[10px] font-bold text-sky-600 ring-1 ring-sky-100">欧赔 · 去水</span>
+    </div>
+    <!-- 三段堆叠概率条 -->
+    <div class="mt-4 flex h-2 w-full overflow-hidden rounded-full">
+      
+      
+      <div class="h-full bg-emerald-400" style="width: 57%"></div>
+      
+      
+      
+      <div class="h-full bg-amber-300" style="width: 27%"></div>
+      
+      
+      
+      <div class="h-full bg-sky-400" style="width: 15%"></div>
+      
+      
+    </div>
+    <!-- 三列明细 -->
+    <div class="mt-5 grid grid-cols-3 divide-x divide-slate-100 text-center">
+      
+      <div class="px-2">
+        <div class="text-[11px] font-semibold text-slate-400">主胜</div>
+        <div class="tnum mt-1 text-2xl font-black text-slate-800">1.54</div>
+        <div class="tnum mt-0.5 text-xs font-bold text-emerald-600">57.5%</div>
+      </div>
+      
+      <div class="px-2">
+        <div class="text-[11px] font-semibold text-slate-400">平局</div>
+        <div class="tnum mt-1 text-2xl font-black text-slate-800">3.25</div>
+        <div class="tnum mt-0.5 text-xs font-bold text-amber-500">27.2%</div>
+      </div>
+      
+      <div class="px-2">
+        <div class="text-[11px] font-semibold text-slate-400">客胜</div>
+        <div class="tnum mt-1 text-2xl font-black text-slate-800">5.8</div>
+        <div class="tnum mt-0.5 text-xs font-bold text-sky-600">15.3%</div>
+      </div>
+      
+    </div>
+
+    <!-- 市场比分 TOP5 + 市场进球数 TOP5 -->
+    <div class="mt-6 grid gap-5 sm:grid-cols-2">
+      
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] font-bold tracking-wider text-slate-500">市场比分 TOP5</span>
+          <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[10px] font-bold text-sky-600 ring-1 ring-sky-100">欧赔 · 去水</span>
+        </div>
+        <div class="mt-3 space-y-1.5">
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">2:0</span>
+            <span class="tnum text-slate-400">14.2%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">1:0</span>
+            <span class="tnum text-slate-400">13.5%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">2:1</span>
+            <span class="tnum text-slate-400">10.9%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">1:1</span>
+            <span class="tnum text-slate-400">10.5%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">0:0</span>
+            <span class="tnum text-slate-400">8.3%</span>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] font-bold tracking-wider text-slate-500">市场进球数 TOP5</span>
+          <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[10px] font-bold text-sky-600 ring-1 ring-sky-100">欧赔 · 去水</span>
+        </div>
+        <div class="mt-3 space-y-1.5">
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">2球</span>
+            <span class="tnum text-slate-400">28.5%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">3球</span>
+            <span class="tnum text-slate-400">23.4%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">1球</span>
+            <span class="tnum text-slate-400">19.7%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">4球</span>
+            <span class="tnum text-slate-400">10.3%</span>
+          </div>
+          
+          <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-[12px]">
+            <span class="tnum font-bold text-slate-700">0球</span>
+            <span class="tnum text-slate-400">9.4%</span>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>
+
+  <!-- 球队画像 PK（指标 → 攻防 → 进球分布）+ 联赛画像 -->
+
+<section id="profile" class="rise-in rise-in-4 mt-8">
+  <div class="panel rounded-3xl p-8">
+    <div class="flex items-baseline justify-between"><h2 class="text-lg font-black text-slate-800">球队画像 · 对比</h2>
+      <div class="flex items-center gap-3"><span class="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-700">画像</span><span class="panel-head">TEAM PROFILE</span></div></div>
+
+    
+    <div class="relative mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white/70">
+      <div class="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-emerald-300 bg-white text-sm font-black tracking-widest text-emerald-600 shadow-lg shadow-emerald-500/20 lg:grid">VS</div>
+      <div class="grid lg:grid-cols-2">
+        <div class="p-6 lg:pr-14">
+          
+          <div class="text-base font-black text-slate-800">巴竞技</div>
+          <div class="mt-1.5 text-[11px] tracking-widest text-slate-400">主场 · 主队</div>
+          <div class="mt-5 space-y-3.5">
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">胜率</span>
+                <span class="tnum text-xl font-black text-emerald-600">50%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-emerald-500 to-emerald-300" style="width:61%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">场均进球</span>
+                <span class="tnum text-xl font-black text-emerald-600">1.3333</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-emerald-500 to-emerald-300" style="width:57%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">场均失球</span>
+                <span class="tnum text-xl font-black text-slate-800">1</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-slate-400 to-slate-300" style="width:42%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">零封率</span>
+                <span class="tnum text-xl font-black text-emerald-600">27.8%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-emerald-500 to-emerald-300" style="width:44%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">双方进球</span>
+                <span class="tnum text-xl font-black text-slate-800">50%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-slate-400 to-slate-300" style="width:56%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">大2.5 (总)</span>
+                <span class="tnum text-xl font-black text-slate-800">44.4%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-slate-400 to-slate-300" style="width:54%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">大3.5 (总)</span>
+                <span class="tnum text-xl font-black text-slate-800">16.7%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-slate-400 to-slate-300" style="width:37%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-[11px] text-slate-400">大4.5 (总)</span>
+                <span class="tnum text-xl font-black text-slate-800">11.1%</span></div>
+              <div class="mt-1 flex h-1.5 justify-end"><div class="rounded-l-full bg-gradient-to-l from-slate-400 to-slate-300" style="width:58%"></div></div>
+            </div>
+            
+          </div>
+          
+          <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="text-[11px] font-bold text-slate-500">攻防细节</div>
+            <div class="mt-2.5 grid grid-cols-3 gap-2 text-center">
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">场均进球</div><div class="tnum text-sm font-black text-emerald-700">1.3333</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">上半场占比</div><div class="tnum text-sm font-black text-emerald-700">45.8%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">76+ 占比</div><div class="tnum text-sm font-black text-emerald-700">33.3%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">头球占比</div><div class="tnum text-sm font-black text-emerald-700">12.5%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">点球占比</div><div class="tnum text-sm font-black text-emerald-700">12.5%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">定位球占比</div><div class="tnum text-sm font-black text-emerald-700">8.3%</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">场均失球</div><div class="tnum text-sm font-black text-rose-700">1</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">76+ 失球</div><div class="tnum text-sm font-black text-rose-700">22.2%</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">头球失球</div><div class="tnum text-sm font-black text-rose-700">5.6%</div></div>
+            </div>
+          </div>
+          
+          <!-- 进球分布（最底部） -->
+          
+          <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="text-[11px] font-bold text-slate-500">进球分布</div>
+            <div class="mt-2.5">
+              <div class="flex items-center gap-1.5 text-[10px] text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>进球</div>
+              <div class="mt-1.5 flex h-12 items-end gap-1.5">
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="0-15 29.2%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">29.2</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:11px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="16-30 4.2%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">4.2</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:3px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="31-45 12.5%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">12.5</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:5px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="46-60 16.7%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">16.7</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:6px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="61-75 4.2%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">4.2</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:3px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="76+ 33.3%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">33.3</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:12px"></div>
+                  
+                </div>
+                
+              </div>
+              <div class="mt-1 flex gap-1.5 text-[9px] text-slate-400"><span class="flex-1 text-center">0-15</span><span class="flex-1 text-center">16-30</span><span class="flex-1 text-center">31-45</span><span class="flex-1 text-center">46-60</span><span class="flex-1 text-center">61-75</span><span class="flex-1 text-center">76+</span></div>
+            </div>
+            <div class="mt-3">
+              <div class="flex items-center gap-1.5 text-[10px] text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>失球</div>
+              <div class="mt-1.5 flex h-12 items-end gap-1.5">
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="0-15 27.8%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">27.8</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:10px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="16-30 16.7%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">16.7</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:6px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="31-45 27.8%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">27.8</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:10px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="46-60 5.6%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">5.6</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:3px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="61-75 0%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">0</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:3px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="76+ 22.2%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">22.2</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:8px"></div>
+                  
+                </div>
+                
+              </div>
+              <div class="mt-1 flex gap-1.5 text-[9px] text-slate-400"><span class="flex-1 text-center">0-15</span><span class="flex-1 text-center">16-30</span><span class="flex-1 text-center">31-45</span><span class="flex-1 text-center">46-60</span><span class="flex-1 text-center">61-75</span><span class="flex-1 text-center">76+</span></div>
+            </div>
+          </div>
+          
+          
+          <div class="mt-5 flex flex-wrap justify-end gap-2">
+            <span class="tag-chip bg-slate-50 text-slate-500 border-slate-200" title="三/五后卫阵型占比高，偏防守收缩或边翼卫推进" style="--dot:#94a3b8">三/五后卫体系</span><span class="tag-chip bg-emerald-50/70 text-emerald-700 border-emerald-200" title="开场15分钟内进球占比高，抢开局能力强" style="--dot:#2e7d32">闪击型</span><span class="tag-chip bg-emerald-50/70 text-emerald-700 border-emerald-200" title="76分钟后进球占比高，体能或换人后冲击力强" style="--dot:#2e7d32">后程发力</span><span class="tag-chip bg-emerald-50/70 text-emerald-700 border-emerald-200" title="主场场均进球显著高于客场，主场依赖度高" style="--dot:#2e7d32">主场龙</span><span class="tag-chip bg-rose-50/70 text-rose-600 border-rose-200" title="客场场均失球显著高于主场，客场防线脆弱" style="--dot:#c62828">客场虫</span>
+          </div>
+          
+          
+        </div>
+        <div class="border-t border-slate-200 p-6 lg:border-l lg:border-t-0 lg:pl-14">
+          
+          <div class="text-base font-black text-slate-800">维多利亚</div>
+          <div class="mt-1.5 text-right text-[11px] tracking-widest text-slate-400">客场 · 客队</div>
+          <div class="mt-5 space-y-3.5">
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-sky-600">32%</span>
+                <span class="text-[11px] text-slate-400">胜率</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-sky-500 to-sky-300" style="width:39%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-sky-600">1</span>
+                <span class="text-[11px] text-slate-400">场均进球</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-sky-500 to-sky-300" style="width:43%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-slate-800">1.38</span>
+                <span class="text-[11px] text-slate-400">场均失球</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-slate-400 to-slate-300" style="width:58%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-sky-600">36%</span>
+                <span class="text-[11px] text-slate-400">零封率</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-sky-500 to-sky-300" style="width:56%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-slate-800">40%</span>
+                <span class="text-[11px] text-slate-400">双方进球</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-slate-400 to-slate-300" style="width:44%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-slate-800">38%</span>
+                <span class="text-[11px] text-slate-400">大2.5 (总)</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-slate-400 to-slate-300" style="width:46%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-slate-800">28%</span>
+                <span class="text-[11px] text-slate-400">大3.5 (总)</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-slate-400 to-slate-300" style="width:63%"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex items-baseline justify-between"><span class="tnum text-xl font-black text-slate-800">8%</span>
+                <span class="text-[11px] text-slate-400">大4.5 (总)</span></div>
+              <div class="mt-1 flex h-1.5 justify-start"><div class="rounded-r-full bg-gradient-to-r from-slate-400 to-slate-300" style="width:42%"></div></div>
+            </div>
+            
+          </div>
+          
+          <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="text-[11px] font-bold text-slate-500">攻防细节</div>
+            <div class="mt-2.5 grid grid-cols-3 gap-2 text-center">
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">场均进球</div><div class="tnum text-sm font-black text-emerald-700">1</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">上半场占比</div><div class="tnum text-sm font-black text-emerald-700">44%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">76+ 占比</div><div class="tnum text-sm font-black text-emerald-700">14%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">头球占比</div><div class="tnum text-sm font-black text-emerald-700">20%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">点球占比</div><div class="tnum text-sm font-black text-emerald-700">12%</div></div>
+              <div class="rounded-lg bg-emerald-50/60 py-2"><div class="text-[10px] text-slate-400">定位球占比</div><div class="tnum text-sm font-black text-emerald-700">10%</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">场均失球</div><div class="tnum text-sm font-black text-rose-700">1.38</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">76+ 失球</div><div class="tnum text-sm font-black text-rose-700">24.6%</div></div>
+              <div class="rounded-lg bg-rose-50/60 py-2"><div class="text-[10px] text-slate-400">头球失球</div><div class="tnum text-sm font-black text-rose-700">21.7%</div></div>
+            </div>
+          </div>
+          
+          <!-- 进球分布（最底部） -->
+          
+          <div class="mt-5 border-t border-slate-100 pt-4">
+            <div class="text-[11px] font-bold text-slate-500">进球分布</div>
+            <div class="mt-2.5">
+              <div class="flex items-center gap-1.5 text-[10px] text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>进球</div>
+              <div class="mt-1.5 flex h-12 items-end gap-1.5">
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="0-15 12%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">12</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:4px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="16-30 18%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">18</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:6px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="31-45 14%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">14</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:5px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="46-60 20%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">20</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:7px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="61-75 22%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">22</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:8px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="76+ 14%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">14</span>
+                  <div class="w-full rounded-t bg-emerald-400/80" style="height:5px"></div>
+                  
+                </div>
+                
+              </div>
+              <div class="mt-1 flex gap-1.5 text-[9px] text-slate-400"><span class="flex-1 text-center">0-15</span><span class="flex-1 text-center">16-30</span><span class="flex-1 text-center">31-45</span><span class="flex-1 text-center">46-60</span><span class="flex-1 text-center">61-75</span><span class="flex-1 text-center">76+</span></div>
+            </div>
+            <div class="mt-3">
+              <div class="flex items-center gap-1.5 text-[10px] text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-rose-500"></span>失球</div>
+              <div class="mt-1.5 flex h-12 items-end gap-1.5">
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="0-15 11.6%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">11.6</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:4px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="16-30 14.5%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">14.5</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:5px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="31-45 24.6%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">24.6</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:9px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="46-60 15.9%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">15.9</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:6px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="61-75 8.7%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">8.7</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:3px"></div>
+                  
+                </div>
+                
+                <div class="flex flex-1 flex-col items-center justify-end gap-0.5" title="76+ 24.6%">
+                  <span class="tnum text-[9px] leading-none text-slate-400">24.6</span>
+                  <div class="w-full rounded-t bg-rose-400/80" style="height:9px"></div>
+                  
+                </div>
+                
+              </div>
+              <div class="mt-1 flex gap-1.5 text-[9px] text-slate-400"><span class="flex-1 text-center">0-15</span><span class="flex-1 text-center">16-30</span><span class="flex-1 text-center">31-45</span><span class="flex-1 text-center">46-60</span><span class="flex-1 text-center">61-75</span><span class="flex-1 text-center">76+</span></div>
+            </div>
+          </div>
+          
+          
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="tag-chip bg-emerald-50/70 text-emerald-700 border-emerald-200" title="主场场均进球显著高于客场，主场依赖度高" style="--dot:#2e7d32">主场龙</span><span class="tag-chip bg-rose-50/70 text-rose-600 border-rose-200" title="客场场均失球显著高于主场，客场防线脆弱" style="--dot:#c62828">客场虫</span>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+    
+  </div>
+</section>
+
+
+  <!-- 欧赔走势：公司 Tab 切换 + 共识/分歧 -->
+
+<section id="trend" class="rise-in rise-in-3 mt-8">
+  <div class="panel rounded-3xl p-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <div class="flex flex-wrap items-baseline gap-2">
+        <h2 class="text-lg font-black text-slate-800">欧赔走势 · 1x2</h2>
+        <span class="text-[10px] text-slate-400">截至 2026-08-10 15:18:26</span>
+      </div>
+      <div class="flex items-center gap-3"><span class="rounded-full border border-sky-200 bg-sky-50 px-2 py-0.5 text-[10px] font-bold text-sky-700">市场</span><span class="panel-head">ODDS TREND</span></div>
+    </div>
+    <p class="mt-1 text-xs text-slate-400">按公司切换查看各自走势 · 主胜（绿）/平局（黄）/客胜（蓝）</p>
+    <div class="mt-6 flex flex-wrap gap-2">
+      
+      <button type="button" class="month-pill co-pill is-active shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold" onclick="switchCompany('co-0', this)">公司 1<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-1', this)">公司 2<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-2', this)">公司 3<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-3', this)">公司 4<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-4', this)">公司 5<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-5', this)">公司 6<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-6', this)">公司 7<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-7', this)">公司 8<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-8', this)">公司 9<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-9', this)">公司 10<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-10', this)">公司 11<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-11', this)">公司 12<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-12', this)">公司 13<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-13', this)">公司 14<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-14', this)">公司 15<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-15', this)">公司 16<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-16', this)">公司 17<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-17', this)">公司 18<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-18', this)">公司 19<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-19', this)">公司 20<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-20', this)">公司 21<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-21', this)">公司 22<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+      <button type="button" class="month-pill co-pill  shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-slate-500" onclick="switchCompany('co-22', this)">公司 23<span class="ml-1.5 rounded bg-emerald-100 px-1 text-[9px] font-bold text-emerald-700">主</span></button>
+      
+    </div>
+    
+    <div id="co-0" class="company-panel mt-5 ">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 1 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.48</b> / <b class="text-slate-700">3.7</b> / <b class="text-slate-700">5.45</b> → 临 <b class="text-emerald-700">1.54</b> / <b class="text-amber-600">3.25</b> / <b class="text-sky-700">5.8</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.54</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          <span class="ml-auto text-slate-400">8 个采样点 · 凯利 0.88</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">8 个采样点 · 区间 1.46 ~ 6.30</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,189.3 L87.1,190.0 L164.3,190.0 L241.4,190.0 L318.6,189.3 L395.7,188.5 L472.9,187.8 L550.0,187.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,106.7 L87.1,106.7 L164.3,112.3 L241.4,114.1 L318.6,116.7 L395.7,118.6 L472.9,120.5 L550.0,123.4" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,41.6 L87.1,30.5 L164.3,15.6 L241.4,10.0 L318.6,15.6 L395.7,21.2 L472.9,26.7 L550.0,28.6" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.54</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.06</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.48 → 1.54</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:13.333333333333334%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.45</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.7 → 3.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:100%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.35</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.45 → 5.8</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:77.77777777777777%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.88</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-1" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 2 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.85</b> / <b class="text-slate-700">3.25</b> / <b class="text-slate-700">4.2</b> → 临 <b class="text-emerald-700">1.67</b> / <b class="text-amber-600">3.5</b> / <b class="text-sky-700">5.75</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.96</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.56 ~ 6.00</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,187.6 L38.4,189.6 L66.8,188.4 L95.3,190.0 L123.7,189.6 L152.1,187.6 L180.5,188.4 L208.9,187.6 L237.4,189.6 L265.8,184.3 L294.2,187.6 L322.6,187.6 L351.1,185.9 L379.5,187.6 L407.9,187.6 L436.3,187.6 L464.7,184.3 L493.2,185.5 L521.6,184.3 L550.0,185.5" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,101.2 L38.4,101.2 L66.8,99.2 L95.3,103.2 L123.7,103.2 L152.1,103.2 L180.5,103.2 L208.9,103.2 L237.4,103.2 L265.8,107.3 L294.2,103.2 L322.6,107.3 L351.1,107.3 L379.5,111.4 L407.9,111.4 L436.3,103.2 L464.7,107.3 L493.2,111.4 L521.6,111.4 L550.0,111.4" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,20.1 L38.4,10.0 L66.8,10.0 L95.3,10.0 L123.7,10.0 L152.1,10.0 L180.5,10.0 L208.9,10.0 L237.4,20.1 L265.8,40.4 L294.2,30.3 L322.6,30.3 L351.1,40.4 L379.5,10.0 L407.9,20.1 L436.3,20.1 L464.7,40.4 L493.2,20.1 L521.6,30.3 L550.0,20.1" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.18</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.85 → 1.67</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:11.61290322580645%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.25</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.25 → 3.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:16.129032258064516%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.55</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.2 → 5.75</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.96</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-2" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 3 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.55</b> / <b class="text-slate-700">3.6</b> / <b class="text-slate-700">4.9</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.2</b> / <b class="text-sky-700">5.25</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.2</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.25</span>
+          <span class="ml-auto text-slate-400">5 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">5 个采样点 · 区间 1.45 ~ 5.75</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,185.8 L145.0,190.0 L280.0,188.7 L415.0,182.9 L550.0,183.7" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,100.0 L145.0,91.6 L280.0,91.6 L415.0,116.7 L550.0,116.7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,45.6 L145.0,10.0 L280.0,28.8 L415.0,39.3 L550.0,30.9" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.2</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.25</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.05</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.55 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:12.5%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.40</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.6 → 3.2</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:100%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.35</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.9 → 5.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:87.49999999999999%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-3" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 4 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.47</b> / <b class="text-slate-700">3.7</b> / <b class="text-slate-700">5.5</b> → 临 <b class="text-emerald-700">1.51</b> / <b class="text-amber-600">3.35</b> / <b class="text-sky-700">5.8</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.51</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.35</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          <span class="ml-auto text-slate-400">10 个采样点 · 凯利 0.87</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">10 个采样点 · 区间 1.47 ~ 6.10</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,190.0 L70.0,190.0 L130.0,190.0 L190.0,187.7 L250.0,188.1 L310.0,188.4 L370.0,189.6 L430.0,190.0 L490.0,188.4 L550.0,188.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,103.3 L70.0,107.2 L130.0,109.1 L190.0,113.0 L250.0,115.0 L310.0,115.0 L370.0,113.0 L430.0,113.0 L490.0,115.0 L550.0,116.9" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,33.3 L70.0,25.6 L130.0,21.7 L190.0,41.1 L250.0,33.3 L310.0,29.4 L370.0,17.8 L430.0,10.0 L490.0,29.4 L550.0,21.7" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.51</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.35</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.04</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.47 → 1.51</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:11.428571428571429%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.35</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.7 → 3.35</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:100%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.5 → 5.8</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:85.71428571428572%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.87</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-4" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 5 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.73</b> / <b class="text-slate-700">3.4</b> / <b class="text-slate-700">4.6</b> → 临 <b class="text-emerald-700">1.65</b> / <b class="text-amber-600">3.3</b> / <b class="text-sky-700">5.8</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.95</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.50 ~ 6.00</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,185.2 L38.4,184.0 L66.8,185.2 L95.3,187.2 L123.7,187.2 L152.1,187.2 L180.5,188.0 L208.9,190.0 L237.4,188.0 L265.8,187.2 L294.2,187.2 L322.6,187.2 L351.1,186.0 L379.5,185.2 L407.9,183.2 L436.3,184.0 L464.7,184.0 L493.2,185.2 L521.6,185.2 L550.0,184.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,110.0 L38.4,114.0 L66.8,110.0 L95.3,106.0 L123.7,106.0 L152.1,106.0 L180.5,106.0 L208.9,98.0 L237.4,106.0 L265.8,110.0 L294.2,110.0 L322.6,110.0 L351.1,114.0 L379.5,114.0 L407.9,118.0 L436.3,118.0 L464.7,118.0 L493.2,118.0 L521.6,118.0 L550.0,118.0" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,50.0 L38.4,50.0 L66.8,30.0 L95.3,18.0 L123.7,30.0 L152.1,18.0 L180.5,10.0 L208.9,10.0 L237.4,10.0 L265.8,18.0 L294.2,10.0 L322.6,18.0 L351.1,10.0 L379.5,18.0 L407.9,30.0 L436.3,30.0 L464.7,18.0 L493.2,18.0 L521.6,10.0 L550.0,18.0" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.08</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.73 → 1.65</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:6.666666666666667%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.10</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.4 → 3.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:8.333333333333334%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.6 → 5.8</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局下调，客胜走高；凯利 <b class="tnum">0.95</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-5" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 6 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.8</b> / <b class="text-slate-700">3</b> / <b class="text-slate-700">4.5</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.25</b> / <b class="text-sky-700">5.25</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.25</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.48 ~ 5.50</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.0 L38.4,189.1 L66.8,189.1 L95.3,190.0 L123.7,189.1 L152.1,187.8 L180.5,187.8 L208.9,187.8 L237.4,186.9 L265.8,186.0 L294.2,184.6 L322.6,184.2 L351.1,184.2 L379.5,184.2 L407.9,184.2 L436.3,184.6 L464.7,186.0 L493.2,186.0 L521.6,186.0 L550.0,184.6" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,90.6 L38.4,86.1 L66.8,88.4 L95.3,86.1 L123.7,88.4 L152.1,90.6 L180.5,95.1 L208.9,95.1 L237.4,104.0 L265.8,104.0 L294.2,104.0 L322.6,108.5 L351.1,110.7 L379.5,113.0 L407.9,108.5 L436.3,104.0 L464.7,108.5 L493.2,104.0 L521.6,108.5 L550.0,110.7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,32.4 L38.4,21.2 L66.8,10.0 L95.3,10.0 L123.7,21.2 L152.1,21.2 L180.5,21.2 L208.9,10.0 L237.4,10.0 L265.8,10.0 L294.2,21.2 L322.6,32.4 L351.1,32.4 L379.5,21.2 L407.9,21.2 L436.3,21.2 L464.7,10.0 L493.2,10.0 L521.6,10.0 L550.0,21.2" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.25</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.8 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:26.666666666666668%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.25</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3 → 3.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:33.33333333333333%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.75</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.5 → 5.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-6" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 7 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.8</b> / <b class="text-slate-700">3.25</b> / <b class="text-slate-700">4</b> → 临 <b class="text-emerald-700">1.58</b> / <b class="text-amber-600">3.35</b> / <b class="text-sky-700">6</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.58</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.35</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.91</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.58 ~ 6.25</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,190.0 L38.4,190.0 L66.8,189.2 L95.3,188.1 L123.7,189.2 L152.1,188.1 L180.5,189.2 L208.9,188.1 L237.4,188.1 L265.8,189.2 L294.2,189.2 L322.6,190.0 L351.1,189.2 L379.5,189.2 L407.9,190.0 L436.3,189.2 L464.7,190.0 L493.2,190.0 L521.6,190.0 L550.0,190.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,116.0 L38.4,117.9 L66.8,119.9 L95.3,121.8 L123.7,121.8 L152.1,121.8 L180.5,121.8 L208.9,121.8 L237.4,119.9 L265.8,121.8 L294.2,119.9 L322.6,119.9 L351.1,121.8 L379.5,119.9 L407.9,119.9 L436.3,119.9 L464.7,119.9 L493.2,119.9 L521.6,121.8 L550.0,121.8" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,19.6 L38.4,29.3 L66.8,38.9 L95.3,38.9 L123.7,38.9 L152.1,38.9 L180.5,38.9 L208.9,38.9 L237.4,29.3 L265.8,38.9 L294.2,38.9 L322.6,29.3 L351.1,29.3 L379.5,19.6 L407.9,29.3 L436.3,19.6 L464.7,29.3 L493.2,19.6 L521.6,10.0 L550.0,19.6" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.58</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.35</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.22</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.8 → 1.58</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:11%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.10</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.25 → 3.35</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:5%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 2.00</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4 → 6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.91</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-7" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 8 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.83</b> / <b class="text-slate-700">3.3</b> / <b class="text-slate-700">4</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.3</b> / <b class="text-sky-700">5.75</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.57 ~ 6.00</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.7 L38.4,188.0 L66.8,186.7 L95.3,188.0 L123.7,188.8 L152.1,188.0 L180.5,188.8 L208.9,190.0 L237.4,188.8 L265.8,188.8 L294.2,190.0 L322.6,188.8 L351.1,190.0 L379.5,188.8 L407.9,190.0 L436.3,190.0 L464.7,190.0 L493.2,190.0 L521.6,188.8 L550.0,188.8" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,119.7 L38.4,119.7 L66.8,119.7 L95.3,119.7 L123.7,115.6 L152.1,119.7 L180.5,115.6 L208.9,115.6 L237.4,115.6 L265.8,115.6 L294.2,115.6 L322.6,119.7 L351.1,115.6 L379.5,119.7 L407.9,115.6 L436.3,115.6 L464.7,115.6 L493.2,115.6 L521.6,119.7 L550.0,119.7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,40.5 L38.4,30.3 L66.8,40.5 L95.3,30.3 L123.7,30.3 L152.1,30.3 L180.5,30.3 L208.9,20.2 L237.4,20.2 L265.8,30.3 L294.2,20.2 L322.6,20.2 L351.1,20.2 L379.5,20.2 L407.9,20.2 L436.3,10.0 L464.7,20.2 L493.2,10.0 L521.6,10.0 L550.0,20.2" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.23</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.83 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:13.142857142857142%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">—</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.3 → 3.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:0%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.75</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4 → 5.75</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-8" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 9 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.72</b> / <b class="text-slate-700">3.6</b> / <b class="text-slate-700">5.1</b> → 临 <b class="text-emerald-700">1.67</b> / <b class="text-amber-600">3.5</b> / <b class="text-sky-700">5.8</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.96</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.54 ~ 6.40</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,190.0 L38.4,190.0 L66.8,188.9 L95.3,188.9 L123.7,188.9 L152.1,188.9 L180.5,188.9 L208.9,188.9 L237.4,187.4 L265.8,187.4 L294.2,187.4 L322.6,186.3 L351.1,186.3 L379.5,184.8 L407.9,184.8 L436.3,185.9 L464.7,185.9 L493.2,185.9 L521.6,185.9 L550.0,185.2" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,102.6 L38.4,106.3 L66.8,106.3 L95.3,110.0 L123.7,106.3 L152.1,106.3 L180.5,106.3 L208.9,106.3 L237.4,106.3 L265.8,110.0 L294.2,110.0 L322.6,110.0 L351.1,113.7 L379.5,113.7 L407.9,117.4 L436.3,117.4 L464.7,117.4 L493.2,117.4 L521.6,117.4 L550.0,117.4" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,13.7 L38.4,13.7 L66.8,17.4 L95.3,17.4 L123.7,17.4 L152.1,10.0 L180.5,17.4 L208.9,21.1 L237.4,21.1 L265.8,21.1 L294.2,28.5 L322.6,32.2 L351.1,35.9 L379.5,43.3 L407.9,32.2 L436.3,32.2 L464.7,28.5 L493.2,21.1 L521.6,17.4 L550.0,32.2" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.8</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.05</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.72 → 1.67</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:7.142857142857144%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.10</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.6 → 3.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:14.285714285714288%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.70</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.1 → 5.8</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局下调，客胜走高；凯利 <b class="tnum">0.96</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-9" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 10 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.9</b> / <b class="text-slate-700">3.2</b> / <b class="text-slate-700">4.2</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.45</b> / <b class="text-sky-700">6</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.45</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.53 ~ 6.50</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,187.5 L38.4,186.4 L66.8,187.5 L95.3,187.5 L123.7,187.5 L152.1,185.7 L180.5,187.5 L208.9,189.3 L237.4,190.0 L265.8,189.3 L294.2,187.5 L322.6,186.4 L351.1,186.4 L379.5,186.4 L407.9,186.4 L436.3,185.7 L464.7,183.8 L493.2,183.8 L521.6,185.7 L550.0,187.5" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,116.8 L38.4,116.8 L66.8,116.8 L95.3,116.8 L123.7,116.8 L152.1,122.3 L180.5,116.8 L208.9,111.4 L237.4,109.6 L265.8,111.4 L294.2,115.0 L322.6,118.7 L351.1,120.5 L379.5,118.7 L407.9,122.3 L436.3,122.3 L464.7,125.9 L493.2,125.9 L521.6,124.1 L550.0,120.5" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,28.1 L38.4,37.2 L66.8,28.1 L95.3,37.2 L123.7,28.1 L152.1,46.2 L180.5,28.1 L208.9,19.1 L237.4,10.0 L265.8,19.1 L294.2,28.1 L322.6,28.1 L351.1,37.2 L379.5,28.1 L407.9,37.2 L436.3,37.2 L464.7,46.2 L493.2,37.2 L521.6,37.2 L550.0,28.1" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.45</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.9 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:16.666666666666664%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.25</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.2 → 3.45</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:13.88888888888889%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.80</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.2 → 6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-10" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 11 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.82</b> / <b class="text-slate-700">3.15</b> / <b class="text-slate-700">4.2</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.6</b> / <b class="text-sky-700">6</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.50 ~ 6.40</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,185.6 L38.4,187.4 L66.8,189.3 L95.3,190.0 L123.7,189.3 L152.1,188.5 L180.5,188.2 L208.9,187.4 L237.4,187.4 L265.8,186.7 L294.2,185.6 L322.6,186.3 L351.1,185.6 L379.5,184.9 L407.9,183.8 L436.3,183.8 L464.7,184.9 L493.2,186.3 L521.6,186.0 L550.0,186.3" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,116.5 L38.4,111.0 L66.8,107.3 L95.3,103.7 L123.7,101.8 L152.1,103.7 L180.5,107.3 L208.9,107.3 L237.4,105.5 L265.8,109.2 L294.2,112.9 L322.6,111.0 L351.1,112.9 L379.5,114.7 L407.9,116.5 L436.3,118.4 L464.7,114.7 L493.2,112.9 L521.6,112.9 L550.0,112.9" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,46.7 L38.4,39.4 L66.8,24.7 L95.3,17.3 L123.7,10.0 L152.1,17.3 L180.5,24.7 L208.9,24.7 L237.4,24.7 L265.8,32.0 L294.2,32.0 L322.6,24.7 L351.1,32.0 L379.5,39.4 L407.9,46.7 L436.3,39.4 L464.7,39.4 L493.2,24.7 L521.6,24.7 L550.0,24.7" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.22</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.82 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:12.222222222222221%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.45</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.15 → 3.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:25%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.80</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.2 → 6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-11" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 12 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.56</b> / <b class="text-slate-700">3.7</b> / <b class="text-slate-700">4.85</b> → 临 <b class="text-emerald-700">1.64</b> / <b class="text-amber-600">3.25</b> / <b class="text-sky-700">6.2</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.2</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.94</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.59 ~ 6.20</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,189.2 L38.4,190.0 L66.8,190.0 L95.3,190.0 L123.7,190.0 L152.1,190.0 L180.5,190.0 L208.9,190.0 L237.4,188.8 L265.8,188.0 L294.2,188.0 L322.6,188.0 L351.1,188.0 L379.5,188.0 L407.9,188.0 L436.3,188.0 L464.7,188.0 L493.2,188.0 L521.6,187.7 L550.0,188.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,111.5 L38.4,111.5 L66.8,109.6 L95.3,111.5 L123.7,109.6 L152.1,109.6 L180.5,109.6 L208.9,111.5 L237.4,113.5 L265.8,113.5 L294.2,113.5 L322.6,115.4 L351.1,117.4 L379.5,115.4 L407.9,115.4 L436.3,115.4 L464.7,115.4 L493.2,115.4 L521.6,125.2 L550.0,125.2" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,33.4 L38.4,29.5 L66.8,29.5 L95.3,29.5 L123.7,29.5 L152.1,33.4 L180.5,29.5 L208.9,29.5 L237.4,37.3 L265.8,45.1 L294.2,41.2 L322.6,41.2 L351.1,37.3 L379.5,37.3 L407.9,41.2 L436.3,37.3 L464.7,41.2 L493.2,37.3 L521.6,13.9 L550.0,10.0" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.2</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.08</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.56 → 1.64</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:5.925925925925926%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.45</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.7 → 3.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:33.33333333333333%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.35</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.85 → 6.2</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.94</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-12" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 13 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.8</b> / <b class="text-slate-700">3.3</b> / <b class="text-slate-700">4.8</b> → 临 <b class="text-emerald-700">1.62</b> / <b class="text-amber-600">3.45</b> / <b class="text-sky-700">5.75</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.62</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.45</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.93</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.62 ~ 6.00</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.7 L38.4,187.1 L66.8,187.5 L95.3,187.1 L123.7,187.5 L152.1,187.9 L180.5,187.5 L208.9,187.5 L237.4,187.5 L265.8,187.9 L294.2,187.5 L322.6,187.9 L351.1,188.4 L379.5,187.9 L407.9,187.5 L436.3,188.4 L464.7,187.5 L493.2,187.1 L521.6,188.8 L550.0,190.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,112.7 L38.4,112.7 L66.8,112.7 L95.3,112.7 L123.7,112.7 L152.1,112.7 L180.5,112.7 L208.9,114.8 L237.4,112.7 L265.8,112.7 L294.2,112.7 L322.6,112.7 L351.1,112.7 L379.5,112.7 L407.9,112.7 L436.3,112.7 L464.7,112.7 L493.2,114.8 L521.6,116.8 L550.0,114.8" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,20.3 L38.4,20.3 L66.8,20.3 L95.3,20.3 L123.7,20.3 L152.1,10.0 L180.5,10.0 L208.9,10.0 L237.4,10.0 L265.8,10.0 L294.2,10.0 L322.6,10.0 L351.1,10.0 L379.5,10.0 L407.9,20.3 L436.3,10.0 L464.7,20.3 L493.2,20.3 L521.6,20.3 L550.0,20.3" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.62</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.45</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.18</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.8 → 1.62</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:18.947368421052634%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.15</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.3 → 3.45</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:15.789473684210526%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.95</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.8 → 5.75</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.93</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-13" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 14 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.78</b> / <b class="text-slate-700">3</b> / <b class="text-slate-700">4.6</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.3</b> / <b class="text-sky-700">5.5</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.49 ~ 5.75</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.2 L38.4,186.6 L66.8,186.6 L95.3,189.2 L123.7,190.0 L152.1,190.0 L180.5,189.2 L208.9,188.3 L237.4,188.3 L265.8,187.5 L294.2,186.6 L322.6,186.2 L351.1,184.5 L379.5,184.1 L407.9,184.5 L436.3,184.5 L464.7,186.2 L493.2,186.2 L521.6,186.6 L550.0,185.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,105.1 L38.4,100.8 L66.8,96.6 L95.3,92.4 L123.7,92.4 L152.1,88.2 L180.5,92.4 L208.9,94.5 L237.4,100.8 L265.8,105.1 L294.2,109.3 L322.6,109.3 L351.1,109.3 L379.5,115.6 L407.9,115.6 L436.3,113.5 L464.7,109.3 L493.2,109.3 L521.6,109.3 L550.0,113.5" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,31.1 L38.4,41.7 L66.8,41.7 L95.3,31.1 L123.7,10.0 L152.1,20.6 L180.5,20.6 L208.9,31.1 L237.4,20.6 L265.8,20.6 L294.2,20.6 L322.6,31.1 L351.1,41.7 L379.5,31.1 L407.9,31.1 L436.3,31.1 L464.7,31.1 L493.2,20.6 L521.6,10.0 L550.0,20.6" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.18</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.78 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:20%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3 → 3.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:33.33333333333333%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.90</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.6 → 5.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-14" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 15 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.8</b> / <b class="text-slate-700">3</b> / <b class="text-slate-700">4.5</b> → 临 <b class="text-emerald-700">1.57</b> / <b class="text-amber-600">3.3</b> / <b class="text-sky-700">5.5</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.57</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.9</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.48 ~ 5.50</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.0 L38.4,184.6 L66.8,186.0 L95.3,186.0 L123.7,189.1 L152.1,189.1 L180.5,190.0 L208.9,189.1 L237.4,187.8 L265.8,187.8 L294.2,187.8 L322.6,186.9 L351.1,186.0 L379.5,184.2 L407.9,184.2 L436.3,184.2 L464.7,184.2 L493.2,184.6 L521.6,186.0 L550.0,186.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,95.1 L38.4,99.6 L66.8,95.1 L95.3,90.6 L123.7,86.1 L152.1,88.4 L180.5,86.1 L208.9,88.4 L237.4,90.6 L265.8,95.1 L294.2,95.1 L322.6,104.0 L351.1,104.0 L379.5,108.5 L407.9,110.7 L436.3,113.0 L464.7,108.5 L493.2,104.0 L521.6,104.0 L550.0,108.5" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,32.4 L38.4,32.4 L66.8,32.4 L95.3,32.4 L123.7,21.2 L152.1,10.0 L180.5,10.0 L208.9,21.2 L237.4,21.2 L265.8,21.2 L294.2,10.0 L322.6,10.0 L351.1,10.0 L379.5,32.4 L407.9,32.4 L436.3,21.2 L464.7,21.2 L493.2,21.2 L521.6,10.0 L550.0,10.0" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.57</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.23</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.8 → 1.57</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:23%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3 → 3.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:30%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.00</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.5 → 5.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.9</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-15" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 16 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.62</b> / <b class="text-slate-700">3.75</b> / <b class="text-slate-700">5.1</b> → 临 <b class="text-emerald-700">1.67</b> / <b class="text-amber-600">3.25</b> / <b class="text-sky-700">5.3</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.3</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.96</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.62 ~ 6.10</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,187.6 L38.4,188.0 L66.8,187.6 L95.3,187.6 L123.7,187.6 L152.1,188.4 L180.5,189.2 L208.9,190.0 L237.4,190.0 L265.8,190.0 L294.2,189.6 L322.6,190.0 L351.1,189.6 L379.5,189.2 L407.9,188.8 L436.3,189.6 L464.7,188.4 L493.2,188.0 L521.6,188.0 L550.0,188.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,122.5 L38.4,122.5 L66.8,122.5 L95.3,122.5 L123.7,122.5 L152.1,120.5 L180.5,120.5 L208.9,120.5 L237.4,120.5 L265.8,120.5 L294.2,122.5 L322.6,120.5 L351.1,120.5 L379.5,120.5 L407.9,120.5 L436.3,120.5 L464.7,124.5 L493.2,124.5 L521.6,124.5 L550.0,124.5" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,38.1 L38.4,30.1 L66.8,38.1 L95.3,42.1 L123.7,38.1 L152.1,30.1 L180.5,26.1 L208.9,14.0 L237.4,22.1 L265.8,14.0 L294.2,14.0 L322.6,10.0 L351.1,10.0 L379.5,22.1 L407.9,22.1 L436.3,22.1 L464.7,22.1 L493.2,26.1 L521.6,34.1 L550.0,42.1" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.67</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.3</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.05</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.62 → 1.67</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:10%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.50</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.75 → 3.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:100%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.1 → 5.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:40%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.96</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-16" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 17 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.56</b> / <b class="text-slate-700">3.7</b> / <b class="text-slate-700">4.85</b> → 临 <b class="text-emerald-700">1.64</b> / <b class="text-amber-600">3.5</b> / <b class="text-sky-700">5.5</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.94</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.59 ~ 5.70</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,187.8 L38.4,188.7 L66.8,189.1 L95.3,189.1 L123.7,189.1 L152.1,190.0 L180.5,190.0 L208.9,190.0 L237.4,190.0 L265.8,190.0 L294.2,190.0 L322.6,190.0 L351.1,187.8 L379.5,187.8 L407.9,187.8 L436.3,187.8 L464.7,187.8 L493.2,187.8 L521.6,187.8 L550.0,187.8" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,102.0 L38.4,99.8 L66.8,99.8 L95.3,102.0 L123.7,102.0 L152.1,102.0 L180.5,99.8 L208.9,102.0 L237.4,99.8 L265.8,99.8 L294.2,99.8 L322.6,102.0 L351.1,104.2 L379.5,104.2 L407.9,106.4 L436.3,108.5 L464.7,106.4 L493.2,106.4 L521.6,106.4 L550.0,106.4" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,31.9 L38.4,27.5 L66.8,23.1 L95.3,18.8 L123.7,14.4 L152.1,10.0 L180.5,10.0 L208.9,10.0 L237.4,10.0 L265.8,14.4 L294.2,10.0 L322.6,10.0 L351.1,27.5 L379.5,23.1 L407.9,23.1 L436.3,18.8 L464.7,23.1 L493.2,18.8 L521.6,23.1 L550.0,18.8" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.5</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.08</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.56 → 1.64</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:12.307692307692307%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.7 → 3.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:30.76923076923077%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.65</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.85 → 5.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.94</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-17" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 18 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.6</b> / <b class="text-slate-700">3.67</b> / <b class="text-slate-700">5.39</b> → 临 <b class="text-emerald-700">1.64</b> / <b class="text-amber-600">3.26</b> / <b class="text-sky-700">6.69</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.26</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.69</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.94</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.61 ~ 7.01</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,189.0 L38.4,189.3 L66.8,189.7 L95.3,189.7 L123.7,190.0 L152.1,190.0 L180.5,190.0 L208.9,190.0 L237.4,189.7 L265.8,189.7 L294.2,189.3 L322.6,189.3 L351.1,189.3 L379.5,189.7 L407.9,189.0 L436.3,189.0 L464.7,188.0 L493.2,188.0 L521.6,188.7 L550.0,189.0" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,126.7 L38.4,126.0 L66.8,125.0 L95.3,125.3 L123.7,124.7 L152.1,124.3 L180.5,124.7 L208.9,125.0 L237.4,125.0 L265.8,125.7 L294.2,126.3 L322.6,126.0 L351.1,126.3 L379.5,126.3 L407.9,128.0 L436.3,128.3 L464.7,130.0 L493.2,130.0 L521.6,136.0 L550.0,135.0" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,18.3 L38.4,17.0 L66.8,13.3 L95.3,13.0 L123.7,11.7 L152.1,11.7 L180.5,11.7 L208.9,11.7 L237.4,11.7 L265.8,12.0 L294.2,12.0 L322.6,12.0 L351.1,12.0 L379.5,10.0 L407.9,13.3 L436.3,13.3 L464.7,20.7 L493.2,20.3 L521.6,24.0 L550.0,20.7" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.64</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.26</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.69</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.04</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.6 → 1.64</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:3.0769230769230766%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.41</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.67 → 3.26</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:31.538461538461537%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.39 → 6.69</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.94</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-18" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 19 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.85</b> / <b class="text-slate-700">3.2</b> / <b class="text-slate-700">5</b> → 临 <b class="text-emerald-700">1.65</b> / <b class="text-amber-600">3.5</b> / <b class="text-sky-700">6</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.95</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.53 ~ 6.25</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,186.2 L38.4,186.6 L66.8,186.9 L95.3,188.5 L123.7,190.0 L152.1,190.0 L180.5,189.2 L208.9,188.1 L237.4,188.1 L265.8,186.9 L294.2,186.6 L322.6,185.4 L351.1,185.0 L379.5,184.3 L407.9,184.3 L436.3,184.3 L464.7,186.2 L493.2,186.2 L521.6,186.6 L550.0,185.4" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,105.3 L38.4,99.6 L66.8,95.8 L95.3,92.0 L123.7,92.0 L152.1,88.2 L180.5,92.0 L208.9,95.8 L237.4,99.6 L265.8,107.2 L294.2,111.1 L322.6,111.1 L351.1,111.1 L379.5,114.9 L407.9,118.7 L436.3,114.9 L464.7,111.1 L493.2,111.1 L521.6,111.1 L550.0,114.9" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,38.6 L38.4,38.6 L66.8,38.6 L95.3,29.1 L123.7,10.0 L152.1,10.0 L180.5,19.5 L208.9,29.1 L237.4,19.5 L265.8,19.5 L294.2,10.0 L322.6,29.1 L351.1,38.6 L379.5,29.1 L407.9,29.1 L436.3,29.1 L464.7,29.1 L493.2,19.5 L521.6,10.0 L550.0,19.5" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.5</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.85 → 1.65</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:20%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▲ 0.30</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.2 → 3.5</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:30%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.00</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5 → 6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局走高，客胜走高；凯利 <b class="tnum">0.95</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-19" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 20 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.56</b> / <b class="text-slate-700">3.48</b> / <b class="text-slate-700">5.1</b> → 临 <b class="text-emerald-700">1.62</b> / <b class="text-amber-600">3.32</b> / <b class="text-sky-700">5.3</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.62</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.32</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.3</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.93</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.58 ~ 5.70</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,185.6 L38.4,185.6 L66.8,188.3 L95.3,187.4 L123.7,188.3 L152.1,187.8 L180.5,188.3 L208.9,188.7 L237.4,188.7 L265.8,188.7 L294.2,188.7 L322.6,189.6 L351.1,189.6 L379.5,189.6 L407.9,189.6 L436.3,190.0 L464.7,189.6 L493.2,189.6 L521.6,188.7 L550.0,188.3" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,114.9 L38.4,115.7 L66.8,110.9 L95.3,111.4 L123.7,110.9 L152.1,110.5 L180.5,110.9 L208.9,109.6 L237.4,110.0 L265.8,110.5 L294.2,111.8 L322.6,110.5 L351.1,110.5 L379.5,110.5 L407.9,111.4 L436.3,111.8 L464.7,112.2 L493.2,111.8 L521.6,113.1 L550.0,114.0" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,42.8 L38.4,41.5 L66.8,31.8 L95.3,36.2 L123.7,31.8 L152.1,36.2 L180.5,31.8 L208.9,31.8 L237.4,27.5 L265.8,27.5 L294.2,23.1 L322.6,18.7 L351.1,14.4 L379.5,18.7 L407.9,14.4 L436.3,10.0 L464.7,14.4 L493.2,14.4 L521.6,23.1 L550.0,27.5" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.62</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.32</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.3</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.06</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.56 → 1.62</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:30%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.16</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.48 → 3.32</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:80%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 0.20</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">5.1 → 5.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.93</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-20" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 21 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.56</b> / <b class="text-slate-700">3.7</b> / <b class="text-slate-700">4.85</b> → 临 <b class="text-emerald-700">1.65</b> / <b class="text-amber-600">3.25</b> / <b class="text-sky-700">6.1</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.1</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.95</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.59 ~ 6.10</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,189.2 L38.4,189.2 L66.8,189.2 L95.3,190.0 L123.7,190.0 L152.1,190.0 L180.5,190.0 L208.9,190.0 L237.4,190.0 L265.8,190.0 L294.2,188.8 L322.6,188.0 L351.1,188.0 L379.5,188.0 L407.9,188.0 L436.3,188.0 L464.7,188.0 L493.2,188.0 L521.6,188.0 L550.0,187.6" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,107.8 L38.4,109.8 L66.8,109.8 L95.3,109.8 L123.7,107.8 L152.1,109.8 L180.5,107.8 L208.9,107.8 L237.4,107.8 L265.8,109.8 L294.2,111.8 L322.6,111.8 L351.1,111.8 L379.5,113.8 L407.9,113.8 L436.3,115.8 L464.7,113.8 L493.2,113.8 L521.6,113.8 L550.0,123.7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,37.9 L38.4,33.9 L66.8,30.0 L95.3,26.0 L123.7,26.0 L152.1,26.0 L180.5,26.0 L208.9,30.0 L237.4,26.0 L265.8,26.0 L294.2,33.9 L322.6,41.9 L351.1,37.9 L379.5,37.9 L407.9,33.9 L436.3,33.9 L464.7,33.9 L493.2,37.9 L521.6,33.9 L550.0,10.0" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.25</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 6.1</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▲ 0.09</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.56 → 1.65</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:7.199999999999999%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.45</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.7 → 3.25</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:36%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.25</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4.85 → 6.1</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付上调，平局下调，客胜走高；凯利 <b class="tnum">0.95</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-21" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 22 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.86</b> / <b class="text-slate-700">3.24</b> / <b class="text-slate-700">3.88</b> → 临 <b class="text-emerald-700">1.65</b> / <b class="text-amber-600">3.22</b> / <b class="text-sky-700">5.65</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.22</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.65</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.95</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.60 ~ 5.95</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,190.0 L38.4,190.0 L66.8,190.0 L95.3,190.0 L123.7,190.0 L152.1,190.0 L180.5,189.6 L208.9,189.6 L237.4,189.6 L265.8,189.2 L294.2,188.8 L322.6,188.8 L351.1,188.8 L379.5,187.9 L407.9,187.5 L436.3,187.9 L464.7,187.1 L493.2,187.5 L521.6,187.5 L550.0,187.9" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,117.2 L38.4,117.6 L66.8,117.6 L95.3,117.6 L123.7,118.0 L152.1,118.4 L180.5,119.7 L208.9,119.7 L237.4,120.9 L265.8,120.9 L294.2,121.7 L322.6,121.3 L351.1,124.2 L379.5,123.0 L407.9,123.4 L436.3,122.6 L464.7,123.4 L493.2,123.0 L521.6,123.4 L550.0,123.0" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,14.1 L38.4,14.1 L66.8,12.1 L95.3,14.1 L123.7,12.1 L152.1,12.1 L180.5,12.1 L208.9,14.1 L237.4,10.0 L265.8,14.1 L294.2,16.2 L322.6,18.3 L351.1,24.5 L379.5,22.4 L407.9,26.6 L436.3,22.4 L464.7,30.7 L493.2,28.6 L521.6,26.6 L550.0,22.4" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.65</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.22</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.65</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.21</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.86 → 1.65</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:11.864406779661016%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">▼ 0.02</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.24 → 3.22</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:1.1299435028248588%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.77</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.88 → 5.65</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，平局下调，客胜走高；凯利 <b class="tnum">0.95</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="co-22" class="company-panel mt-5 hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
+          <span class="text-sm font-bold text-slate-800">公司 23 <span class="ml-1 text-[10px] font-medium text-emerald-600">主要公司</span></span>
+          <span class="tnum text-xs text-slate-500">初 <b class="text-slate-700">1.83</b> / <b class="text-slate-700">3.3</b> / <b class="text-slate-700">4</b> → 临 <b class="text-emerald-700">1.6</b> / <b class="text-amber-600">3.3</b> / <b class="text-sky-700">5.75</b></span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-4 px-1 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+          <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          <span class="ml-auto text-slate-400">20 个采样点 · 凯利 0.92</span>
+        </div>
+      </div>
+      <div class="mt-3 grid gap-3 lg:grid-cols-2">
+        
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-wider text-slate-500">赔率走势折线</span><span class="text-[10px] text-slate-400">20 个采样点 · 区间 1.57 ~ 6.00</span></div>
+          <svg viewBox="0 0 560 200" class="mt-2 w-full">
+            <g stroke="rgba(100,116,139,0.14)" stroke-width="1">
+              <line x1="10" y1="50" x2="550" y2="50" />
+              <line x1="10" y1="100" x2="550" y2="100" />
+              <line x1="10" y1="150" x2="550" y2="150" />
+            </g>
+            <path d="M10.0,188.4 L38.4,188.8 L66.8,188.4 L95.3,188.8 L123.7,190.0 L152.1,188.8 L180.5,188.8 L208.9,188.8 L237.4,190.0 L265.8,188.8 L294.2,190.0 L322.6,188.8 L351.1,190.0 L379.5,188.8 L407.9,190.0 L436.3,188.8 L464.7,190.0 L493.2,188.8 L521.6,190.0 L550.0,188.8" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M10.0,119.7 L38.4,115.6 L66.8,119.7 L95.3,115.6 L123.7,115.6 L152.1,115.6 L180.5,115.6 L208.9,115.6 L237.4,115.6 L265.8,115.6 L294.2,115.6 L322.6,119.7 L351.1,115.6 L379.5,119.7 L407.9,115.6 L436.3,119.7 L464.7,115.6 L493.2,119.7 L521.6,115.6 L550.0,119.7" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" />
+            <path d="M10.0,30.3 L38.4,30.3 L66.8,30.3 L95.3,30.3 L123.7,20.2 L152.1,30.3 L180.5,20.2 L208.9,30.3 L237.4,20.2 L265.8,30.3 L294.2,20.2 L322.6,20.2 L351.1,20.2 L379.5,20.2 L407.9,20.2 L436.3,20.2 L464.7,20.2 L493.2,20.2 L521.6,10.0 L550.0,20.2" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div class="mt-2 flex flex-wrap gap-4 text-[11px] text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-emerald-600"></span>主胜 1.6</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-amber-500"></span>平局 3.3</span>
+            <span class="flex items-center gap-1.5"><span class="h-1.5 w-5 rounded-full bg-sky-600"></span>客胜 5.75</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-4 ">
+          <div class="text-xs font-bold tracking-wider text-slate-500">初 → 临 走势解读</div>
+          <div class="mt-3 grid gap-2.5 sm:grid-cols-3">
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">主胜</span><span class="tnum font-bold text-emerald-700">▼ 0.23</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">1.83 → 1.6</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-emerald-500" style="width:13.142857142857142%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">平局</span><span class="tnum font-bold text-amber-700">—</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">3.3 → 3.3</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-amber-500" style="width:0%"></div></div>
+            </div>
+            
+            <div class="rounded-xl bg-slate-50 p-3">
+              <div class="flex items-center justify-between text-xs"><span class="text-slate-500">客胜</span><span class="tnum font-bold text-sky-700">▲ 1.75</span></div>
+              <div class="tnum mt-0.5 text-sm font-bold text-slate-800">4 → 5.75</div>
+              <div class="mt-1.5 h-1 overflow-hidden rounded-full bg-white"><div class="h-full rounded-full bg-sky-500" style="width:100%"></div></div>
+            </div>
+            
+          </div>
+          <div class="mt-3 rounded-xl bg-emerald-50/70 px-3.5 py-2.5 text-xs leading-relaxed text-emerald-800"><b>解读</b>：主胜赔付下调，客胜走高；凯利 <b class="tnum">0.92</b>。</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-5">
+      <div class="flex items-center justify-between"><span class="text-sm font-bold text-slate-700">全公司 共识 / 分歧</span><span class="text-[10px] text-slate-400">23 家公司</span></div>
+      <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
+        <span class="rounded-full bg-emerald-50 px-2.5 py-1 font-bold text-emerald-700">主胜 ↓ 14 家</span>
+        <span class="rounded-full bg-amber-50 px-2.5 py-1 font-bold text-amber-700">平局 ↓ 12 家</span>
+        <span class="rounded-full bg-sky-50 px-2.5 py-1 font-bold text-sky-700">客胜 ↑ 23 家</span>
+      </div>
+      <div class="mt-3 rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 text-xs leading-relaxed text-emerald-800"><b>共识</b>：主胜整体下调（14/23 家）、客胜整体上调（23/23 家）。</div>
+    </div>
+    <script>
+      function switchCompany(id, btn) {
+        var ps = document.querySelectorAll('.company-panel'); for (var i = 0; i < ps.length; i++) ps[i].classList.add('hidden');
+        document.getElementById(id).classList.remove('hidden');
+        var pills = document.querySelectorAll('.co-pill'); for (var j = 0; j < pills.length; j++) pills[j].classList.remove('is-active');
+        btn.classList.add('is-active');
+      }
+    </script>
+  </div>
+</section>
+
+
+  <!-- 欧赔信号：共识 / 走势 / 评分 / 三档 / 组合（本地静态计算） -->
+
+
+<section id="signals" class="rise-in rise-in-3 mt-8">
+  <div class="panel rounded-3xl p-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 class="text-lg font-black text-slate-800">欧赔信号</h2>
+      <span class="panel-head">ODDS SIGNALS</span>
+    </div>
+    <p class="mt-1 text-xs text-slate-400">数据更新：2026-08-10 15:18</p>
+
+    <!-- 三档结论卡 -->
+    <div class="mt-5 grid gap-3 lg:grid-cols-3">
+      <div class="rounded-2xl border p-4 border-emerald-200 bg-emerald-50">
+        <div class="text-[10px] font-bold tracking-wider text-slate-500">三档判定</div>
+        <div class="mt-1 text-lg font-black text-emerald-700">稳</div>
+        <p class="mt-1 text-[11px] leading-5 text-slate-600">市场明确看好且信号一致，共识方向可信任（历史命中 73%）</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="text-[10px] font-bold tracking-wider text-slate-500">可信度评分</div>
+        <div class="mt-1 text-lg font-black text-slate-800">98<span class="text-xs font-medium text-slate-400"> / 100</span></div>
+        <p class="mt-1 text-[11px] leading-5 text-slate-500">概率 40 · spread 25 · 走势 20 · 演化 8 · 抬价 5</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="text-[10px] font-bold tracking-wider text-slate-500">组合判定（胶着档参考）</div>
+        <div class="mt-1 text-lg font-black text-slate-800">主不败<span class="text-xs font-medium text-slate-400"> 84.1%</span></div>
+        <p class="mt-1 text-[11px] leading-5 text-slate-500">主不败 84.1% · 客不败 43.3% · 分胜负 72.6%</p>
+      </div>
+    </div>
+
+    <!-- 共识 + 走势 -->
+    <div class="mt-3 grid gap-3 lg:grid-cols-2">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="text-[10px] font-bold tracking-wider text-slate-500">市场共识</div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span class="text-lg font-black text-slate-800">主胜</span>
+          <span class="text-sm text-slate-500">隐含概率 56.7%</span>
+          <span class="ml-auto text-[10px] text-slate-400">主 56.7% / 平 27.4% / 客 15.9%</span>
+        </div>
+        <div class="mt-3">
+          <div class="flex h-2.5 w-full overflow-hidden rounded-full">
+            <div class="bg-emerald-500" style="width: 56.7%"></div>
+            <div class="bg-amber-500" style="width: 27.4%"></div>
+            <div class="bg-sky-600" style="width: 15.9%"></div>
+          </div>
+          <div class="mt-2 flex justify-between text-[10px] text-slate-500">
+            <span>主胜 56.7%</span><span>平局 27.4%</span><span>客胜 15.9%</span>
+          </div>
+        </div>
+        <p class="mt-3 text-[11px] leading-5 text-slate-500">主客概率差 spread 40.8pct · 公司间离散度 Kstd 0.053 · 个体一致率 100%</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="text-[10px] font-bold tracking-wider text-slate-500">走势信号（初盘→最新）</div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span class="text-lg font-black text-slate-800">主胜</span>
+          <span class="text-sm text-slate-500">概率 +3.21pct</span>
+          <span class="ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-700">强度强</span>
+        </div>
+        <p class="mt-1 text-[11px] text-slate-500">61% 公司同向</p>
+        <div class="mt-3 grid grid-cols-3 gap-2 text-center text-[11px]">
+          <div class="rounded-lg bg-emerald-50 py-2"><div class="font-bold text-emerald-700">+3.21pct</div><div class="text-slate-500">主胜移动</div></div>
+          <div class="rounded-lg bg-amber-50 py-2"><div class="font-bold text-amber-700">+0.49pct</div><div class="text-slate-500">平局移动</div></div>
+          <div class="rounded-lg bg-sky-50 py-2"><div class="font-bold text-sky-700">-3.71pct</div><div class="text-slate-500">客胜移动</div></div>
+        </div>
+        <p class="mt-2 text-[11px] text-slate-500">临场演化：收敛 · 共识方向被抬价公司：0 家</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 亚盘分析：初盘/临盘市场主流 + 四象限图（家数分布）+ 判定 + 让球玩法（脚本化） -->
+
+
+<section id="asian" class="rise-in rise-in-4 mt-8">
+  <div class="panel rounded-3xl p-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 class="text-lg font-black text-slate-800">亚盘分析</h2>
+      <span class="panel-head">ASIAN HANDICAP</span>
+    </div>
+    <p class="mt-1 text-xs text-slate-400">判定口径：初盘市场主流 → 临盘市场主流（不数各象限家数）；四象限图标注各行为家数分布；让球买卖方向由亚盘判定推导，不读官方让球赔率</p>
+
+    <!-- 初盘/临盘市场主流 -->
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex items-center gap-2">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+          <div class="text-[10px] font-bold tracking-wider text-slate-500">初盘市场主流</div>
+        </div>
+        <div class="mt-1.5 text-xl font-black text-slate-800">主让一球/球半</div>
+        <div class="tnum mt-1 text-[11px] text-slate-500">水位 主 1.19 / 客 0.9 ｜ 4 家</div>
+      </div>
+      <div class="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-4">
+        <div class="flex items-center gap-2">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <div class="text-[10px] font-bold tracking-wider text-emerald-600">临盘市场主流</div>
+        </div>
+        <div class="mt-1.5 text-xl font-black text-emerald-700">主让半一</div>
+        <div class="tnum mt-1 text-[11px] text-slate-500">水位 主 0.88 / 客 0.97 ｜ 9 家</div>
+      </div>
+    </div>
+
+    <!-- 四象限图 + 判定/让球 -->
+    <div class="mt-4 grid gap-3 lg:grid-cols-2">
+      <!-- SVG 四象限 -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-4">
+        <div class="flex items-baseline justify-between gap-2">
+          <div class="text-[10px] font-bold tracking-wider text-slate-500">四象限 · 各行为家数</div>
+          <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-600">★ 主流判定 以退为进</span>
+        </div>
+        <svg viewBox="0 0 440 360" width="100%" style="max-width:440px;display:block;margin:0 auto;font-family:ui-sans-serif,system-ui,'PingFang SC','Microsoft YaHei',sans-serif">
+          <!-- 象限定义：右=升盘增强，上=支持增强（让球方降水） -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <rect x="220" y="50" width="152" height="136" fill="#dcfce7" fill-opacity="0.1" stroke="#16a34a" stroke-opacity="0.5" stroke-width="0.8"/>
+          <text x="296" y="92" text-anchor="middle" font-size="12" font-weight="800" fill="#16a34a">强看好</text>
+          <text x="296" y="122" text-anchor="middle" font-size="24" font-weight="800" fill="#1f2937">0 家</text>
+          
+          
+          
+          
+          <rect x="68" y="50" width="152" height="136" fill="#f59e0b" fill-opacity="0.16" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="2"/>
+          
+          <text x="144" y="92" text-anchor="middle" font-size="12" font-weight="800" fill="#f59e0b">以退为进 ★</text>
+          <text x="144" y="122" text-anchor="middle" font-size="24" font-weight="800" fill="#1f2937">5 家</text>
+          <text x="144" y="144" text-anchor="middle" font-size="9.5" fill="#64748b">主流判定</text>
+          
+          
+          
+          <rect x="68" y="186" width="152" height="136" fill="#fee2e2" fill-opacity="0.1" stroke="#dc2626" stroke-opacity="0.5" stroke-width="0.8"/>
+          <text x="144" y="228" text-anchor="middle" font-size="12" font-weight="800" fill="#dc2626">明确看淡</text>
+          <text x="144" y="258" text-anchor="middle" font-size="24" font-weight="800" fill="#1f2937">0 家</text>
+          
+          
+          
+          <rect x="220" y="186" width="152" height="136" fill="#fffbeb" fill-opacity="0.1" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="0.8"/>
+          <text x="296" y="228" text-anchor="middle" font-size="12" font-weight="800" fill="#f59e0b">强撑矛盾</text>
+          <text x="296" y="258" text-anchor="middle" font-size="24" font-weight="800" fill="#1f2937">4 家</text>
+          
+          
+          <line x1="68" y1="186" x2="372" y2="186" stroke="#94a3b8" stroke-width="1.4"/>
+          <line x1="220" y1="44" x2="220" y2="316" stroke="#94a3b8" stroke-width="1.4"/>
+          <text x="220" y="356" text-anchor="middle" font-size="10.5" fill="#64748b">盘口减弱 ←——— 盘口变化 ———→ 盘口增强</text>
+          <text x="434" y="178" text-anchor="end" font-size="10" fill="#64748b">↑ 支持增强</text>
+          <text x="434" y="204" text-anchor="end" font-size="10" fill="#64748b">↓ 支持减弱</text>
+          <text x="238" y="178" font-size="9.5" fill="#16a34a">稳降水 3</text>
+          <text x="238" y="202" font-size="9.5" fill="#dc2626">稳升水 0</text>
+          <text x="238" y="224" font-size="9.5" fill="#64748b">稳平 0</text>
+          
+        </svg>
+        <p class="mt-2 text-center text-[10px] text-slate-400">横轴=盘口变化（升盘=让球加深）；纵轴=支持变化（让球方水位降=被买）。★=按主流判定。</p>
+      </div>
+
+      <!-- 判定 + 预期 + 让球 -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-2xl border p-4 border-amber-200 bg-amber-50">
+          <div class="flex items-center justify-between gap-2">
+            <div class="text-[10px] font-bold tracking-wider text-slate-500">主流判定</div>
+            <span class="rounded-full px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-700">★ 强力信号</span>
+          </div>
+          <div class="mt-1 text-lg font-black text-slate-800">以退为进 ★</div>
+          <div class="mt-0.5 text-[10px] font-bold text-slate-500">主让一球/球半 → 主让半一（降盘）</div>
+          <p class="mt-1 text-[11px] leading-5 text-slate-600">盘口变浅但让球方仍被买：退盘有钱流入，姿态可疑</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <div class="text-[10px] font-bold tracking-wider text-slate-500">预期方向 · 亚盘</div>
+          <div class="mt-1 flex flex-wrap items-center gap-2">
+            <span class="text-base font-black text-slate-800">看衰巴竞技 → 输盘</span>
+            <span class="rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-black text-white">× 未中</span>
+            
+          </div>
+          <p class="tnum mt-1 text-[11px] text-slate-500">结算：赢（让主0.75）</p>
+        </div>
+        <div class="rounded-2xl border border-sky-100 bg-sky-50/40 p-4">
+          <div class="text-[10px] font-bold tracking-wider text-sky-700">让球玩法</div>
+          <div class="mt-1 flex flex-wrap items-center gap-1.5">
+            <span class="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-black text-sky-700 ring-1 ring-sky-200">主让1</span>
+            <span class="text-base font-black text-slate-800">买【让平/让负】</span>
+          </div>
+          <p class="mt-1 text-[11px] leading-5 text-slate-600">
+            <span class="text-slate-500">让球后实际：主胜</span>
+            <span class="ml-1 rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-black text-white">× 让球未命中</span>
+            
+          </p>
+          <p class="mt-1 text-[10px] leading-4 text-slate-400">买卖方向由亚盘判定推导（看好主队→让主胜/让平，看衰主队→让平/让负），历史 ~80%；强力信号=机会信号 ~90%。</p>
+        </div>
+        <!-- 背离象限解读（紧凑并排，mt-auto 贴底使右列与左列 SVG 等高） -->
+        <div class="mt-auto rounded-2xl border border-slate-200 bg-white p-3.5">
+          <div class="text-[10px] font-bold tracking-wider text-slate-500">背离象限解读</div>
+          <div class="mt-1.5 grid gap-1.5 sm:grid-cols-2">
+            <div class="rounded-lg border px-2.5 py-1.5 border-amber-300 bg-amber-50">
+              <span class="text-[10px] font-black text-amber-700">以退为进</span><span class="ml-1 rounded-full bg-amber-500 px-1 py-px text-[8px] font-black text-white">本场</span>
+              <p class="mt-0.5 text-[9.5px] leading-3.5 text-slate-500">降盘+被买 → 让球方输盘（~67%）</p>
+            </div>
+            <div class="rounded-lg border px-2.5 py-1.5 border-slate-100 bg-slate-50/60">
+              <span class="text-[10px] font-black text-amber-700">强撑矛盾</span>
+              <p class="mt-0.5 text-[9.5px] leading-3.5 text-slate-500">升盘+被抛 → 让球方输盘（两可）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 剧本预测：根据欧赔信号生成比分剧本（稳→市场方向 / 胶着→组合方向 / 爆冷→冷门） -->
+
+
+<section id="script" class="rise-in rise-in-4 mt-8">
+  <div class="panel rounded-3xl p-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 class="text-lg font-black text-slate-800">剧本预测</h2>
+      <span class="panel-head">SCRIPT PREDICTION</span>
+    </div>
+    <p class="mt-1 text-xs text-slate-400">由欧赔信号派生：市场方向剧本</p>
+
+    <div class="mt-5 rounded-2xl border p-4 border-emerald-200 bg-emerald-50">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="rounded-full px-2.5 py-1 text-[10px] font-bold bg-emerald-100 text-emerald-700">市场方向剧本</span>
+        <span class="text-sm font-bold text-slate-800">市场看好主胜（共识概率 56.7%）</span>
+        <span class="ml-auto text-[10px] text-slate-400">评分 98 · 三档 稳</span>
+      </div>
+      <p class="mt-2 text-[11px] leading-5 text-slate-600">稳档：评分 ≥60 且共识概率 ≥45%，市场信号一致，按欧赔共识方向给出比分剧本（历史命中 67%）</p>
+    </div>
+
+    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+      
+      <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+        <div class="text-[10px] font-bold tracking-wider text-slate-400">TOP 1</div>
+        <div class="mt-1 text-2xl font-black text-slate-800">1:0</div>
+        <div class="mt-1 text-[11px] text-slate-500">隐含概率 13.7%</div>
+        <div class="mt-1 text-[10px] text-slate-400">赔率 5.25</div>
+      </div>
+      
+      <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+        <div class="text-[10px] font-bold tracking-wider text-slate-400">TOP 2</div>
+        <div class="mt-1 text-2xl font-black text-slate-800">2:1</div>
+        <div class="mt-1 text-[11px] text-slate-500">隐含概率 11%</div>
+        <div class="mt-1 text-[10px] text-slate-400">赔率 6.5</div>
+      </div>
+      
+      <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+        <div class="text-[10px] font-bold tracking-wider text-slate-400">TOP 3</div>
+        <div class="mt-1 text-2xl font-black text-slate-800">3:2</div>
+        <div class="mt-1 text-[11px] text-slate-500">隐含概率 2.1%</div>
+        <div class="mt-1 text-[10px] text-slate-400">赔率 35</div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+</main>
+<script>
+  // 锚点平滑滚动：preventDefault 不产生新历史记录（后退一次即回上一页），replaceState 仅更新 URL hash
+  function navAnchor(ev) {
+    ev.preventDefault();
+    var href = ev.currentTarget.getAttribute('href');
+    var el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    try { history.replaceState(null, '', href); } catch (e) { /* 忽略 */ }
+  }
+  // 侧边锚点导航：滚动高亮当前区块
+  (function () {
+    var navItems = document.querySelectorAll('.side-nav a[href^="#"]');
+    if (!navItems.length) return;
+    var secs = document.querySelectorAll('main section[id], main div[id]');
+    function spy() {
+      var pos = window.scrollY + 140;
+      var cur = null;
+      for (var i = 0; i < secs.length; i++) { if (secs[i].offsetTop <= pos) cur = secs[i].id; }
+      for (var j = 0; j < navItems.length; j++) {
+        navItems[j].classList.toggle('is-active', navItems[j].getAttribute('href') === '#' + cur);
+      }
+    }
+    window.addEventListener('scroll', spy, { passive: true });
+    spy();
+  })();
+</script>
+<!-- 详情页页脚 -->
+<footer class="border-t border-slate-200/80 px-6 py-8">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+    <div class="flex items-center gap-2 text-xs text-slate-500">
+      <a href="../index.html" class="transition hover:text-emerald-600">← 返回赛程归档</a>
+      <span class="text-slate-300">·</span><span>© 2026 Football Report · 自动生成</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

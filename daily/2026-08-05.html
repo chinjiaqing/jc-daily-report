@@ -86,13 +86,17 @@
     <div class="mt-2 flex flex-wrap items-center gap-3">
       <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-05 · 每日汇总</h1>
       <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周三 · 精英 3 场</span>
-      
+      <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 2 场</span>
       
     </div>
+<<<<<<< HEAD
     <p class="mt-2 text-xs text-slate-400">欧赔 V4（定方向）· 大小球 V12（管进球）· 亚盘 V14（补盲）· 裁判组 V7 · 稀有度按清洗后验证命中率</p>
+=======
+    <p class="mt-2 text-xs text-slate-400">分层门控：核武 T1（双轨猎手 83%/精英狙击 93%/欧赔 SSS）直接触发 → 低保 T2（V14 上盘阻挡等）兜底 → 强队受疑禁区驳回 · 稀有度按清洗后验证命中率</p>
+>>>>>>> 0785f90 (build: 2026-08-12 每日报告)
   </div>
 
-  <!-- 标签模块：稀有度档位 + 当日标签语义字典 -->
+  <!-- 标签模块：稀有度档位 + 分层语义字典（核武 T1 / 低保 T2） -->
   <div class="rise-in rise-in-1 mt-6 mb-6 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-[11px] leading-relaxed text-slate-500">
     <div class="flex flex-wrap items-center gap-1.5">
       <b class="text-slate-700">🎴 稀有度</b>：
@@ -101,6 +105,8 @@
       <span class="rk rk-sr">SR·史诗 70-79%</span>
       <span class="rk rk-r">R·稀有 60-69%</span>
       <span class="rk rk-n">N·普通 &lt;60%/拦截</span>
+      <span class="ml-2 rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+      <span class="rounded-full bg-indigo-400 px-1.5 py-0.5 text-[9px] font-black text-white">低保 T2</span>
     </div>
     
   </div>
@@ -136,12 +142,12 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周三002</span><span class="text-[15px] font-bold text-slate-800">奥胡斯 <span class="text-slate-400 font-normal">vs</span> 萨巴赫</span>
@@ -170,12 +176,22 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周三003</span><span class="text-[15px] font-bold text-slate-800">费内巴切 <span class="text-slate-400 font-normal">vs</span> 格拉茨风暴</span>
@@ -204,7 +220,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>

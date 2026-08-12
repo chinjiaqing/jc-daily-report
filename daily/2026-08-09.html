@@ -86,13 +86,17 @@
     <div class="mt-2 flex flex-wrap items-center gap-3">
       <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-09 · 每日汇总</h1>
       <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周日 · 精英 24 场</span>
-      <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 7 场</span>
-      <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">信号命中 4/7</span>
+      <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 16 场</span>
+      <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">信号命中 8/11</span>
     </div>
+<<<<<<< HEAD
     <p class="mt-2 text-xs text-slate-400">欧赔 V4（定方向）· 大小球 V12（管进球）· 亚盘 V14（补盲）· 裁判组 V7 · 稀有度按清洗后验证命中率</p>
+=======
+    <p class="mt-2 text-xs text-slate-400">分层门控：核武 T1（双轨猎手 83%/精英狙击 93%/欧赔 SSS）直接触发 → 低保 T2（V14 上盘阻挡等）兜底 → 强队受疑禁区驳回 · 稀有度按清洗后验证命中率</p>
+>>>>>>> 0785f90 (build: 2026-08-12 每日报告)
   </div>
 
-  <!-- 标签模块：稀有度档位 + 当日标签语义字典 -->
+  <!-- 标签模块：稀有度档位 + 分层语义字典（核武 T1 / 低保 T2） -->
   <div class="rise-in rise-in-1 mt-6 mb-6 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-[11px] leading-relaxed text-slate-500">
     <div class="flex flex-wrap items-center gap-1.5">
       <b class="text-slate-700">🎴 稀有度</b>：
@@ -101,28 +105,38 @@
       <span class="rk rk-sr">SR·史诗 70-79%</span>
       <span class="rk rk-r">R·稀有 60-69%</span>
       <span class="rk rk-n">N·普通 &lt;60%/拦截</span>
+      <span class="ml-2 rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+      <span class="rounded-full bg-indigo-400 px-1.5 py-0.5 text-[9px] font-black text-white">低保 T2</span>
     </div>
     
     <div class="mt-2 space-y-1">
       
+      <div class="mt-1 font-bold text-rose-600">🛡️ 核武层 T1（直接触发，命中 76-98%）</div>
       
-        <div class="mt-1.5 font-bold text-slate-600">欧赔</div>
-        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-r shrink-0">R·准冷门震荡 62%</span><span>检测到弱队赔率异动（资金涌入）→ 冷门有爆点 → 执行：博冷客队方向</span></div>
       
-        
-        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-n shrink-0">N·客胜催化·博胆 66%</span><span>检测到客胜赔率被压低（庄家引导）→ 客胜方向 → 执行：客胜博胆</span></div>
-      
-        
+        <div class="mt-1 font-bold text-slate-600">欧赔</div>
         <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·弱势崩塌 80%</span><span>检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败</span></div>
       
-        <div class="mt-1.5 font-bold text-slate-600">大小球</div>
+        <div class="mt-1 font-bold text-slate-600">欧亚偏差</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-sr shrink-0">SR·欧亚联动 81%</span><span>欧亚联动：亚盘滞后(线差 0.00)，欧赔主胜升 0.43 已先行崩塌</span></div>
+      
+        
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·职业偷跑 89%</span><span>职业偷跑：盘口钉死(平手/半球)，平博主水 1.04→0.91 降 0.13</span></div>
+      
+        <div class="mt-1 font-bold text-slate-600">大小球</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ur shrink-0">UR·精英提纯 93%</span><span>检测到精英联赛降盘+小球被买（狙击）→ 庄家压盘买小 → 执行：买小球</span></div>
+      
+      
+      
+      <div class="mt-2 font-bold text-indigo-500">🔧 低保层 T2（核武观望时兜底，仓位减半）</div>
+      
+      
+        <div class="mt-1 font-bold text-slate-600">大小球</div>
         <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-sr shrink-0">SR·高水破格 78%</span><span>检测到降盘却不降水（高位吸筹）→ 暗中买小 → 执行：买小球</span></div>
       
         
         <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·共识流 81%</span><span>检测到全市场一致降盘（共识）→ 人人买小 → 执行：跟买小球</span></div>
       
-        
-        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ur shrink-0">UR·精英提纯 93%</span><span>检测到精英联赛降盘+小球被买（狙击）→ 庄家压盘买小 → 执行：买小球</span></div>
       
     </div>
     
@@ -130,11 +144,13 @@
 
   <!-- 场次列表 -->
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日001</span><span class="text-[15px] font-bold text-slate-800">东京绿茵 <span class="text-slate-400 font-normal">vs</span> 川崎前锋</span>
         <span class="text-xs font-black text-amber-700">1:1</span>
+        
+        <span class="rk rk-ur">UR·精英提纯 93%</span>
         
       </div>
       <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
@@ -171,7 +187,20 @@
           <span class="ml-auto"><span class="hit-wait">—</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">小球</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤动态目标)</span>
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到精英联赛降盘+小球被买（狙击）→ 庄家压盘买小 → 执行：买小球 · 置信 93%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🟡 核武·精英狙击</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
       
     </div>
   </div>
@@ -182,7 +211,7 @@
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日002</span><span class="text-[15px] font-bold text-slate-800">长崎成功丸 <span class="text-slate-400 font-normal">vs</span> 京都不死鸟</span>
         <span class="text-xs font-black text-amber-700">2:1</span>
         
-        <span class="rk rk-ssr">SSR·弱势崩塌 80%</span>
+        <span class="rk rk-sr">SR·欧亚联动 81%</span>
         
       </div>
       <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
@@ -212,21 +241,23 @@
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         
+          <span class="rk rk-sr">SR·欧亚联动</span>
+          <b>下盘</b>
           
-          <b>公司数不足</b>
-          
-          <span class="sub">有效公司0&lt;3</span>
-          <span class="ml-auto"><span class="hit-wait">—</span></span>
+          <span class="sub">欧亚联动：亚盘滞后(线差 0.00)，欧赔主胜升 0.43 已先行崩塌</span>
+          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
-        <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
-        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
-        <span class="text-[11px] text-amber-500">★★★★★</span>
-        <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">博冷（客队）</b>
+        
+        <span class="text-[11px] text-amber-500">★★★★☆</span>
+        <span class="opacity-80">（检测到欧赔主胜升水≥0.12 而亚盘滞后（概率坍塌先行）→ 执行：博冷客队 · 置信 81%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🎯 核武·欧亚联动</span>
         
         <span class="ml-auto"><span class="hit-no">× 未中</span></span>
         
@@ -264,7 +295,7 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
@@ -306,14 +337,16 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
         
@@ -322,7 +355,7 @@
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日005</span><span class="text-[15px] font-bold text-slate-800">圣保利 <span class="text-slate-400 font-normal">vs</span> 菲尔特</span>
@@ -351,7 +384,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>
@@ -373,13 +416,7 @@
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
-        
-          <span class="rk rk-n">N·客胜催化·博胆</span>
-          <b>看客胜</b>
-          <span class="sub">H 2.45 (0.51)</span>
-          <span class="sub">客胜催化：H升0.51/D降-0.15</span>
-          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
-        
+        <span class="sub">观望</span>
       </div>
       <!-- 大小球 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -403,7 +440,7 @@
           <span class="ml-auto"><span class="hit-wait">—</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
@@ -437,12 +474,12 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日008</span><span class="text-[15px] font-bold text-slate-800">古比斯 <span class="text-slate-400 font-normal">vs</span> TPS土尔库</span>
@@ -471,7 +508,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>
@@ -513,14 +560,16 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
         
@@ -529,11 +578,13 @@
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日010</span><span class="text-[15px] font-bold text-slate-800">格罗宁根 <span class="text-slate-400 font-normal">vs</span> 乌德勒支</span>
         <span class="text-xs font-black text-amber-700">2:1</span>
+        
+        <span class="rk rk-ssr">SSR·职业偷跑 89%</span>
         
       </div>
       <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
@@ -562,9 +613,28 @@
       <!-- 亚盘 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
-        <span class="sub">观望</span>
+        
+          <span class="rk rk-ssr">SSR·职业偷跑</span>
+          <b>上盘</b>
+          
+          <span class="sub">职业偷跑：盘口钉死(平手/半球)，平博主水 1.04→0.91 降 0.13</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
+        
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">买入主队（上盘）</b>
+        
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到盘口钉死但平博主水降≥0.12（职业先行者偷跑）→ 执行：买入主队上盘 · 置信 89%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🎯 核武·职业偷跑</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
       
     </div>
   </div>
@@ -586,13 +656,7 @@
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
-        
-          <span class="rk rk-r">R·准冷门震荡</span>
-          <b>看客不败</b>
-          <span class="sub">H 2.42 (0.28)</span>
-          <span class="sub">准冷门获支持 A=2.59</span>
-          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
-        
+        <span class="sub">观望</span>
       </div>
       <!-- 大小球 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -604,16 +668,18 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日012</span><span class="text-[15px] font-bold text-slate-800">图尔库国际 <span class="text-slate-400 font-normal">vs</span> 拉赫蒂</span>
         <span class="text-xs font-black text-amber-700">0:0</span>
+        
+        <span class="rk rk-ur">UR·精英提纯 93%</span>
         
       </div>
       <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
@@ -626,13 +692,7 @@
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
-        
-          <span class="rk rk-n">N·客胜催化·博胆</span>
-          <b>看客胜</b>
-          <span class="sub">H 2.36 (0.61)</span>
-          <span class="sub">客胜催化：H升0.61/D降-0.33</span>
-          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
-        
+        <span class="sub">观望</span>
       </div>
       <!-- 大小球 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -650,7 +710,20 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">小球</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤动态目标)</span>
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到精英联赛降盘+小球被买（狙击）→ 庄家压盘买小 → 执行：买小球 · 置信 93%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🟡 核武·精英狙击</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
       
     </div>
   </div>
@@ -692,14 +765,16 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
         
@@ -708,11 +783,13 @@
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日014</span><span class="text-[15px] font-bold text-slate-800">哥德堡 <span class="text-slate-400 font-normal">vs</span> 卡尔马</span>
         <span class="text-xs font-black text-amber-700">3:2</span>
+        
+        <span class="rk rk-ssr">SSR·职业偷跑 89%</span>
         
       </div>
       <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
@@ -725,13 +802,7 @@
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
-        
-          <span class="rk rk-n">N·客胜催化·博胆</span>
-          <b>看客胜</b>
-          <span class="sub">H 2.40 (0.20)</span>
-          <span class="sub">客胜催化：H升0.20/D降-0.10</span>
-          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
-        
+        <span class="sub">观望</span>
       </div>
       <!-- 大小球 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -742,14 +813,27 @@
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         
+          <span class="rk rk-ssr">SSR·职业偷跑</span>
+          <b>上盘</b>
           
-          <b>公司数不足</b>
-          
-          <span class="sub">有效公司1&lt;3</span>
-          <span class="ml-auto"><span class="hit-wait">—</span></span>
+          <span class="sub">职业偷跑：盘口钉死(平手/半球)，平博主水 1.00→0.80 降 0.20</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">买入主队（上盘）</b>
+        
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到盘口钉死但平博主水降≥0.12（职业先行者偷跑）→ 执行：买入主队上盘 · 置信 89%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🎯 核武·职业偷跑</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
       
     </div>
   </div>
@@ -791,14 +875,16 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-no">× 未中</span></span>
         
@@ -842,7 +928,7 @@
           <span class="ml-auto"><span class="hit-wait">—</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
@@ -888,12 +974,12 @@
           <span class="ml-auto"><span class="hit-wait">—</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日018</span><span class="text-[15px] font-bold text-slate-800">波尔图 <span class="text-slate-400 font-normal">vs</span> 艾华卡</span>
@@ -928,7 +1014,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>
@@ -976,14 +1072,16 @@
           <span class="ml-auto"><span class="hit-wait">—</span></span>
         
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-no">× 未中</span></span>
         
@@ -992,7 +1090,7 @@
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日020</span><span class="text-[15px] font-bold text-slate-800">本菲卡 <span class="text-slate-400 font-normal">vs</span> 维塞乌</span>
@@ -1021,7 +1119,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>
@@ -1043,13 +1151,7 @@
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
         <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
-        
-          <span class="rk rk-r">R·准冷门震荡</span>
-          <b>看客不败</b>
-          <span class="sub">H 2.13 (0.37)</span>
-          <span class="sub">准冷门获支持 A=3.37</span>
-          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
-        
+        <span class="sub">观望</span>
       </div>
       <!-- 大小球 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1067,7 +1169,7 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
@@ -1109,14 +1211,16 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
         <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
         <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
         <span class="text-[11px] text-amber-500">★★★★★</span>
         <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
-        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·弱势弃守</span>
         
         <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
         
@@ -1154,12 +1258,12 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
       
     </div>
   </div>
   
-  <div class="sigcard rise-in ">
+  <div class="sigcard rise-in has-sig">
     <div class="flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周日024</span><span class="text-[15px] font-bold text-slate-800">弗拉门戈 <span class="text-slate-400 font-normal">vs</span> 维多利亚</span>
@@ -1188,7 +1292,17 @@
         <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
         <span class="sub">观望</span>
       </div>
-      <!-- 裁判组 -->
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
       
     </div>
   </div>

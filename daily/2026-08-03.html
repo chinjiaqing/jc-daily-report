@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>每日汇总 · 2026-08-03 · Football Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #f4f8f5; color: #1e293b; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+  .bg-layer { position: fixed; inset: 0; z-index: -10; pointer-events: none;
+    background: radial-gradient(1100px 560px at 50% -12%, rgba(16,185,129,.09), transparent 62%), radial-gradient(900px 480px at 92% 108%, rgba(251,191,36,.06), transparent 60%), repeating-linear-gradient(90deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), repeating-linear-gradient(0deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), #f4f8f5; }
+  .text-gradient { background: linear-gradient(100deg,#065f46 15%,#059669 55%,#0d9488 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  .rise-in { animation: rise-in .9s cubic-bezier(.22,1,.36,1) both; }
+  .rise-in-1 { animation-delay: .08s; } .rise-in-2 { animation-delay: .18s; } .rise-in-3 { animation-delay: .28s; } .rise-in-4 { animation-delay: .38s; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.07); }
+  .panel-head { letter-spacing: .22em; font-size: 11px; font-weight: 700; color: rgba(5,150,105,.85); }
+  .day-card { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.08); transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+  .day-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,.55); box-shadow: 0 20px 44px -14px rgba(16,185,129,.30); }
+  .day-card.is-today { background: linear-gradient(160deg, rgba(209,250,229,.7), rgba(255,255,255,.95)); border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 16px 40px -14px rgba(16,185,129,.28); }
+  .month-pill { border: 1px solid rgba(226,232,240,.95); background: rgba(255,255,255,.85); box-shadow: 0 1px 4px -1px rgba(15,118,110,.08); transition: all .25s; }
+  .month-pill:hover { border-color: rgba(16,185,129,.5); color: #047857; }
+  .month-pill.is-active { background: linear-gradient(120deg,#059669,#10b981); border-color: #059669; color: #fff; box-shadow: 0 8px 20px -6px rgba(5,150,105,.45); }
+  .tag-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid; box-shadow: 0 1px 3px -1px rgba(15,23,42,.06); cursor: default; transition: transform .15s, box-shadow .15s; }
+  .tag-chip::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--dot, currentColor); flex-shrink: 0; }
+  .tag-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px -4px rgba(15,23,42,.16); }
+  .nice-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  .nice-scroll::-webkit-scrollbar { width: 4px; }
+  .nice-scroll::-webkit-scrollbar-track { background: transparent; }
+  .nice-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  @keyframes dot-blink { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+  .dot-blink { animation: dot-blink 2.6s ease-in-out infinite; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #f4f8f5; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; border: 2px solid #f4f8f5; }
+  ::selection { background: rgba(16,185,129,.25); color: #064e3b; }
+  /* 侧边锚点导航：仅超宽屏（>1300px）显示 */
+  .side-nav { position: fixed; right: 14px; top: 50%; z-index: 40; display: none; flex-direction: column; gap: 2px;
+    transform: translateY(-50%); width: 108px; padding: 8px 6px; border-radius: 16px;
+    background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9);
+    box-shadow: 0 12px 36px -12px rgba(15,118,110,.18); backdrop-filter: blur(8px); }
+  @media (min-width: 1301px) { .side-nav { display: flex; } }
+  .nav-item { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px;
+    font-size: 12px; color: #64748b; transition: all .15s; white-space: nowrap; }
+  .nav-item:hover { color: #047857; background: rgba(209,250,229,.6); }
+  .nav-item.is-active { color: #047857; background: rgba(209,250,229,.85); font-weight: 700; }
+  .nav-back { margin-top: 4px; border-top: 1px solid rgba(226,232,240,.8); padding-top: 8px; font-weight: 700; color: #0f766e; }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="top"></div>
+<div class="bg-layer"></div>
+<!-- 通用顶栏 -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="group flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-emerald-600">
+      <svg class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      返回上一页</button>
+    <a href="../index.html" class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 text-sm text-white shadow-md shadow-emerald-500/25">⚽</span>
+      <span class="text-sm font-bold tracking-wide text-slate-800">FOOTBALL REPORT</span></a>
+    <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+      <span class="tnum font-bold text-emerald-600">周一</span><span class="text-slate-300">·</span>2026-08-03</div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-7xl px-5 pb-24 pt-28">
+  <div class="rise-in">
+    <p class="text-xs font-bold tracking-[0.3em] text-emerald-600">DAILY SUMMARY</p>
+    <div class="mt-2 flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-03 · 每日汇总</h1>
+      <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周一 · 4 场</span>
+      <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">命中 3/4</span>
+    </div>
+    <p class="mt-2 text-xs text-slate-400">数据更新：2026-08-10 15:18</p>
+  </div>
+
+  <!-- 三档统计 -->
+  <div class="rise-in rise-in-1 mt-6 grid gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-5">
+      <div class="text-xs tracking-widest text-emerald-700">稳 · 市场看好</div>
+      <div class="tnum mt-1 text-2xl font-black text-slate-800">2 <span class="text-sm font-bold text-slate-400">场</span></div>
+      <div class="mt-1 text-[11px] text-slate-500">评分 ≥60，共识方向可信任（历史 73%）</div>
+    </div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/70 p-5">
+      <div class="text-xs tracking-widest text-amber-700">爆冷 · 建议放弃</div>
+      <div class="tnum mt-1 text-2xl font-black text-slate-800">2 <span class="text-sm font-bold text-slate-400">场</span></div>
+      <div class="mt-1 text-[11px] text-slate-500">有倾向但信号打架，共识不可信（历史 69% 打不出）</div>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+      <div class="text-xs tracking-widest text-slate-500">胶着 · 胜负难分</div>
+      <div class="tnum mt-1 text-2xl font-black text-slate-800">0 <span class="text-sm font-bold text-slate-400">场</span></div>
+      <div class="mt-1 text-[11px] text-slate-500">共识 &lt;45%，市场无方向，参考组合判定（历史 74%）</div>
+    </div>
+  </div>
+
+  <!-- 逐场信号汇总（卡片式） -->
+  <div class="rise-in rise-in-2 mt-6">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div>
+        <div class="text-sm font-black tracking-wider text-slate-700">逐场信号汇总</div>
+        <p class="mt-0.5 text-[11px] text-slate-400">命中卡片浅绿 稳=方向一致、爆冷=意见不统一，需谨慎、胶着=不明确 · 点击卡片查看详情</p>
+      </div>
+      <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-bold text-slate-600">4 场</span>
+    </div>
+    <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[1080px] border-collapse text-left text-[13px]">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-50 text-[11px] font-bold tracking-wider text-slate-500">
+              <th class="whitespace-nowrap px-4 py-3">番号</th>
+              <th class="whitespace-nowrap px-4 py-3">对阵</th>
+              <th class="whitespace-nowrap min-w-[13rem] px-4 py-3">胜平负概率（去水）</th>
+              <th class="whitespace-nowrap px-4 py-3">欧指信心</th>
+              <th class="whitespace-nowrap min-w-[8rem] px-4 py-3">亚盘判定</th>
+              <th class="whitespace-nowrap min-w-[7rem] px-4 py-3">大小球</th>
+              <th class="whitespace-nowrap min-w-[10rem] px-4 py-3">推测</th>
+              <th class="whitespace-nowrap px-4 py-3">赛果</th>
+              <th class="whitespace-nowrap px-4 py-3">验证</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr onclick="location.href='../2026-08-03/周一001_塞伊奈_赫尔辛基.html'" title="点击查看详情" class="cursor-pointer border-b border-slate-100 align-top transition hover:bg-emerald-50/60 bg-emerald-50">
+              <td class="tnum whitespace-nowrap px-4 py-3.5"><a href="../2026-08-03/周一001_塞伊奈_赫尔辛基.html" onclick="event.stopPropagation()" class="font-black text-slate-800 transition hover:text-emerald-600">周一001</a></td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <a href="../2026-08-03/周一001_塞伊奈_赫尔辛基.html" onclick="event.stopPropagation()" class="font-bold text-slate-800 transition hover:text-emerald-600">塞伊奈(+1) vs 赫尔辛基</a>
+                <div class="mt-1 flex items-center gap-1.5">
+                  <span class="rounded bg-emerald-50 px-1.5 py-px text-[11px] font-bold text-emerald-700 ring-1 ring-emerald-100">芬超</span>
+                  <span class="text-[11px] text-slate-400">2026-08-04 00:00</span>
+                </div>
+              </td>
+              <td class="px-4 py-3.5">
+                
+                <div class="flex h-1.5 w-44 overflow-hidden rounded-full">
+                  <div class="bg-emerald-500" style="width: 28.7%"></div>
+                  <div class="bg-amber-400" style="width: 24.7%"></div>
+                  <div class="bg-sky-600" style="width: 46.6%"></div>
+                </div>
+                <div class="tnum mt-1 text-[11px]"><span class="text-emerald-700">主28.7%</span> <span class="text-amber-600">平24.7%</span> <span class="text-sky-700">客46.6%</span></div>
+                <div class="tnum mt-1 text-[11px] text-slate-500">赔率 3.3 / 3.87 / 1.76</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-amber-100 text-amber-700">爆冷</span>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">走势客胜 +2.44pp · 中<span class="block text-[10px] text-slate-400">同向 91%</span></div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold text-slate-700">强撑矛盾</span>
+                  <span class="rounded px-1.5 py-px text-[10px] font-bold ring-1 bg-emerald-100 text-emerald-700 ring-emerald-200">★ 强力信号</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">(初)平手 --&gt; 客让半球</div>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">Q4真支撑：欧赔同向，倾向赫尔辛基赢盘</div>
+                
+                <div class="mt-1.5">
+                  <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-black text-emerald-700 ring-1 ring-emerald-300">真支撑·倾向赢盘 · 让球方客不败</span>
+                  
+                </div>
+                
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-violet-100 px-1.5 py-px text-[10px] font-black text-violet-700 ring-1 ring-violet-200">大小</span>
+                  <span class="text-[11px] font-bold text-slate-500">稳</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">3.5 --&gt; 3.5</div>
+                <div class="mt-0.5 max-w-[6.5rem] text-[11px] font-bold leading-tight text-emerald-600">看好 ≤3 球</div>
+                <div class="tnum mt-0.5 text-[10px] text-slate-400">大水 0.63 --&gt; 0.96</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-sky-100 px-1.5 py-px text-[10px] font-black text-sky-700 ring-1 ring-sky-200">让球</span>
+                  <span class="tnum text-[11px] font-bold text-slate-700">主受让1</span>
+                  <b class="text-[11px] text-sky-700">买【让主胜/让平】</b>
+                </div>
+                
+                <span class="tnum mt-0.5 block font-bold text-indigo-700">1:1 / 2:1 / 2:2</span>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <div class="tnum text-base font-black text-slate-800">3:0</div>
+                <div class="tnum mt-0.5 text-[11px] font-semibold text-sky-600">让球后 主胜</div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-700">命中</span>
+                
+              </td>
+            </tr>
+            
+            <tr onclick="location.href='../2026-08-03/周一002_哈尔姆斯_天狼星.html'" title="点击查看详情" class="cursor-pointer border-b border-slate-100 align-top transition hover:bg-emerald-50/60 bg-emerald-50">
+              <td class="tnum whitespace-nowrap px-4 py-3.5"><a href="../2026-08-03/周一002_哈尔姆斯_天狼星.html" onclick="event.stopPropagation()" class="font-black text-slate-800 transition hover:text-emerald-600">周一002</a></td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <a href="../2026-08-03/周一002_哈尔姆斯_天狼星.html" onclick="event.stopPropagation()" class="font-bold text-slate-800 transition hover:text-emerald-600">哈尔姆斯(+1) vs 天狼星</a>
+                <div class="mt-1 flex items-center gap-1.5">
+                  <span class="rounded bg-emerald-50 px-1.5 py-px text-[11px] font-bold text-emerald-700 ring-1 ring-emerald-100">瑞超</span>
+                  <span class="text-[11px] text-slate-400">2026-08-04 01:00</span>
+                </div>
+              </td>
+              <td class="px-4 py-3.5">
+                
+                <div class="flex h-1.5 w-44 overflow-hidden rounded-full">
+                  <div class="bg-emerald-500" style="width: 13.5%"></div>
+                  <div class="bg-amber-400" style="width: 19.4%"></div>
+                  <div class="bg-sky-600" style="width: 67.1%"></div>
+                </div>
+                <div class="tnum mt-1 text-[11px]"><span class="text-emerald-700">主13.5%</span> <span class="text-amber-600">平19.4%</span> <span class="text-sky-700">客67.1%</span></div>
+                <div class="tnum mt-1 text-[11px] text-slate-500">赔率 7.3 / 5.2 / 1.25</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-700">稳</span>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">走势客胜 +0.93pp · 弱<span class="block text-[10px] text-slate-400">同向 52%</span></div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold text-slate-700">强撑矛盾</span>
+                  <span class="rounded px-1.5 py-px text-[10px] font-bold ring-1 bg-sky-50 text-sky-600 ring-sky-100">一般信号</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">(初)客让一球 --&gt; 客让一球/球半</div>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">Q4真支撑：欧赔同向，倾向天狼星赢盘</div>
+                
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-violet-100 px-1.5 py-px text-[10px] font-black text-violet-700 ring-1 ring-violet-200">大小</span>
+                  <span class="text-[11px] font-bold text-slate-500">稳</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">3.5 --&gt; 3.5</div>
+                <div class="mt-0.5 max-w-[6.5rem] text-[11px] font-bold leading-tight text-emerald-600">看好 ≤3 球</div>
+                <div class="tnum mt-0.5 text-[10px] text-slate-400">大水 0.71 --&gt; 0.94</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <b class="text-slate-800">客胜</b>
+                
+                <span class="tnum mt-0.5 block font-bold text-indigo-700">1:2 / 0:1 / 2:3</span>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <div class="tnum text-base font-black text-slate-800">0:2</div>
+                <div class="tnum mt-0.5 text-[11px] font-semibold text-sky-600">让球后 客胜</div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-700">命中</span>
+                
+              </td>
+            </tr>
+            
+            <tr onclick="location.href='../2026-08-03/周一003_佐加顿斯_韦斯特罗.html'" title="点击查看详情" class="cursor-pointer border-b border-slate-100 align-top transition hover:bg-emerald-50/60 ">
+              <td class="tnum whitespace-nowrap px-4 py-3.5"><a href="../2026-08-03/周一003_佐加顿斯_韦斯特罗.html" onclick="event.stopPropagation()" class="font-black text-slate-800 transition hover:text-emerald-600">周一003</a></td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <a href="../2026-08-03/周一003_佐加顿斯_韦斯特罗.html" onclick="event.stopPropagation()" class="font-bold text-slate-800 transition hover:text-emerald-600">佐加顿斯(-1) vs 韦斯特罗</a>
+                <div class="mt-1 flex items-center gap-1.5">
+                  <span class="rounded bg-emerald-50 px-1.5 py-px text-[11px] font-bold text-emerald-700 ring-1 ring-emerald-100">瑞超</span>
+                  <span class="text-[11px] text-slate-400">2026-08-04 01:00</span>
+                </div>
+              </td>
+              <td class="px-4 py-3.5">
+                
+                <div class="flex h-1.5 w-44 overflow-hidden rounded-full">
+                  <div class="bg-emerald-500" style="width: 60.2%"></div>
+                  <div class="bg-amber-400" style="width: 21%"></div>
+                  <div class="bg-sky-600" style="width: 18.8%"></div>
+                </div>
+                <div class="tnum mt-1 text-[11px]"><span class="text-emerald-700">主60.2%</span> <span class="text-amber-600">平21%</span> <span class="text-sky-700">客18.8%</span></div>
+                <div class="tnum mt-1 text-[11px] text-slate-500">赔率 1.38 / 4.5 / 5.5</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-amber-100 text-amber-700">爆冷</span>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">走势客胜 +3.28pp · 强<span class="block text-[10px] text-slate-400">同向 96%</span></div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold text-slate-700">强撑矛盾</span>
+                  <span class="rounded px-1.5 py-px text-[10px] font-bold ring-1 bg-sky-50 text-sky-600 ring-sky-100">持平</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">(初)主让半一 --&gt; 主让一球</div>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">Q4假支撑：看衰佐加顿斯 → 输盘</div>
+                
+                <div class="mt-1.5">
+                  <span class="rounded-full bg-rose-50 px-2 py-0.5 text-[10px] font-bold text-rose-600 ring-1 ring-rose-200">假支撑·看衰输盘 · 受让方客不败</span>
+                  
+                </div>
+                
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-violet-100 px-1.5 py-px text-[10px] font-black text-violet-700 ring-1 ring-violet-200">大小</span>
+                  <span class="text-[11px] font-bold text-slate-500">稳</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">3.5 --&gt; 3.5</div>
+                <div class="mt-0.5 max-w-[6.5rem] text-[11px] font-bold leading-tight text-emerald-600">看好 ≤3 球</div>
+                <div class="tnum mt-0.5 text-[10px] text-slate-400">大水 0.67 --&gt; 0.79</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-sky-100 px-1.5 py-px text-[10px] font-black text-sky-700 ring-1 ring-sky-200">让球</span>
+                  <span class="tnum text-[11px] font-bold text-slate-700">主让1</span>
+                  <b class="text-[11px] text-sky-700">买【让平/让负】</b>
+                </div>
+                
+                <span class="tnum mt-0.5 block font-bold text-indigo-700">1:1 / 2:2 / 1:2</span>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <div class="tnum text-base font-black text-slate-800">6:0</div>
+                <div class="tnum mt-0.5 text-[11px] font-semibold text-sky-600">让球后 主胜</div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-rose-50 text-rose-600">未命中</span>
+                
+              </td>
+            </tr>
+            
+            <tr onclick="location.href='../2026-08-03/周一004_巴竞技_维多利亚.html'" title="点击查看详情" class="cursor-pointer border-b border-slate-100 align-top transition hover:bg-emerald-50/60 bg-emerald-50">
+              <td class="tnum whitespace-nowrap px-4 py-3.5"><a href="../2026-08-03/周一004_巴竞技_维多利亚.html" onclick="event.stopPropagation()" class="font-black text-slate-800 transition hover:text-emerald-600">周一004</a></td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <a href="../2026-08-03/周一004_巴竞技_维多利亚.html" onclick="event.stopPropagation()" class="font-bold text-slate-800 transition hover:text-emerald-600">巴竞技(-1) vs 维多利亚</a>
+                <div class="mt-1 flex items-center gap-1.5">
+                  <span class="rounded bg-emerald-50 px-1.5 py-px text-[11px] font-bold text-emerald-700 ring-1 ring-emerald-100">巴西杯</span>
+                  <span class="text-[11px] text-slate-400">2026-08-04 08:00</span>
+                </div>
+              </td>
+              <td class="px-4 py-3.5">
+                
+                <div class="flex h-1.5 w-44 overflow-hidden rounded-full">
+                  <div class="bg-emerald-500" style="width: 56.7%"></div>
+                  <div class="bg-amber-400" style="width: 27.4%"></div>
+                  <div class="bg-sky-600" style="width: 15.9%"></div>
+                </div>
+                <div class="tnum mt-1 text-[11px]"><span class="text-emerald-700">主56.7%</span> <span class="text-amber-600">平27.4%</span> <span class="text-sky-700">客15.9%</span></div>
+                <div class="tnum mt-1 text-[11px] text-slate-500">赔率 1.54 / 3.25 / 5.8</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-700">稳</span>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">走势主胜 +3.21pp · 强<span class="block text-[10px] text-slate-400">同向 61%</span></div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[11px] font-bold text-slate-700">以退为进</span>
+                  <span class="rounded px-1.5 py-px text-[10px] font-bold ring-1 bg-emerald-100 text-emerald-700 ring-emerald-200">★ 强力信号</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">(初)主让一球/球半 --&gt; 主让半一</div>
+                <div class="mt-0.5 max-w-[9rem] text-[11px] font-semibold leading-tight text-slate-600">看衰巴竞技 → 输盘</div>
+                
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <div class="flex items-center gap-1.5">
+                  <span class="rounded bg-violet-100 px-1.5 py-px text-[10px] font-black text-violet-700 ring-1 ring-violet-200">大小</span>
+                  <span class="text-[11px] font-bold text-slate-500">稳</span>
+                </div>
+                <div class="tnum mt-0.5 text-[10.5px] font-bold text-slate-500">2.5 --&gt; 2.5</div>
+                <div class="mt-0.5 max-w-[6.5rem] text-[11px] font-bold leading-tight text-emerald-600">看好 ≤2 球<span class="ml-0.5 text-amber-600" title="小球高信心：初盘线≤2.75+大球被抛+初盘水位0.6-0.7（历史85.7%）">★</span></div>
+                <div class="tnum mt-0.5 text-[10px] text-slate-400">大水 0.67 --&gt; 0.95</div>
+                
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                
+                <b class="text-slate-800">主胜</b>
+                
+                <span class="tnum mt-0.5 block font-bold text-indigo-700">1:0 / 2:1 / 3:2</span>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <div class="tnum text-base font-black text-slate-800">2:0</div>
+                <div class="tnum mt-0.5 text-[11px] font-semibold text-sky-600">让球后 主胜</div>
+              </td>
+              <td class="whitespace-nowrap px-4 py-3.5">
+                <span class="rounded-full px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-700">命中</span>
+                
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-4 text-[11px] text-slate-400">胜平负概率（抽水后）= 主要公司最新赔率去水归一化后的隐含概率（主/平/客）。临场赔率取主要公司最新均值。剧本 TOP3 = 比分赔率中对应方向赔率最低的 3 个。</p>
+</main>
+<!-- 详情页页脚 -->
+<footer class="border-t border-slate-200/80 px-6 py-8">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+    <div class="flex items-center gap-2 text-xs text-slate-500">
+      <a href="../index.html" class="transition hover:text-emerald-600">← 返回赛程归档</a>
+      <span class="text-slate-300">·</span><span>© 2026 Football Report · 自动生成</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
