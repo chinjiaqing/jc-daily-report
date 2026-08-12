@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>每日汇总 · 2026-08-07 · Football Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #f4f8f5; color: #1e293b; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+  .bg-layer { position: fixed; inset: 0; z-index: -10; pointer-events: none;
+    background: radial-gradient(1100px 560px at 50% -12%, rgba(16,185,129,.09), transparent 62%), radial-gradient(900px 480px at 92% 108%, rgba(251,191,36,.06), transparent 60%), repeating-linear-gradient(90deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), repeating-linear-gradient(0deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), #f4f8f5; }
+  .text-gradient { background: linear-gradient(100deg,#065f46 15%,#059669 55%,#0d9488 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  .rise-in { animation: rise-in .9s cubic-bezier(.22,1,.36,1) both; }
+  .rise-in-1 { animation-delay: .08s; } .rise-in-2 { animation-delay: .18s; } .rise-in-3 { animation-delay: .28s; } .rise-in-4 { animation-delay: .38s; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.07); }
+  .panel-head { letter-spacing: .22em; font-size: 11px; font-weight: 700; color: rgba(5,150,105,.85); }
+  .day-card { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.08); transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+  .day-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,.55); box-shadow: 0 20px 44px -14px rgba(16,185,129,.30); }
+  .day-card.is-today { background: linear-gradient(160deg, rgba(209,250,229,.7), rgba(255,255,255,.95)); border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 16px 40px -14px rgba(16,185,129,.28); }
+  .month-pill { border: 1px solid rgba(226,232,240,.95); background: rgba(255,255,255,.85); box-shadow: 0 1px 4px -1px rgba(15,118,110,.08); transition: all .25s; }
+  .month-pill:hover { border-color: rgba(16,185,129,.5); color: #047857; }
+  .month-pill.is-active { background: linear-gradient(120deg,#059669,#10b981); border-color: #059669; color: #fff; box-shadow: 0 8px 20px -6px rgba(5,150,105,.45); }
+  .tag-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid; box-shadow: 0 1px 3px -1px rgba(15,23,42,.06); cursor: default; transition: transform .15s, box-shadow .15s; }
+  .tag-chip::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--dot, currentColor); flex-shrink: 0; }
+  .tag-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px -4px rgba(15,23,42,.16); }
+  .nice-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  .nice-scroll::-webkit-scrollbar { width: 4px; }
+  .nice-scroll::-webkit-scrollbar-track { background: transparent; }
+  .nice-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  @keyframes dot-blink { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+  .dot-blink { animation: dot-blink 2.6s ease-in-out infinite; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #f4f8f5; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; border: 2px solid #f4f8f5; }
+  ::selection { background: rgba(16,185,129,.25); color: #064e3b; }
+  /* 侧边锚点导航：仅超宽屏（>1300px）显示 */
+  .side-nav { position: fixed; right: 14px; top: 50%; z-index: 40; display: none; flex-direction: column; gap: 2px;
+    transform: translateY(-50%); width: 108px; padding: 8px 6px; border-radius: 16px;
+    background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9);
+    box-shadow: 0 12px 36px -12px rgba(15,118,110,.18); backdrop-filter: blur(8px); }
+  @media (min-width: 1301px) { .side-nav { display: flex; } }
+  .nav-item { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px;
+    font-size: 12px; color: #64748b; transition: all .15s; white-space: nowrap; }
+  .nav-item:hover { color: #047857; background: rgba(209,250,229,.6); }
+  .nav-item.is-active { color: #047857; background: rgba(209,250,229,.85); font-weight: 700; }
+  .nav-back { margin-top: 4px; border-top: 1px solid rgba(226,232,240,.8); padding-top: 8px; font-weight: 700; color: #0f766e; }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="top"></div>
+<div class="bg-layer"></div>
+<!-- 通用顶栏 -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="group flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-emerald-600">
+      <svg class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      返回上一页</button>
+    <a href="../index.html" class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 text-sm text-white shadow-md shadow-emerald-500/25">⚽</span>
+      <span class="text-sm font-bold tracking-wide text-slate-800">FOOTBALL REPORT</span></a>
+    <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+      <span class="tnum font-bold text-emerald-600">周五</span><span class="text-slate-300">·</span>2026-08-07</div>
+  </div>
+</header>
+
+<style>
+  .rk{display:inline-flex;align-items:center;font-size:10px;padding:2px 8px;border-radius:999px;color:#fff;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+  .rk-ur{background:linear-gradient(135deg,#b8860b,#d4a017);box-shadow:0 0 6px rgba(212,160,23,.4)}
+  .rk-ssr{background:linear-gradient(135deg,#6d2a8a,#9b4dd6)}
+  .rk-sr{background:linear-gradient(135deg,#1f5a8a,#2f8fd6)}
+  .rk-r{background:linear-gradient(135deg,#2f7a52,#4fb47a)}
+  .rk-n{background:#8a8a80}
+  .sigcard{background:rgba(255,255,255,.94);border:1px solid rgba(226,232,240,.9);border-radius:16px;box-shadow:0 4px 20px -6px rgba(15,118,110,.07);padding:16px 18px;margin-bottom:14px;transition:transform .25s,box-shadow .25s}
+  .sigcard:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(15,118,110,.22)}
+  .sigcard.has-sig{border-left:4px solid #b8860b}
+  .sub{color:#94a3b8;font-size:11px;font-weight:500}
+  .hit-ok{color:#047857;font-weight:800}
+  .hit-no{color:#b91c1c;font-weight:800}
+  .hit-wait{color:#94a3b8}
+</style>
+<main class="mx-auto max-w-7xl px-5 pb-24 pt-28">
+  <div class="rise-in">
+    <p class="text-xs font-bold tracking-[0.3em] text-emerald-600">DAILY SUMMARY · TRIPLE-PLAY</p>
+    <div class="mt-2 flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-07 · 每日汇总</h1>
+      <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周五 · 精英 10 场</span>
+      <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 3 场</span>
+      <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">信号命中 2/3</span>
+    </div>
+    <p class="mt-2 text-xs text-slate-400">欧赔 V4（定方向）· 大小球 V12（管进球）· 亚盘 V14（补盲）· 裁判组 V7 · 稀有度按清洗后验证命中率</p>
+  </div>
+
+  <!-- 标签模块：稀有度档位 + 当日标签语义字典 -->
+  <div class="rise-in rise-in-1 mt-6 mb-6 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-[11px] leading-relaxed text-slate-500">
+    <div class="flex flex-wrap items-center gap-1.5">
+      <b class="text-slate-700">🎴 稀有度</b>：
+      <span class="rk rk-ur">UR·神话 ≥90%</span>
+      <span class="rk rk-ssr">SSR·传说 80-89%</span>
+      <span class="rk rk-sr">SR·史诗 70-79%</span>
+      <span class="rk rk-r">R·稀有 60-69%</span>
+      <span class="rk rk-n">N·普通 &lt;60%/拦截</span>
+    </div>
+    
+    <div class="mt-2 space-y-1">
+      
+      
+        <div class="mt-1.5 font-bold text-slate-600">欧赔</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·弱势崩塌 80%</span><span>检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败</span></div>
+      
+        <div class="mt-1.5 font-bold text-slate-600">大小球</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·共识流 81%</span><span>检测到全市场一致降盘（共识）→ 人人买小 → 执行：跟买小球</span></div>
+      
+        
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ur shrink-0">UR·精英提纯 93%</span><span>检测到精英联赛降盘+小球被买（狙击）→ 庄家压盘买小 → 执行：买小球</span></div>
+      
+    </div>
+    
+  </div>
+
+  <!-- 场次列表 -->
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五001</span><span class="text-[15px] font-bold text-slate-800">横滨水手 <span class="text-slate-400 font-normal">vs</span> 鹿岛鹿角</span>
+        <span class="text-xs font-black text-amber-700">3:4</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>日职联</span>
+        <span>2026-08-07 18:25</span>
+        <span class="font-bold text-slate-500">7球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-ur">UR·精英提纯</span>
+          <b>&lt;=2球</b>
+          <span class="sub">初2.38→即2.23</span>
+          <span class="sub">精英实质强降·核爆区</span>
+          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司1&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五002</span><span class="text-[15px] font-bold text-slate-800">大阪钢巴 <span class="text-slate-400 font-normal">vs</span> 浦和红钻</span>
+        <span class="text-xs font-black text-amber-700">4:3</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>日职联</span>
+        <span>2026-08-07 18:30</span>
+        <span class="font-bold text-slate-500">7球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五003</span><span class="text-[15px] font-bold text-slate-800">塞伊奈约基 <span class="text-slate-400 font-normal">vs</span> 格尼斯坦</span>
+        <span class="text-xs font-black text-amber-700">2:2</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>芬超</span>
+        <span>2026-08-08 00:00</span>
+        <span class="font-bold text-slate-500">4球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五004</span><span class="text-[15px] font-bold text-slate-800">桑德菲杰 <span class="text-slate-400 font-normal">vs</span> KFUM奥斯陆</span>
+        <span class="text-xs font-black text-amber-700">0:1</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>挪超</span>
+        <span>2026-08-08 01:00</span>
+        <span class="font-bold text-slate-500">1球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五005</span><span class="text-[15px] font-bold text-slate-800">坎布尔 <span class="text-slate-400 font-normal">vs</span> SBV精英</span>
+        <span class="text-xs font-black text-amber-700">0:4</span>
+        
+        <span class="rk rk-ssr">SSR·弱势崩塌 80%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷甲</span>
+        <span>2026-08-08 02:00</span>
+        <span class="font-bold text-slate-500">4球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        
+          <span class="rk rk-ssr">SSR·弱势崩塌</span>
+          <b>看客不败</b>
+          <span class="sub">H 2.63 (0.28)</span>
+          <span class="sub">弱势主队弃守 H=2.63</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
+        
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-ssr">SSR·共识流</span>
+          <b>&lt;=3球</b>
+          <span class="sub">初2.81→即2.69</span>
+          <span class="sub">全市场共识降盘</span>
+          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+        <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五006</span><span class="text-[15px] font-bold text-slate-800">奥斯 <span class="text-slate-400 font-normal">vs</span> 布雷达</span>
+        <span class="text-xs font-black text-amber-700">1:2</span>
+        
+        <span class="rk rk-ssr">SSR·弱势崩塌 80%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷乙</span>
+        <span>2026-08-08 02:00</span>
+        <span class="font-bold text-slate-500">3球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        
+          <span class="rk rk-ssr">SSR·弱势崩塌</span>
+          <b>看客不败</b>
+          <span class="sub">H 4.78 (0.63)</span>
+          <span class="sub">弱势主队弃守 H=4.78</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
+        
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组 -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+        <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        
+        <span class="ml-auto"><span class="hit-ok">√ 主判词命中</span></span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五007</span><span class="text-[15px] font-bold text-slate-800">埃门 <span class="text-slate-400 font-normal">vs</span> 罗达JC</span>
+        <span class="text-xs font-black text-amber-700">1:0</span>
+        
+        <span class="rk rk-ssr">SSR·弱势崩塌 80%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷乙</span>
+        <span>2026-08-08 02:00</span>
+        <span class="font-bold text-slate-500">1球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        
+          <span class="rk rk-ssr">SSR·弱势崩塌</span>
+          <b>看客不败</b>
+          <span class="sub">H 2.59 (0.32)</span>
+          <span class="sub">弱势主队弃守 H=2.59</span>
+          <span class="ml-auto"><span class="hit-no">× 未中</span></span>
+        
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg bg-indigo-50/70 px-2.5 py-1.5 text-[12px] text-indigo-700">
+        <b>裁判组</b>：<b class="text-[13px]">防范，客队不败</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">小球(≤2)</span>
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到主胜赔率持续升水（弃守）→ 主队失血 → 执行：客队不败 · 置信 80%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 欧赔核心·弱势弃守</span>
+        
+        <span class="ml-auto"><span class="hit-no">× 未中</span></span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五008</span><span class="text-[15px] font-bold text-slate-800">波鸿 <span class="text-slate-400 font-normal">vs</span> 柏林赫塔</span>
+        <span class="text-xs font-black text-amber-700">0:1</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>德乙</span>
+        <span>2026-08-08 02:30</span>
+        <span class="font-bold text-slate-500">1球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-ssr">SSR·共识流</span>
+          <b>&lt;=3球</b>
+          <span class="sub">初2.95→即2.75</span>
+          <span class="sub">全市场共识降盘</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司2&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五009</span><span class="text-[15px] font-bold text-slate-800">米德尔斯堡 <span class="text-slate-400 font-normal">vs</span> 雷克瑟姆</span>
+        <span class="text-xs font-black text-amber-700">1:0</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>英联杯</span>
+        <span>2026-08-08 03:00</span>
+        <span class="font-bold text-slate-500">1球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五010</span><span class="text-[15px] font-bold text-slate-800">埃斯托里尔 <span class="text-slate-400 font-normal">vs</span> 法马利康</span>
+        <span class="text-xs font-black text-amber-700">1:1</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>葡超</span>
+        <span>2026-08-08 03:15</span>
+        <span class="font-bold text-slate-500">2球</span>
+      </div>
+    </div>
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-ssr">SSR·共识流</span>
+          <b>&lt;=3球</b>
+          <span class="sub">初2.68→即2.41</span>
+          <span class="sub">全市场共识降盘</span>
+          <span class="ml-auto"><span class="hit-ok">√ 命中</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          
+          <b>公司数不足</b>
+          
+          <span class="sub">有效公司1&lt;3</span>
+          <span class="ml-auto"><span class="hit-wait">—</span></span>
+        
+      </div>
+      <!-- 裁判组 -->
+      
+    </div>
+  </div>
+  
+
+  <div class="mt-6 flex items-center justify-between text-[11px] text-slate-400">
+    <span>命中口径：欧赔=客不败/客胜/平局 · 大小球=目标球数 · 亚盘=盘口方向（走盘算中）</span>
+    <a href="../index.html" class="font-semibold text-emerald-600 hover:text-emerald-700">← 返回首页</a>
+  </div>
+</main>
+
+</body>
+</html>
