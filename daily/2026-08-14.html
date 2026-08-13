@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>每日汇总 · 2026-08-14 · Football Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #f4f8f5; color: #1e293b; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+  .bg-layer { position: fixed; inset: 0; z-index: -10; pointer-events: none;
+    background: radial-gradient(1100px 560px at 50% -12%, rgba(16,185,129,.09), transparent 62%), radial-gradient(900px 480px at 92% 108%, rgba(251,191,36,.06), transparent 60%), repeating-linear-gradient(90deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), repeating-linear-gradient(0deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), #f4f8f5; }
+  .text-gradient { background: linear-gradient(100deg,#065f46 15%,#059669 55%,#0d9488 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  .rise-in { animation: rise-in .9s cubic-bezier(.22,1,.36,1) both; }
+  .rise-in-1 { animation-delay: .08s; } .rise-in-2 { animation-delay: .18s; } .rise-in-3 { animation-delay: .28s; } .rise-in-4 { animation-delay: .38s; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.07); }
+  .panel-head { letter-spacing: .22em; font-size: 11px; font-weight: 700; color: rgba(5,150,105,.85); }
+  .day-card { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.08); transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+  .day-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,.55); box-shadow: 0 20px 44px -14px rgba(16,185,129,.30); }
+  .day-card.is-today { background: linear-gradient(160deg, rgba(209,250,229,.7), rgba(255,255,255,.95)); border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 16px 40px -14px rgba(16,185,129,.28); }
+  .month-pill { border: 1px solid rgba(226,232,240,.95); background: rgba(255,255,255,.85); box-shadow: 0 1px 4px -1px rgba(15,118,110,.08); transition: all .25s; }
+  .month-pill:hover { border-color: rgba(16,185,129,.5); color: #047857; }
+  .month-pill.is-active { background: linear-gradient(120deg,#059669,#10b981); border-color: #059669; color: #fff; box-shadow: 0 8px 20px -6px rgba(5,150,105,.45); }
+  .tag-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid; box-shadow: 0 1px 3px -1px rgba(15,23,42,.06); cursor: default; transition: transform .15s, box-shadow .15s; }
+  .tag-chip::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--dot, currentColor); flex-shrink: 0; }
+  .tag-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px -4px rgba(15,23,42,.16); }
+  .nice-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  .nice-scroll::-webkit-scrollbar { width: 4px; }
+  .nice-scroll::-webkit-scrollbar-track { background: transparent; }
+  .nice-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  @keyframes dot-blink { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+  .dot-blink { animation: dot-blink 2.6s ease-in-out infinite; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #f4f8f5; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; border: 2px solid #f4f8f5; }
+  ::selection { background: rgba(16,185,129,.25); color: #064e3b; }
+  /* 侧边锚点导航：仅超宽屏（>1300px）显示 */
+  .side-nav { position: fixed; right: 14px; top: 50%; z-index: 40; display: none; flex-direction: column; gap: 2px;
+    transform: translateY(-50%); width: 108px; padding: 8px 6px; border-radius: 16px;
+    background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9);
+    box-shadow: 0 12px 36px -12px rgba(15,118,110,.18); backdrop-filter: blur(8px); }
+  @media (min-width: 1301px) { .side-nav { display: flex; } }
+  .nav-item { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px;
+    font-size: 12px; color: #64748b; transition: all .15s; white-space: nowrap; }
+  .nav-item:hover { color: #047857; background: rgba(209,250,229,.6); }
+  .nav-item.is-active { color: #047857; background: rgba(209,250,229,.85); font-weight: 700; }
+  .nav-back { margin-top: 4px; border-top: 1px solid rgba(226,232,240,.8); padding-top: 8px; font-weight: 700; color: #0f766e; }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="top"></div>
+<div class="bg-layer"></div>
+<!-- 通用顶栏 -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="group flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-emerald-600">
+      <svg class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      返回上一页</button>
+    <a href="../index.html" class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 text-sm text-white shadow-md shadow-emerald-500/25">⚽</span>
+      <span class="text-sm font-bold tracking-wide text-slate-800">FOOTBALL REPORT</span></a>
+    <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+      <span class="tnum font-bold text-emerald-600">周五</span><span class="text-slate-300">·</span>2026-08-14</div>
+  </div>
+</header>
+
+<style>
+  .rk{display:inline-flex;align-items:center;font-size:10px;padding:2px 8px;border-radius:999px;color:#fff;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+  .rk-ur{background:linear-gradient(135deg,#b8860b,#d4a017);box-shadow:0 0 6px rgba(212,160,23,.4)}
+  .rk-ssr{background:linear-gradient(135deg,#6d2a8a,#9b4dd6)}
+  .rk-sr{background:linear-gradient(135deg,#1f5a8a,#2f8fd6)}
+  .rk-r{background:linear-gradient(135deg,#2f7a52,#4fb47a)}
+  .rk-n{background:#8a8a80}
+  .sigcard{background:rgba(255,255,255,.94);border:1px solid rgba(226,232,240,.9);border-radius:16px;box-shadow:0 4px 20px -6px rgba(15,118,110,.07);padding:16px 18px;margin-bottom:14px;transition:transform .25s,box-shadow .25s}
+  .sigcard:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(15,118,110,.22)}
+  .sigcard.has-sig{border-left:4px solid #b8860b}
+  .sub{color:#94a3b8;font-size:11px;font-weight:500}
+  .hit-ok{color:#047857;font-weight:800}
+  .hit-no{color:#b91c1c;font-weight:800}
+  .hit-wait{color:#94a3b8}
+</style>
+<main class="mx-auto max-w-7xl px-5 pb-24 pt-28">
+  <div class="rise-in">
+    <p class="text-xs font-bold tracking-[0.3em] text-emerald-600">DAILY SUMMARY · TRIPLE-PLAY</p>
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-14 · 每日汇总</h1>
+      <div class="flex flex-col items-start gap-1">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周五 · 精英 17 场</span>
+          <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 8 场</span>
+          
+        </div>
+        <span class="inline-flex items-center whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">数据更新于 2026-08-13 20:09:00 · 越接近比赛临盘信号越准确</span>
+      </div>
+    </div>
+    <p class="mt-3 text-xs text-slate-400">分层门控：核武 T1（双轨猎手 83%/精英狙击 93%/欧赔 SSS）直接触发 → 低保 T2（V14 上盘阻挡等）兜底 → 强队受疑禁区驳回 · 稀有度按清洗后验证命中率</p>
+  </div>
+
+  <!-- 标签模块：稀有度档位 + 分层语义字典（核武 T1 / 低保 T2） -->
+  <div class="rise-in rise-in-1 mt-6 mb-6 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-[11px] leading-relaxed text-slate-500">
+    <div class="flex flex-wrap items-center gap-1.5">
+      <b class="text-slate-700">🎴 稀有度</b>：
+      <span class="rk rk-ur">UR·神话 ≥90%</span>
+      <span class="rk rk-ssr">SSR·传说 80-89%</span>
+      <span class="rk rk-sr">SR·史诗 70-79%</span>
+      <span class="rk rk-r">R·稀有 60-69%</span>
+      <span class="rk rk-n">N·普通 &lt;60%/拦截</span>
+      <span class="ml-2 rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+      <span class="rounded-full bg-indigo-400 px-1.5 py-0.5 text-[9px] font-black text-white">低保 T2</span>
+      <span class="ml-2 rounded-full bg-rose-600 px-1.5 py-0.5 text-[9px] font-black text-white">ALPHA ≥60 介入</span>
+      <span class="rounded-full bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold text-amber-700">Alpha 30-60 观察</span>
+      <span class="ml-2 text-[10px] text-slate-400">ALPHA=因子打分（挤压/欧赔强度/深盘/压盘加分，赔付溢出/升盘接盘减分），≥60 介入·按分定仓（60-70→1单位 / 70-85→2 / &gt;85→4）</span>
+    </div>
+    
+    <div class="mt-2 space-y-1">
+      
+      <div class="mt-1 font-bold text-rose-600">🛡️ 核武层 T1（直接触发，命中 76-98%）</div>
+      
+      
+        <div class="mt-1 font-bold text-slate-600">欧赔</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·定盘星背离 82%</span><span>检测到主胜赔率被机构死守（护盘）→ 主队赢不了 → 执行：客队不败</span></div>
+      
+        <div class="mt-1 font-bold text-slate-600">欧亚偏差</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-ssr shrink-0">SSR·职业偷跑 89%</span><span>职业偷跑：盘口钉死(平手)，平博主水 1.03→0.76 降 0.27</span></div>
+      
+      
+      
+      <div class="mt-2 font-bold text-indigo-500">🔧 低保层 T2（核武观望时兜底，仓位减半）</div>
+      
+      
+        <div class="mt-1 font-bold text-slate-600">欧亚偏差</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-sr shrink-0">SR·上盘阻挡 78%</span><span>检测到欧赔看好主队但亚盘只敢让浅盘（压盘）→ 庄家掩护主队 → 执行：主队上盘·轻仓，防平（实测主不败 78%，赢盘仅 56%，平局 19%——T2 低保）（盘口：主队-0.75胜）</span></div>
+      
+        <div class="mt-1 font-bold text-slate-600">大小球</div>
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-sr shrink-0">SR·高水破格 78%</span><span>检测到降盘却不降水（高位吸筹）→ 暗中买小 → 执行：买小球</span></div>
+      
+        
+        <div class="flex flex-wrap items-start gap-x-2"><span class="rk rk-sr shrink-0">SR·澳定盘 77%</span><span>检测到澳门盘口低于市场均盘（压盘）→ 澳门买小 → 执行：买小球</span></div>
+      
+      
+    </div>
+    
+  </div>
+
+  <!-- 场次列表 -->
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五001</span><span class="text-[15px] font-bold text-slate-800">东京绿茵 <span class="text-slate-400 font-normal">vs</span> 柏太阳神</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+        <span class="rk rk-ssr">SSR·定盘星背离 82%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>日职联</span>
+        <span>2026-08-14 18:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 23%"></div>
+        <div class="bg-amber-400" style="width: 29%"></div>
+        <div class="bg-sky-400" style="width: 49%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">4.08</b> <b class="text-emerald-600">23%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.26</b> <b class="text-amber-600">29%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.91</b> <b class="text-sky-600">49%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        
+          <span class="rk rk-ssr">SSR·定盘星背离</span>
+          <b>看客不败</b>
+          <span class="sub">H 4.08 (-0.27)</span>
+          <span class="sub">定盘星背离：365降-0.30/平博升0.43</span>
+          <span class="ml-auto"><span class="hit-wait">⏳</span></span>
+        
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">博冷，客队不败</b>
+        
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（检测到主胜赔率被机构死守（护盘）→ 主队赢不了 → 执行：客队不败 · 置信 82%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🔍 核武·定盘背离</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五002</span><span class="text-[15px] font-bold text-slate-800">VPS瓦萨 <span class="text-slate-400 font-normal">vs</span> TPS土尔库</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=30（EU_INTENSITY+RES_COMPRESSION）→ 观察">Alpha 30</span>
+        <span class="text-[10px] text-amber-600">欧赔强看好主队+亚盘压盘掩护</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>芬超</span>
+        <span>2026-08-14 23:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 55%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 20%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.67</b> <b class="text-emerald-600">55%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.71</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.55</b> <b class="text-sky-600">20%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-sr">SR·高水破格</span>
+          <b>&lt;=3球</b>
+          <span class="sub">初2.58→即2.51</span>
+          <span class="sub">降盘+高水吸筹·红利水位</span>
+          <span class="ml-auto"><span class="hit-wait">⏳</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五003</span><span class="text-[15px] font-bold text-slate-800">荷尔斯泰因 <span class="text-slate-400 font-normal">vs</span> 圣保利</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>德乙</span>
+        <span>2026-08-15 00:30</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 40%"></div>
+        <div class="bg-amber-400" style="width: 27%"></div>
+        <div class="bg-sky-400" style="width: 33%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.33</b> <b class="text-emerald-600">40%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.42</b> <b class="text-amber-600">27%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.76</b> <b class="text-sky-600">33%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五004</span><span class="text-[15px] font-bold text-slate-800">布伦瑞克 <span class="text-slate-400 font-normal">vs</span> 波鸿</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+        <span class="rk rk-ssr">SSR·职业偷跑 89%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>德乙</span>
+        <span>2026-08-15 00:30</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 38%"></div>
+        <div class="bg-amber-400" style="width: 28%"></div>
+        <div class="bg-sky-400" style="width: 34%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.41</b> <b class="text-emerald-600">38%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.29</b> <b class="text-amber-600">28%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.74</b> <b class="text-sky-600">34%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          <span class="rk rk-ssr">SSR·职业偷跑</span>
+          <b>上盘</b>
+          
+          <span class="sub">职业偷跑：盘口钉死(平手)，平博主水 1.03→0.76 降 0.27</span>
+          <span class="ml-auto"><span class="hit-wait">⏳</span></span>
+        
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-rose-50/80 text-rose-700">
+        <span class="rounded-full bg-rose-500 px-1.5 py-0.5 text-[9px] font-black text-white">核武 T1</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">买入主队（上盘 · 主队胜）</b>
+        
+        <span class="text-[11px] text-amber-500">★★★★★</span>
+        <span class="opacity-80">（职业偷跑：盘口钉死(平手)，平博主水 1.03→0.76 降 0.27 · 置信 89%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🎯 核武·职业偷跑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五005</span><span class="text-[15px] font-bold text-slate-800">新未来城体育 <span class="text-slate-400 font-normal">vs</span> 费哈</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=30（EU_INTENSITY+LINE_DEPTH）→ 观察">Alpha 30</span>
+        <span class="text-[10px] text-amber-600">欧赔强看好主队+盘口深让</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>沙特联</span>
+        <span>2026-08-15 00:50</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 57%"></div>
+        <div class="bg-amber-400" style="width: 24%"></div>
+        <div class="bg-sky-400" style="width: 19%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.61</b> <b class="text-emerald-600">57%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.79</b> <b class="text-amber-600">24%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.81</b> <b class="text-sky-600">19%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五006</span><span class="text-[15px] font-bold text-slate-800">埃尔夫斯堡 <span class="text-slate-400 font-normal">vs</span> 瓦斯特拉斯</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>瑞典超</span>
+        <span>2026-08-15 01:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 51%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 24%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.82</b> <b class="text-emerald-600">51%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.66</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.85</b> <b class="text-sky-600">24%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五007</span><span class="text-[15px] font-bold text-slate-800">罗森博格 <span class="text-slate-400 font-normal">vs</span> 维京</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>挪超</span>
+        <span>2026-08-15 01:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 37%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 39%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.49</b> <b class="text-emerald-600">37%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.75</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.39</b> <b class="text-sky-600">39%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五008</span><span class="text-[15px] font-bold text-slate-800">达曼协作 <span class="text-slate-400 font-normal">vs</span> 利雅得体育</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=45（ULTRA_COMPRESSION+RES_COMPRESSION）→ 观察">Alpha 45</span>
+        <span class="text-[10px] text-amber-600">水位极限下压+亚盘压盘掩护</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>沙特联</span>
+        <span>2026-08-15 02:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 46%"></div>
+        <div class="bg-amber-400" style="width: 26%"></div>
+        <div class="bg-sky-400" style="width: 29%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.01</b> <b class="text-emerald-600">46%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.59</b> <b class="text-amber-600">26%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.16</b> <b class="text-sky-600">29%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五009</span><span class="text-[15px] font-bold text-slate-800">利雅得新月 <span class="text-slate-400 font-normal">vs</span> 费萨里哈曼</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-rose-600 px-2 py-0.5 text-[10px] font-black text-white shadow-sm" title="Alpha=65（ULTRA_COMPRESSION+EU_INTENSITY+LINE_DEPTH）→ 介入 仓位1单位">ALPHA 65</span>
+        <span class="text-[10px] font-semibold text-rose-600">水位极限下压+欧赔强看好主队+盘口深让 · 仓位1单位</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>沙特联</span>
+        <span>2026-08-15 02:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 84%"></div>
+        <div class="bg-amber-400" style="width: 10%"></div>
+        <div class="bg-sky-400" style="width: 6%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.11</b> <b class="text-emerald-600">84%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">8.96</b> <b class="text-amber-600">10%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">15.39</b> <b class="text-sky-600">6%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五010</span><span class="text-[15px] font-bold text-slate-800">特尔斯达 <span class="text-slate-400 font-normal">vs</span> 鹿特丹斯巴达</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷甲</span>
+        <span>2026-08-15 02:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 42%"></div>
+        <div class="bg-amber-400" style="width: 26%"></div>
+        <div class="bg-sky-400" style="width: 33%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.24</b> <b class="text-emerald-600">42%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.61</b> <b class="text-amber-600">26%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.84</b> <b class="text-sky-600">33%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五011</span><span class="text-[15px] font-bold text-slate-800">瓦尔韦克 <span class="text-slate-400 font-normal">vs</span> 多德勒支</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=35（ULTRA_COMPRESSION+RES_COMPRESSION）→ 观察">Alpha 35</span>
+        <span class="text-[10px] text-amber-600">水位极限下压+亚盘压盘掩护</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷乙</span>
+        <span>2026-08-15 02:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 50%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 25%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.81</b> <b class="text-emerald-600">50%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.68</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.65</b> <b class="text-sky-600">25%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五012</span><span class="text-[15px] font-bold text-slate-800">赫拉克勒斯 <span class="text-slate-400 font-normal">vs</span> 邓伯什</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=40（EU_INTENSITY+LINE_DEPTH）→ 观察">Alpha 40</span>
+        <span class="text-[10px] text-amber-600">欧赔强看好主队+盘口深让</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>荷乙</span>
+        <span>2026-08-15 02:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 60%"></div>
+        <div class="bg-amber-400" style="width: 22%"></div>
+        <div class="bg-sky-400" style="width: 19%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.54</b> <b class="text-emerald-600">60%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.24</b> <b class="text-amber-600">22%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.82</b> <b class="text-sky-600">19%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五013</span><span class="text-[15px] font-bold text-slate-800">阿纳西 <span class="text-slate-400 font-normal">vs</span> 罗德兹</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>法乙</span>
+        <span>2026-08-15 02:45</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 43%"></div>
+        <div class="bg-amber-400" style="width: 28%"></div>
+        <div class="bg-sky-400" style="width: 29%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.12</b> <b class="text-emerald-600">43%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.32</b> <b class="text-amber-600">28%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.13</b> <b class="text-sky-600">29%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五014</span><span class="text-[15px] font-bold text-slate-800">兰斯 <span class="text-slate-400 font-normal">vs</span> USL敦刻尔克</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        
+        <span class="rk rk-sr">SR·上盘阻挡 78%</span>
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>法乙</span>
+        <span>2026-08-15 02:45</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 54%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 21%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.71</b> <b class="text-emerald-600">54%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.62</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.36</b> <b class="text-sky-600">21%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        
+          <span class="rk rk-sr">SR·上盘阻挡</span>
+          <b>上盘</b>
+          <span class="sub">线0.75 主水0.96 Δp0.33</span>
+          <span class="sub">欧压背离·低调阻挡(Δp=0.33 res=-0.13 主水0.96)</span>
+          <span class="ml-auto"><span class="hit-wait">⏳</span></span>
+        
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        <span class="rounded-full bg-indigo-400 px-1.5 py-0.5 text-[9px] font-black text-white">低保 T2</span>
+        
+        <b>裁判组</b>：<b class="text-[13px]">主队上盘·轻仓，防平</b>
+        
+        <span class="text-[11px] text-amber-500">★★★☆☆</span>
+        <span class="opacity-80">（检测到欧赔看好主队但亚盘只敢让浅盘（压盘）→ 庄家掩护主队 → 执行：主队上盘·轻仓，防平（实测主不败 78%，赢盘仅 56%，平局 19%——T2 低保）（盘口：主队-0.75胜） · 置信 78%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">🎯 兜底·上盘价值</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in ">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五015</span><span class="text-[15px] font-bold text-slate-800">圣埃蒂安 <span class="text-slate-400 font-normal">vs</span> 克莱蒙</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=45（EU_INTENSITY+LINE_DEPTH）→ 观察">Alpha 45</span>
+        <span class="text-[10px] text-amber-600">欧赔强看好主队+盘口深让</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>法乙</span>
+        <span>2026-08-15 02:45</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 60%"></div>
+        <div class="bg-amber-400" style="width: 23%"></div>
+        <div class="bg-sky-400" style="width: 17%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.53</b> <b class="text-emerald-600">60%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.04</b> <b class="text-amber-600">23%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">5.25</b> <b class="text-sky-600">17%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五016</span><span class="text-[15px] font-bold text-slate-800">狼队 <span class="text-slate-400 font-normal">vs</span> 布莱克本</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-rose-600 px-2 py-0.5 text-[10px] font-black text-white shadow-sm" title="Alpha=60（EU_INTENSITY+LINE_DEPTH+RES_COMPRESSION）→ 介入 仓位1单位">ALPHA 60</span>
+        <span class="text-[10px] font-semibold text-rose-600">欧赔强看好主队+盘口深让+亚盘压盘掩护 · 仓位1单位</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>英冠</span>
+        <span>2026-08-15 03:00</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 62%"></div>
+        <div class="bg-amber-400" style="width: 22%"></div>
+        <div class="bg-sky-400" style="width: 16%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.50</b> <b class="text-emerald-600">62%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.19</b> <b class="text-amber-600">22%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">5.84</b> <b class="text-sky-600">16%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        
+          <span class="rk rk-sr">SR·澳定盘</span>
+          <b>&lt;=3球</b>
+          <span class="sub">初2.64→即2.63</span>
+          <span class="sub">澳先行定盘低线(2.50&lt;2.63)</span>
+          <span class="ml-auto"><span class="hit-wait">⏳</span></span>
+        
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="sigcard rise-in has-sig">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1.5 inline-flex items-center rounded-md bg-amber-500 px-1.5 py-0.5 text-[10px] font-black text-white shadow-sm">周五017</span><span class="text-[15px] font-bold text-slate-800">葡萄牙体育 <span class="text-slate-400 font-normal">vs</span> 吉马良斯</span>
+        <span class="text-xs font-black text-amber-700"></span>
+        
+        <span class="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700" title="Alpha=45（EU_INTENSITY+LINE_DEPTH）→ 观察">Alpha 45</span>
+        <span class="text-[10px] text-amber-600">欧赔强看好主队+盘口深让</span>
+        
+        
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+        <span>葡超</span>
+        <span>2026-08-15 03:15</span>
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500">赛前</span>
+      </div>
+    </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 75%"></div>
+        <div class="bg-amber-400" style="width: 15%"></div>
+        <div class="bg-sky-400" style="width: 9%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.23</b> <b class="text-emerald-600">75%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">6.01</b> <b class="text-amber-600">15%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">10.09</b> <b class="text-sky-600">9%</b></span>
+      </div>
+    </div>
+    
+    <div class="mt-2 space-y-1 text-[12px]">
+      <!-- 欧赔 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">欧赔</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 大小球 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">大小球</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 亚盘 -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="w-10 text-[10px] font-bold text-slate-400">亚盘</span>
+        <span class="sub">观望</span>
+      </div>
+      <!-- 裁判组（分层门控裁决） -->
+      
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] bg-indigo-50/70 text-indigo-700">
+        
+        <b>裁判组</b>：<b class="text-[13px]">观望</b>
+        <span class="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold">无明确方向</span>
+        
+        <span class="opacity-80">（观望，无有效方向：不要在这个比赛上浪费资金 · 置信 0%）</span>
+        <span class="hidden xl:inline text-[11px] opacity-50">⚠️ 场次异常·强队受疑</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+
+  <div class="mt-6 flex items-center justify-between text-[11px] text-slate-400">
+    <span>命中口径：欧赔=客不败/客胜/平局 · 大小球=目标球数 · 亚盘=盘口方向（走盘算中）</span>
+    <a href="../index.html" class="font-semibold text-emerald-600 hover:text-emerald-700">← 返回首页</a>
+  </div>
+</main>
+
+</body>
+</html>
