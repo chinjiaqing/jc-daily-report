@@ -83,13 +83,18 @@
 <main class="mx-auto max-w-7xl px-5 pb-24 pt-28">
   <div class="rise-in">
     <p class="text-xs font-bold tracking-[0.3em] text-emerald-600">DAILY SUMMARY · TRIPLE-PLAY</p>
-    <div class="mt-2 flex flex-wrap items-center gap-3">
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
       <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-09 · 每日汇总</h1>
-      <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周日 · 精英 24 场</span>
-      <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 16 场</span>
-      <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">信号命中 8/11</span>
+      <div class="flex flex-col items-start gap-1">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">周日 · 精英 24 场</span>
+          <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">三盘信号 16 场</span>
+          <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">信号命中 8/11</span>
+        </div>
+        <span class="inline-flex items-center whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">数据更新于 2026-08-13 16:13:44 · 越接近比赛临盘信号越准确</span>
+      </div>
     </div>
-    <p class="mt-2 text-xs text-slate-400">分层门控：核武 T1（双轨猎手 83%/精英狙击 93%/欧赔 SSS）直接触发 → 低保 T2（V14 上盘阻挡等）兜底 → 强队受疑禁区驳回 · 稀有度按清洗后验证命中率</p>
+    <p class="mt-3 text-xs text-slate-400">分层门控：核武 T1（双轨猎手 83%/精英狙击 93%/欧赔 SSS）直接触发 → 低保 T2（V14 上盘阻挡等）兜底 → 强队受疑禁区驳回 · 稀有度按清洗后验证命中率</p>
   </div>
 
   <!-- 标签模块：稀有度档位 + 分层语义字典（核武 T1 / 低保 T2） -->
@@ -159,6 +164,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 30%"></div>
+        <div class="bg-amber-400" style="width: 30%"></div>
+        <div class="bg-sky-400" style="width: 40%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">3.12</b> <b class="text-emerald-600">30%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.09</b> <b class="text-amber-600">30%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.28</b> <b class="text-sky-600">40%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -215,6 +236,22 @@
         <span class="font-bold text-slate-500">3球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 28%"></div>
+        <div class="bg-amber-400" style="width: 29%"></div>
+        <div class="bg-sky-400" style="width: 42%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">3.26</b> <b class="text-emerald-600">28%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.15</b> <b class="text-amber-600">29%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.18</b> <b class="text-sky-600">42%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -278,6 +315,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 38%"></div>
+        <div class="bg-amber-400" style="width: 28%"></div>
+        <div class="bg-sky-400" style="width: 34%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.40</b> <b class="text-emerald-600">38%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.30</b> <b class="text-amber-600">28%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.70</b> <b class="text-sky-600">34%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -315,6 +368,22 @@
         <span class="font-bold text-slate-500">1球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 19%"></div>
+        <div class="bg-amber-400" style="width: 22%"></div>
+        <div class="bg-sky-400" style="width: 59%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">4.90</b> <b class="text-emerald-600">19%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.21</b> <b class="text-amber-600">22%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.59</b> <b class="text-sky-600">59%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -372,6 +441,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 57%"></div>
+        <div class="bg-amber-400" style="width: 23%"></div>
+        <div class="bg-sky-400" style="width: 20%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.64</b> <b class="text-emerald-600">57%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.98</b> <b class="text-amber-600">23%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.66</b> <b class="text-sky-600">20%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -417,6 +502,22 @@
         <span class="font-bold text-slate-500">3球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 38%"></div>
+        <div class="bg-amber-400" style="width: 27%"></div>
+        <div class="bg-sky-400" style="width: 35%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.45</b> <b class="text-emerald-600">38%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.39</b> <b class="text-amber-600">27%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.70</b> <b class="text-sky-600">35%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -461,6 +562,22 @@
         <span class="font-bold text-slate-500">3球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 61%"></div>
+        <div class="bg-amber-400" style="width: 20%"></div>
+        <div class="bg-sky-400" style="width: 19%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.51</b> <b class="text-emerald-600">61%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.56</b> <b class="text-amber-600">20%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">4.98</b> <b class="text-sky-600">19%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -499,6 +616,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 60%"></div>
+        <div class="bg-amber-400" style="width: 22%"></div>
+        <div class="bg-sky-400" style="width: 18%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.54</b> <b class="text-emerald-600">60%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.14</b> <b class="text-amber-600">22%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">5.12</b> <b class="text-sky-600">18%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -546,6 +679,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 16%"></div>
+        <div class="bg-amber-400" style="width: 20%"></div>
+        <div class="bg-sky-400" style="width: 64%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">5.98</b> <b class="text-emerald-600">16%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.65</b> <b class="text-amber-600">20%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.45</b> <b class="text-sky-600">64%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -602,6 +751,22 @@
         <span class="font-bold text-slate-500">3球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 42%"></div>
+        <div class="bg-amber-400" style="width: 27%"></div>
+        <div class="bg-sky-400" style="width: 31%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.21</b> <b class="text-emerald-600">42%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.45</b> <b class="text-amber-600">27%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.05</b> <b class="text-sky-600">31%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -662,6 +827,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 38%"></div>
+        <div class="bg-amber-400" style="width: 26%"></div>
+        <div class="bg-sky-400" style="width: 36%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.42</b> <b class="text-emerald-600">38%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.51</b> <b class="text-amber-600">26%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.59</b> <b class="text-sky-600">36%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -699,6 +880,22 @@
         <span class="font-bold text-slate-500">0球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 39%"></div>
+        <div class="bg-amber-400" style="width: 29%"></div>
+        <div class="bg-sky-400" style="width: 32%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.36</b> <b class="text-emerald-600">39%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.18</b> <b class="text-amber-600">29%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.87</b> <b class="text-sky-600">32%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -755,6 +952,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 19%"></div>
+        <div class="bg-amber-400" style="width: 23%"></div>
+        <div class="bg-sky-400" style="width: 57%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">4.79</b> <b class="text-emerald-600">19%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.96</b> <b class="text-amber-600">23%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.61</b> <b class="text-sky-600">57%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -811,6 +1024,22 @@
         <span class="font-bold text-slate-500">5球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 39%"></div>
+        <div class="bg-amber-400" style="width: 28%"></div>
+        <div class="bg-sky-400" style="width: 34%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.40</b> <b class="text-emerald-600">39%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.36</b> <b class="text-amber-600">28%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.73</b> <b class="text-sky-600">34%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -867,6 +1096,22 @@
         <span class="font-bold text-slate-500">1球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 30%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 45%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">3.07</b> <b class="text-emerald-600">30%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.76</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.07</b> <b class="text-sky-600">45%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -921,6 +1166,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 45%"></div>
+        <div class="bg-amber-400" style="width: 25%"></div>
+        <div class="bg-sky-400" style="width: 31%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.08</b> <b class="text-emerald-600">45%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.74</b> <b class="text-amber-600">25%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.03</b> <b class="text-sky-600">31%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -956,6 +1217,22 @@
         <span class="font-bold text-slate-500">1球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 31%"></div>
+        <div class="bg-amber-400" style="width: 26%"></div>
+        <div class="bg-sky-400" style="width: 43%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">3.02</b> <b class="text-emerald-600">31%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.49</b> <b class="text-amber-600">26%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">2.15</b> <b class="text-sky-600">43%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1000,6 +1277,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 77%"></div>
+        <div class="bg-amber-400" style="width: 16%"></div>
+        <div class="bg-sky-400" style="width: 7%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.20</b> <b class="text-emerald-600">77%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">5.84</b> <b class="text-amber-600">16%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">13.26</b> <b class="text-sky-600">7%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1053,6 +1346,22 @@
         <span class="font-bold text-slate-500">3球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 21%"></div>
+        <div class="bg-amber-400" style="width: 23%"></div>
+        <div class="bg-sky-400" style="width: 57%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">4.50</b> <b class="text-emerald-600">21%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">4.10</b> <b class="text-amber-600">23%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.64</b> <b class="text-sky-600">57%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1110,6 +1419,22 @@
         <span class="font-bold text-slate-500">4球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 84%"></div>
+        <div class="bg-amber-400" style="width: 11%"></div>
+        <div class="bg-sky-400" style="width: 5%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.11</b> <b class="text-emerald-600">84%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">8.78</b> <b class="text-amber-600">11%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">19.04</b> <b class="text-sky-600">5%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1155,6 +1480,22 @@
         <span class="font-bold text-slate-500">1球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 44%"></div>
+        <div class="bg-amber-400" style="width: 29%"></div>
+        <div class="bg-sky-400" style="width: 27%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.13</b> <b class="text-emerald-600">44%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.20</b> <b class="text-amber-600">29%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.37</b> <b class="text-sky-600">27%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1198,6 +1539,22 @@
         <span class="font-bold text-slate-500">4球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 16%"></div>
+        <div class="bg-amber-400" style="width: 24%"></div>
+        <div class="bg-sky-400" style="width: 60%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">5.92</b> <b class="text-emerald-600">16%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.82</b> <b class="text-amber-600">24%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">1.54</b> <b class="text-sky-600">60%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1252,6 +1609,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 45%"></div>
+        <div class="bg-amber-400" style="width: 29%"></div>
+        <div class="bg-sky-400" style="width: 26%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">2.08</b> <b class="text-emerald-600">45%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">3.22</b> <b class="text-amber-600">29%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">3.51</b> <b class="text-sky-600">26%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -1290,6 +1663,22 @@
         <span class="font-bold text-slate-500">2球</span>
       </div>
     </div>
+    <!-- 市场概率模块（独立 UI：胜平负欧赔 + 赔率隐含概率，非预测） -->
+    
+    <div class="mx-auto mt-2.5 w-3/5 min-w-[260px] px-1 py-1">
+      <div class="text-center text-[10px] text-slate-400">市场概率（赔率隐含）· 非预测</div>
+      <div class="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-slate-200/70">
+        <div class="bg-emerald-500" style="width: 75%"></div>
+        <div class="bg-amber-400" style="width: 16%"></div>
+        <div class="bg-sky-400" style="width: 8%"></div>
+      </div>
+      <div class="mt-1.5 flex items-center justify-between text-[11px]">
+        <span class="text-slate-600">主 <b class="tnum">1.24</b> <b class="text-emerald-600">75%</b></span>
+        <span class="text-slate-600">平 <b class="tnum">5.73</b> <b class="text-amber-600">16%</b></span>
+        <span class="text-slate-600">客 <b class="tnum">11.15</b> <b class="text-sky-600">8%</b></span>
+      </div>
+    </div>
+    
     <div class="mt-2 space-y-1 text-[12px]">
       <!-- 欧赔 -->
       <div class="flex flex-wrap items-center gap-1.5">
