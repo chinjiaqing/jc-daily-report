@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-08-13 全量验证报告 · 分层门控 V18</title>
+<style>
+  body{font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;background:#f6f7f9;margin:0;padding:24px;color:#1e293b}
+  .wrap{max-width:1200px;margin:0 auto}
+  h1{font-size:20px;margin:0 0 4px}h2{font-size:15px;margin:24px 0 10px;color:#334155}
+  .sub{color:#64748b;font-size:12px;margin-bottom:16px}
+  table{border-collapse:collapse;width:100%;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);font-size:12px}
+  th{background:#f1f5f9;text-align:left;padding:8px 10px;font-size:11px;color:#475569}
+  td{padding:8px 10px;border-top:1px solid #f1f5f9;vertical-align:top}
+  tr.future td{opacity:.65}
+  .tb{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:4px;vertical-align:middle}
+  .tb-core{background:#fecdd3;color:#be123c}.tb-fb{background:#c7d2fe;color:#3730a3}.tb-rej{background:#e2e8f0;color:#475569}.tb-other{background:#fef3c7;color:#92400e}
+  .dim{color:#94a3b8;font-size:11px;display:block}
+  .ok{color:#16a34a;font-weight:700}.no{color:#dc2626;font-weight:700}
+  .hit-ok{color:#16a34a;font-weight:700;font-size:11px}.hit-no{color:#dc2626;font-weight:700;font-size:11px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+  .card{background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .card b{font-size:22px;display:block}.card span{font-size:12px;color:#64748b}
+  .bar{height:8px;border-radius:4px;background:#e2e8f0;overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#16a34a,#4ade80)}
+</style></head><body><div class="wrap">
+<h1>📊 2026-08-13 全量验证报告（分层门控 V18）</h1>
+<div class="sub">数据源：2026-08-13 titan 全量 → 有赔率 187 场（精英 <b>51</b> 场 + 非精英 <b>136</b> 场）· 亚盘仅 Bet365(8)+平博(47) 流水（精英 .train/titan · 非精英 .train/titan-other）· 生成 2026/8/13 22:08:40</div>
+
+<div class="cards">
+  <div class="card"><b>187</b><span>有赔率场次（51 精英 + 136 非精英）</span></div>
+  <div class="card"><b>18</b><span>已完赛（真实比分）</span></div>
+  <div class="card"><b>3</b><span>0:0 待确认（占位）</span></div>
+  <div class="card"><b>8</b><span>可判定（有信号）</span></div>
+  <div class="card"><b style="color:#16a34a">5/8 = 63%</b><span>裁判组命中率</span><div class="bar"><i style="width:63%"></i></div></div>
+  <div class="card"><b>42</b><span>核武 T1 触发</span></div>
+  <div class="card"><b>0</b><span>低保 T2 兜底</span></div>
+  <div class="card"><b>142</b><span>观望（无信号）</span></div>
+  <div class="card"><b>57</b><span>场次异常（强队受疑）</span></div>
+</div>
+
+<h2>📌 分信号命中</h2>
+<table><tr><th>信号</th><th>触发</th><th>命中</th></tr><tr><td><b>SSS_GLOBAL_DRIFT</b></td><td>4 场</td><td>4/4 = <b>100%</b></td></tr>
+<tr><td><b>S_GOAL_BED</b></td><td>1 场</td><td>0/1 = <b>0%</b></td></tr>
+<tr><td><b>SSS_VETO</b></td><td>2 场</td><td>1/2 = <b>50%</b></td></tr>
+<tr><td><b>SSS_ELITE_SNIPER</b></td><td>1 场</td><td>0/1 = <b>0%</b></td></tr></table>
+
+<h2>📋 全量场次明细（精英 + 非精英）</h2>
+<table>
+<tr><th>联赛</th><th>对阵</th><th>开赛</th><th>比分</th><th>欧赔</th><th>亚盘</th><th>大小球</th><th>裁判组裁决</th></tr>
+<tr class="">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>洛杉矶FC</b> vs <b>克雷塔罗</b></td>
+    <td class="kt">08-13 10:40</td>
+    <td class="score ">1:1</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.53 无共识</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>西雅图海湾人</b> vs <b>瓜达拉哈拉</b></td>
+    <td class="kt">08-13 10:40</td>
+    <td class="score ok">1:2</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.46</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-ok">√</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>中美俱杯</td>
+    <td class="teams"><b>CD法斯</b> vs <b>韩科维德斯</b></td>
+    <td class="kt">08-13 11:00</td>
+    <td class="score ">4:1</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=3.05 无共识</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>印度地杯</td>
+    <td class="teams"><b>卡南FC</b> vs <b>朗莱文佩MLS</b></td>
+    <td class="kt">08-13 13:30</td>
+    <td class="score ">2:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>贵州五峰杯</td>
+    <td class="teams"><b>蓝跃</b> vs <b>半场兄弟</b></td>
+    <td class="kt">08-13 16:00</td>
+    <td class="score ">7:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>印度地杯</td>
+    <td class="teams"><b>艾藻尔</b> vs <b>西钱马里FC</b></td>
+    <td class="kt">08-13 16:30</td>
+    <td class="score dim">0:0 待确认</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>科莫女足</b> vs <b>热那亚女足</b></td>
+    <td class="kt">08-13 16:30</td>
+    <td class="score no">1:1</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      <span class="hit-no">×</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>阿科纳特瑟</b> vs <b>莱昂蒙扎布里安扎</b></td>
+    <td class="kt">08-13 17:00</td>
+    <td class="score ok">2:2</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">定盘星背离：365降-0.50/平博升0.70</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_VETO</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-ok">√</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>斯伐U19</td>
+    <td class="teams"><b>斯崔达U19</b> vs <b>泽勒U19</b></td>
+    <td class="kt">08-13 17:00</td>
+    <td class="score ">3:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>缅甸U20</td>
+    <td class="teams"><b>猎鹰青年队</b> vs <b>蒂察尔阿尔曼U20</b></td>
+    <td class="kt">08-13 17:00</td>
+    <td class="score ">2:0</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>AGSM维罗纳女足</b> vs <b>帕尔马女足</b></td>
+    <td class="kt">08-13 17:10</td>
+    <td class="score no">4:2</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">定盘星背离：365降-3.00/平博升2.83</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_VETO</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-no">×</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>达曼沙拿联</b> vs <b>帕拉克</b></td>
+    <td class="kt">08-13 17:10</td>
+    <td class="score ">3:0</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>加尔联</td>
+    <td class="teams"><b>乔治泰勒加菲</b> vs <b>科尔卡塔联SC</b></td>
+    <td class="kt">08-13 17:30</td>
+    <td class="score ok">1:7</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=5.62</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-ok">√</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>加尔联</td>
+    <td class="teams"><b>BSS体育俱乐部</b> vs <b>基德波尔</b></td>
+    <td class="kt">08-13 17:30</td>
+    <td class="score no">5:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&lt;=3</b><span class="dim">精英实质强降·核爆区</span></td>
+    <td><b>SSS_ELITE_SNIPER</b><span class="dim">大小球 · &lt;=3</span>
+      <span class="hit-no">×</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>加尔联</td>
+    <td class="teams"><b>比达纳加尔</b> vs <b>莫恩巴甘II</b></td>
+    <td class="kt">08-13 17:30</td>
+    <td class="score ok">0:3</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=21.33</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-ok">√</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>顿涅茨克矿工女足</b> vs <b>里夫FC女足</b></td>
+    <td class="kt">08-13 18:00</td>
+    <td class="score ">2:0</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>加纳超杯</td>
+    <td class="teams"><b>恩苏奥蓬忠诚FC</b> vs <b>塔马利市</b></td>
+    <td class="kt">08-13 18:00</td>
+    <td class="score dim">0:0 待确认</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.60</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span></td>
+    <td class="teams"><b>多元化</b> vs <b>城发集团</b></td>
+    <td class="kt">08-13 18:00</td>
+    <td class="score ">2:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>利恩U19</b> vs <b>维京U19</b></td>
+    <td class="kt">08-13 19:30</td>
+    <td class="score ok">2:4</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.08</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      <span class="hit-ok">√</span></td>
+  </tr>
+<tr class="">
+    <td class="no"><span class="tb tb-other">非精英</span></td>
+    <td class="teams"><b>紫云农旅集团</b> vs <b>团坡村</b></td>
+    <td class="kt">08-13 20:00</td>
+    <td class="score ">2:2</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>哈萨克甲</td>
+    <td class="teams"><b>卡拉特B队</b> vs <b>奥杜斯基克</b></td>
+    <td class="kt">08-13 20:00</td>
+    <td class="score dim">0:0 待确认</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.28 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>巴厘联</b> vs <b>沙巴</b></td>
+    <td class="kt">08-13 20:30</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿美甲</td>
+    <td class="teams"><b>奥林匹亚埃里温</b> vs <b>萨达拉帕特B队</b></td>
+    <td class="kt">08-13 20:30</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>利勒斯特罗姆U19</b> vs <b>博多格林特U19</b></td>
+    <td class="kt">08-13 21:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>梅拉尼第比利斯</b> vs <b>古利亚兰奇胡提</b></td>
+    <td class="kt">08-13 21:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.92</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>也门甲</td>
+    <td class="teams"><b>伊蒂哈德拉毛</b> vs <b>艾毕达</b></td>
+    <td class="kt">08-13 21:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>哈萨克甲</td>
+    <td class="teams"><b>阿克托比B队</b> vs <b>沙克特</b></td>
+    <td class="kt">08-13 21:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=12.26</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>迪德布</b> vs <b>贝勒米</b></td>
+    <td class="kt">08-13 21:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=3.80 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>列弗宁</b> vs <b>艾里斯利马斯素尔</b></td>
+    <td class="kt">08-13 21:15</td>
+    <td class="score dim">进行中</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">定盘星背离：365降-0.15/平博升0.50</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_VETO</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>印度德杯</td>
+    <td class="teams"><b>西隆拉庄</b> vs <b>里斯SC</b></td>
+    <td class="kt">08-13 21:30</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=7.49 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>萨布塔罗提比利锡B队</b> vs <b>第比利斯火车头</b></td>
+    <td class="kt">08-13 21:30</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.33 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>俄杯</td>
+    <td class="teams"><b>纳尔奇克斯巴达</b> vs <b>阿兰尼亚瓦拉</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>乌兹超</td>
+    <td class="teams"><b>安集延</b> vs <b>费尔干纳夫兹</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.63</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>乌兹超</td>
+    <td class="teams"><b>特尔梅兹</b> vs <b>索格迪纳吉扎克</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.32</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>哈萨克甲</td>
+    <td class="teams"><b>艾斯坦拿B队</b> vs <b>杜保尔B队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.30 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>第比利斯迪纳摩B队</b> vs <b>伊比利亚队2010</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=2.17 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>拉科鲁尼亚女足</b> vs <b>波尔图女足</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：平赔骤降 -0.43（资金涌向平局）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>波多黎各努埃沃后备队</b> vs <b>西班牙语体育会后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>尤潘基后备队</b> vs <b>南埃斯特雷拉后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>鲁祖尼后备队</b> vs <b>穆尼斯后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=4.07 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>雷梅迪奥斯后备队</b> vs <b>科勒加勒斯后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=3.89 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>玛伦后备队</b> vs <b>萨尔塔迈特竞技后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>拉费雷尔后备队</b> vs <b>圣马丁布萨科后备队</b></td>
+    <td class="kt">08-13 22:00</td>
+    <td class="score dim">进行中</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>杜堡尔</b> vs <b>贝尔格莱德游击</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿美超</td>
+    <td class="teams"><b>乌拉尔图</b> vs <b>休尼克FC</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.52 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>特拉纳女足</b> vs <b>弗洛西诺尼女足</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.04 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>博洛尼亚女足</b> vs <b>阿雷素女足</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>特里斯顿后备队</b> vs <b>阿尔米兰提布朗后备队</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>戈尼奥</b> vs <b>伊维利亚卡舒里</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>加纳超杯</td>
+    <td class="teams"><b>科福里杜亚森佩尔</b> vs <b>阿善提黄金</b></td>
+    <td class="kt">08-13 23:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.26</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>久加连奴</b> vs <b>伊斯基亚</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.47 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>雷吉纳</b> vs <b>桑雷美森</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：主胜大幅升水 +0.23（avgH=1.81）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>乌兹超</td>
+    <td class="teams"><b>布哈拉</b> vs <b>奥马利克</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>帕卡</b> vs <b>LAUTP II</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>库穆IPS</b> vs <b>克尔特苏</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.70</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>波兰丙</td>
+    <td class="teams"><b>ks假日</b> vs <b>马科维安卡</b></td>
+    <td class="kt">08-13 23:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.64</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>塔林弗洛拉</b> vs <b>伊斯卡尔德斯</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.55 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>埃尔维斯</b> vs <b>里耶卡</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&lt;=3</b><span class="dim">精英实质强降·核爆区</span></td>
+    <td><b>SSS_ELITE_SNIPER</b><span class="dim">大小球 · &lt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>卡拉巴克</b> vs <b>基辅迪纳摩</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬乙</td>
+    <td class="teams"><b>PPJ学院</b> vs <b>迈帕</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.92 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>斯托姆加斯特U19</b> vs <b>萨尔普斯堡U19</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.56 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>拉巴特皇家武装</b> vs <b>海尼拉夫</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=2.46 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>LBK</b> vs <b>维奇亚</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>谭柏勒恩</b> vs <b>TP四九</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=8.54 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>SJK阿波罗</b> vs <b>维夫克</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>艾帕</b> vs <b>尼卡勒比</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>MPS马尔密竞技</b> vs <b>VJS万塔B队</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>阿特兰大竞技后备队</b> vs <b>圣米格尔后备队</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：主胜大幅升水 +0.16（avgH=1.98）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>拉马德里后备队</b> vs <b>坎巴塞雷斯后备队</b></td>
+    <td class="kt">08-14 00:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>沙特联</td>
+    <td class="teams"><b>艾卜哈</b> vs <b>哈森姆</b></td>
+    <td class="kt">08-14 00:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-fb">低保T2</span><b>下盘</b><span class="dim">欧压背离·溢价诱多(avgH=2.49 亚盘0.22 主水1.14)</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>S22_BAIT</b><span class="dim">亚盘 · 下盘</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>里加足球学院</b> vs <b>亚布洛内茨</b></td>
+    <td class="kt">08-14 00:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>俄杯</td>
+    <td class="teams"><b>沃洛格达迪纳摩</b> vs <b>FC特维尔</b></td>
+    <td class="kt">08-14 00:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>拉奎拉</b> vs <b>格拉西纳</b></td>
+    <td class="kt">08-14 00:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：主胜大幅升水 +0.25（avgH=1.96）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>国际友谊</td>
+    <td class="teams"><b>葡萄牙女足U20</b> vs <b>英格兰女足U20</b></td>
+    <td class="kt">08-14 00:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.00</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>奥莫尼亚</b> vs <b>林肯红魔</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.84 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>克拉约瓦大学</b> vs <b>古比斯</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.64 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>贝西克塔斯</b> vs <b>赫拉德茨克拉洛韦</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.91 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>帕福斯</b> vs <b>萨尔茨堡</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>扎布热矿工</b> vs <b>费伦茨瓦罗斯</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>特罗姆瑟</b> vs <b>克卢日</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.45 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>北西兰</b> vs <b>瓦路尔</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-fb">低保T2</span><b>&lt;=5</b><span class="dim">澳先行定盘低线(4.00&lt;4.06)</span></td>
+    <td><b>A_MACAU_FLOOR</b><span class="dim">亚盘 · </span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>斯特里达</b> vs <b>特温特</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>哈马比</b> vs <b>琴斯托霍瓦</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.00 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>中日德兰</b> vs <b>波希米亚人</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.38 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>迪尼普罗加切夫</b> vs <b>巴尼亚卢卡战士</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.50</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>明斯克迪纳摩</b> vs <b>布拉加</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=8.11</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>费罗尔竞技</b> vs <b>皇家阿维勒斯</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>CD迪里奥</b> vs <b>圣伊格纳西奥</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>德戊</td>
+    <td class="teams"><b>布鲁蒙塔勒</b> vs <b>TuS施瓦赫豪森</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>女非国杯</td>
+    <td class="teams"><b>科特迪瓦女足</b> vs <b>加纳女足</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.51</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&lt;=2</b><span class="dim">精英实质强降·核爆区</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>梅洛小阿根廷后备队</b> vs <b>拉科利内尔斯后备队</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>乌尔奎萨后备队</b> vs <b>巴拉圭竞技后备队</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：平赔骤降 -0.21（资金涌向平局）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>格鲁丙</td>
+    <td class="teams"><b>第比利斯2025</b> vs <b>科克禾迪</b></td>
+    <td class="kt">08-14 01:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=2.71 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>胡吉</b> vs <b>勒帕</b></td>
+    <td class="kt">08-14 01:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.48</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>芬K联</td>
+    <td class="teams"><b>HPS B队</b> vs <b>PPS</b></td>
+    <td class="kt">08-14 01:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>克拉克斯维克</b> vs <b>波兹南莱赫</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>维京古尔</b> vs <b>图恩</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>瓦杜兹</b> vs <b>图尔库国际</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>NSI鲁纳维克</b> vs <b>卢加诺</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>赫库斯</b> vs <b>巴伦西亚</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>奥丁</td>
+    <td class="teams"><b>格罗斯克莱恩</b> vs <b>瓦尔特斯多夫</b></td>
+    <td class="kt">08-14 01:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>索非亚中央陆军</b> vs <b>特拉维夫马卡比</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>沙特联</td>
+    <td class="teams"><b>迪雷禾</b> vs <b>吉达国民</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>沙特联</td>
+    <td class="teams"><b>利雅得青年人</b> vs <b>卡达西亚</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>德利塔</b> vs <b>特费奥里</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.84 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>圣加仑</b> vs <b>谢里夫</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.38 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>斯肯迪亚</b> vs <b>希伯尼安</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>艾格尔</b> vs <b>胡萨维克</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>格林达维克</b> vs <b>特罗图尔</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.68</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>维斯特瑞</b> vs <b>IR雷克雅未克</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>塔拉戈纳</b> vs <b>韦斯卡</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>瑞典丙</td>
+    <td class="teams"><b>斯莱坡尼尔</b> vs <b>FF林度</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰女超</td>
+    <td class="teams"><b>韦斯特曼纳埃亚尔女足</b> vs <b>加尔扎拜尔星女足</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>奥丁</td>
+    <td class="teams"><b>克林根巴赫</b> vs <b>SC鲁斯克</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.50 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>爱尔高联</td>
+    <td class="teams"><b>梅菲尔德联</b> vs <b>道格拉斯霍尔</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>阿根廷JRS后备队</b> vs <b>甘拿斯亚LP后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.52 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>门多萨独立后备队</b> vs <b>皮科将军镇后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.48 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>基尔梅斯后备队</b> vs <b>普拉腾斯后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>圣洛伦索后备队</b> vs <b>巴拉卡斯中央后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：主胜大幅升水 +0.20（avgH=1.93）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>泰格雷后备队</b> vs <b>CA塔勒瑞斯后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.37</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>新芝加哥后备队</b> vs <b>CA坦波利后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>弗朗德里亚后备队</b> vs <b>梅洛后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.59 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>洛斯安第斯后备队</b> vs <b>圣太摩后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>基尔梅斯阿根廷后备队</b> vs <b>多科苏德体育会后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>乌拉后备</td>
+    <td class="teams"><b>塞罗拉尔后备队</b> vs <b>尤文图德德拉后备队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴圣青联</td>
+    <td class="teams"><b>美国SP青年队</b> vs <b>桑堤斯塔青年队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴圣青联</td>
+    <td class="teams"><b>伊比乌纳青年队</b> vs <b>福特博青年队</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴圣女联</td>
+    <td class="teams"><b>圣托奥林匹克女足U20</b> vs <b>布拉甘蒂诺女足U20</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>玻利女联</td>
+    <td class="teams"><b>玻利瓦尔女足</b> vs <b>ABB女足</b></td>
+    <td class="kt">08-14 02:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=2.59 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>锡永</b> vs <b>诺亚FC</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>卡积沙斯U19</b> vs <b>哥维克莱恩U19</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>艾斯可U19</b> vs <b>乌拉恩U19</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>瑞迪U19</b> vs <b>卡芬姆U19</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>斯吉德U19</b> vs <b>巴洛姆U19</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴塞希杯</td>
+    <td class="teams"><b>猎鹰俱乐部</b> vs <b>阿美利加SE</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=8.20 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴塞希杯</td>
+    <td class="teams"><b>AA瓜拉尼</b> vs <b>阿拉卡朱</b></td>
+    <td class="kt">08-14 02:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.51</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>格拉斯哥流浪者</b> vs <b>比亚韦斯托克雅盖隆</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.42 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>安德莱赫特</b> vs <b>塞萨洛尼基</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.79</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>吉奥里</b> vs <b>里加FC</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>奥地利维也纳</b> vs <b>比达耶路撒冷</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>马瑟韦尔</b> vs <b>赫尔辛基</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.52 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>根特</b> vs <b>哥德堡</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.41 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>斯科德斯莫U19</b> vs <b>弗洛U19</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>挪威U19</td>
+    <td class="teams"><b>利勒斯特伦 U19</b> vs <b>格鲁吕U19</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.55</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>球会友谊</td>
+    <td class="teams"><b>奇克拉纳</b> vs <b>桑鲁玖诺</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=3.35</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>爱尔高联</td>
+    <td class="teams"><b>宁马贺流浪</b> vs <b>卡里格莱恩联合</b></td>
+    <td class="kt">08-14 02:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>哈茨</b> vs <b>本菲卡</b></td>
+    <td class="kt">08-14 02:45</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=6.30</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>谢尔伯恩</b> vs <b>阿贾克斯</b></td>
+    <td class="kt">08-14 02:45</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧罗巴杯</td>
+    <td class="teams"><b>埃格纳蒂亚</b> vs <b>沙姆洛克流浪</b></td>
+    <td class="kt">08-14 03:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>斯普利特海杜克</b> vs <b>扎尔吉里斯</b></td>
+    <td class="kt">08-14 03:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.47 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>欧协联</td>
+    <td class="teams"><b>地拉拿迪纳摩</b> vs <b>奥达里加</b></td>
+    <td class="kt">08-14 03:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-fb">低保T2</span><b>&lt;=3</b><span class="dim">澳先行定盘低线(2.50&lt;2.57)</span></td>
+    <td><b>A_MACAU_FLOOR</b><span class="dim">亚盘 · </span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>哥斯乙</td>
+    <td class="teams"><b>卡里阿利</b> vs <b>比特布尔思</b></td>
+    <td class="kt">08-14 03:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>费基尔</b> vs <b>阿费查尔丁</b></td>
+    <td class="kt">08-14 03:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>格洛塔</b> vs <b>嘉德维克</b></td>
+    <td class="kt">08-14 03:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛甲</td>
+    <td class="teams"><b>HK科帕沃格</b> vs <b>雷克尼</b></td>
+    <td class="kt">08-14 03:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>冰岛丁</td>
+    <td class="teams"><b>阿佛坦斯</b> vs <b>乌尔法尼尔</b></td>
+    <td class="kt">08-14 03:15</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&gt;=3</b><span class="dim">温床升盘大球（对冲资产）</span></td>
+    <td><b>S_GOAL_BED</b><span class="dim">大小球 · &gt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴拉杯</td>
+    <td class="teams"><b>皮拉尔三月一日队</b> vs <b>谭贝塔里竞技</b></td>
+    <td class="kt">08-14 03:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=4.34</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>女非国杯</td>
+    <td class="teams"><b>南非女足</b> vs <b>尼日利亚女足</b></td>
+    <td class="kt">08-14 04:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>阿后备</td>
+    <td class="teams"><b>科尔多瓦中央SDE后备队</b> vs <b>CA独立队后备队</b></td>
+    <td class="kt">08-14 04:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>厄瓜乙</td>
+    <td class="teams"><b>坎巴亚金融</b> vs <b>圣多明各体育</b></td>
+    <td class="kt">08-14 04:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.32 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>厄瓜乙</td>
+    <td class="teams"><b>国家报队</b> vs <b>圣安东尼奥(ECU)</b></td>
+    <td class="kt">08-14 04:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>严禁入场</b><span class="dim">平衡态陷阱：高初盘深降通常伴随大爆</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>厄瓜乙</td>
+    <td class="teams"><b>库尼布洛FC</b> vs <b>波图维耶霍</b></td>
+    <td class="kt">08-14 04:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴青联</td>
+    <td class="teams"><b>克鲁塞罗U20</b> vs <b>迪门沙欧苏地AL青年队</b></td>
+    <td class="kt">08-14 05:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴马女甲</td>
+    <td class="teams"><b>特维科克尔女足</b> vs <b>乌梅西特女足</b></td>
+    <td class="kt">08-14 05:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴马全联</td>
+    <td class="teams"><b>马里奥门德斯</b> vs <b>维拉加斯后备队</b></td>
+    <td class="kt">08-14 05:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>解放者杯</td>
+    <td class="teams"><b>米拉索</b> vs <b>基多体育大学</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.76 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>南美杯</td>
+    <td class="teams"><b>桑托斯</b> vs <b>马卡拉</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：平赔骤降 -0.65（资金涌向平局）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>南美杯</td>
+    <td class="teams"><b>瓦斯科达伽马</b> vs <b>亚松森奥林匹亚</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&lt;=3</b><span class="dim">精英实质强降·核爆区</span></td>
+    <td><b>SSS_ELITE_SNIPER</b><span class="dim">大小球 · &lt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>智利乙</td>
+    <td class="teams"><b>坎尔托塔</b> vs <b>迪帕特斯</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴高乙</td>
+    <td class="teams"><b>艾斯波迪渥</b> vs <b>圣塔库鲁RS</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴圣女联</td>
+    <td class="teams"><b>圣保罗女足</b> vs <b>桑托斯女足</b></td>
+    <td class="kt">08-14 06:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.34 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>费城联合</b> vs <b>桑托斯拉古纳</b></td>
+    <td class="kt">08-14 07:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>纽约城</b> vs <b>内卡萨</b></td>
+    <td class="kt">08-14 07:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队受疑：平赔骤降 -0.28（资金涌向平局）</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>美女锦标</td>
+    <td class="teams"><b>威斯康星女足</b> vs <b>TCU女足</b></td>
+    <td class="kt">08-14 08:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>中美俱杯</td>
+    <td class="teams"><b>阿利亚</b> vs <b>乌梅西特</b></td>
+    <td class="kt">08-14 08:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.71</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>解放者杯</td>
+    <td class="teams"><b>罗萨里奥中央</b> vs <b>科林蒂安</b></td>
+    <td class="kt">08-14 08:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>南美杯</td>
+    <td class="teams"><b>西恩夏诺</b> vs <b>博塔弗戈</b></td>
+    <td class="kt">08-14 08:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>智利乙</td>
+    <td class="teams"><b>库里科</b> vs <b>圣塔克鲁兹</b></td>
+    <td class="kt">08-14 08:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>智利乙</td>
+    <td class="teams"><b>伊基克体育</b> vs <b>科比亚波</b></td>
+    <td class="kt">08-14 08:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-core">核武T1</span><b>&lt;=3</b><span class="dim">精英实质强降·核爆区</span></td>
+    <td><b>SSS_ELITE_SNIPER</b><span class="dim">大小球 · &lt;=3</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>墨西哥美洲</b> vs <b>奥斯汀FC</b></td>
+    <td class="kt">08-14 08:30</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>墨西甲</td>
+    <td class="teams"><b>瓦哈卡</b> vs <b>帕蒂特兰德莫雷洛斯</b></td>
+    <td class="kt">08-14 09:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=0.54 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴马全联</td>
+    <td class="teams"><b>圣米格利托体育后备队</b> vs <b>巴拿马城FC</b></td>
+    <td class="kt">08-14 09:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.63</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴马全联</td>
+    <td class="teams"><b>SD国民竞技</b> vs <b>德拉斯FC</b></td>
+    <td class="kt">08-14 09:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>巴马全联</td>
+    <td class="teams"><b>乌梅西特后备队</b> vs <b>阿卡德锦标</b></td>
+    <td class="kt">08-14 09:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-core">精英</span>中北美杯</td>
+    <td class="teams"><b>蓝十字</b> vs <b>芝加哥火焰</b></td>
+    <td class="kt">08-14 09:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="tb tb-core">核武T1</span><b>客不败</b><span class="dim">弱势主队弃守 H=2.58</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><b>SSS_GLOBAL_DRIFT</b><span class="dim">欧赔 · 客不败</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>中美俱杯</td>
+    <td class="teams"><b>路斯天使</b> vs <b>迪利安格恩</b></td>
+    <td class="kt">08-14 10:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="tb tb-rej">⚠️ 异常</span><span class="dim">强队波动剧烈：max|shift|=1.00 无共识</span>
+      </td>
+  </tr>
+<tr class="future">
+    <td class="no"><span class="tb tb-other">非精英</span>中美俱杯</td>
+    <td class="teams"><b>安提瓜GFC</b> vs <b>CD马拉松</b></td>
+    <td class="kt">08-14 10:00</td>
+    <td class="score dim">未赛</td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span></td>
+    <td><span class="dim">观望</span>
+      </td>
+  </tr>
+</table>
+</div></body></html>
