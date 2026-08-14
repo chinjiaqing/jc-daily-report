@@ -6,7 +6,7 @@
 
 - 立即访问：**[https://chinjiaqing.github.io/jc-daily-report/](https://chinjiaqing.github.io/jc-daily-report/)**
 - 每日自动更新，历史日期归档，随时回看
-- 已完赛 **30** 场，累计推荐命中 **22/30 = 73.3%**
+- 已完赛 **35** 场，累计推荐命中 **26/35 = 74.3%**
 
 ## 走了一圈弯路
 
