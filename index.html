@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>赛事红绿灯 · Football Report</title>
+<title>信号总览 · Football Report</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   html { scroll-behavior: smooth; }
@@ -56,814 +56,269 @@
   <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
     <a href="#" class="group flex items-center gap-3">
       <span class="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 text-lg text-white shadow-lg shadow-emerald-500/30 transition-transform group-hover:rotate-6">⚽</span>
-      <span class="leading-tight"><span class="block text-[15px] font-bold tracking-wide text-slate-800">FOOTBALL REPORT</span><span class="block text-[11px] tracking-[0.3em] text-emerald-600">赛事红绿灯</span></span>
+      <span class="leading-tight"><span class="block text-[15px] font-bold tracking-wide text-slate-800">FOOTBALL SIGNALS</span><span class="block text-[11px] tracking-[0.3em] text-emerald-600">每日信号总览</span></span>
     </a>
     <nav class="hidden items-center gap-8 text-sm font-medium text-slate-500 md:flex">
-      <a href="daily/2026-08-14.html" class="transition hover:text-emerald-600">每日汇总</a>
+      <a href="daily/2026-08-05.html" class="transition hover:text-emerald-600">最新日报</a>
       <a href="#archive" class="transition hover:text-emerald-600">历史归档</a>
     </nav>
     <div class="flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-700">
       <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span></span>
-      数据服务在线
+      信号服务在线
     </div>
   </div>
 </header>
 
 <section class="relative px-6 pt-36 pb-10 md:pt-40 md:pb-12">
   <div class="mx-auto max-w-7xl">
-    <p class="rise-in mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold tracking-[0.25em] text-emerald-700 shadow-sm"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>ODDS SIGNALS</p>
-    <h1 class="rise-in rise-in-1 text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl"><span class="text-slate-800">每一场对决，</span><br /><span class="text-gradient">赔率自己会说话</span></h1>
-    <p class="rise-in rise-in-2 mt-6 max-w-2xl text-base leading-relaxed text-slate-500 md:text-lg">自动拉取每日赛程与欧赔走势，脚本化计算共识方向、可信度评分与三档判定，生成比分剧本，赛后自动归档验证。</p>
+    <p class="rise-in mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold tracking-[0.25em] text-emerald-700 shadow-sm"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>QUANT SIGNALS</p>
+    <h1 class="rise-in rise-in-1 text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl"><span class="text-slate-800">封板算法，</span><br /><span class="text-gradient">三盘信号雷达</span></h1>
+    <p class="rise-in rise-in-2 mt-5 max-w-2xl text-sm leading-relaxed text-slate-500 md:text-base">欧赔（VETO/弃守/客队弃守）+ 亚盘（狙击/升盘）+ 大小球（温床）三通道封板信号，裁判层合成买入方案，EV 期望值过滤价值。每日自动编译归档。</p>
   </div>
 </section>
 
-<!-- Slogan -->
-<section id="discipline" class="relative scroll-mt-24 px-6 py-12 md:py-16">
-  <div class="mx-auto text-center">
-    
-    <div class="rise-in rise-in-3 mb-8 flex items-center justify-center gap-6 md:mb-10">
-      <span class="tnum inline-block bg-gradient-to-br from-emerald-500 to-green-600 bg-clip-text pb-1 text-6xl font-black leading-none tracking-tight text-transparent">74.3%</span>
-      <div class="flex flex-col justify-center text-left">
-        <div class="text-[11px] font-bold tracking-[0.2em] text-emerald-600">推荐命中率 · 已完赛 35 场</div>
-        <div class="tnum mt-1 text-lg font-black text-slate-700">命中 26/35</div>
-      </div>
-    </div>
-    
-    <h2 class="rise-in rise-in-1 whitespace-nowrap text-3xl font-black leading-snug tracking-tight text-slate-800 md:text-5xl">最好的交易，<span class="text-gradient">往往是那些你没有建仓的交易。</span></h2>
-  </div>
-</section>
-
-<section id="archive" class="relative scroll-mt-24 px-6 pb-28 pt-8">
+<section id="stats" class="relative scroll-mt-24 px-6 py-8">
   <div class="mx-auto max-w-7xl">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <div><p class="text-xs font-bold tracking-[0.3em] text-emerald-600">MATCH ARCHIVE</p>
-        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-800 md:text-4xl">历史归档</h2>
-        <p class="mt-3 max-w-md text-sm text-slate-500">按日期回看每一场的欧赔信号、比分剧本与实际赛果。</p></div>
-      <div class="flex max-w-full gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        
-        <button type="button" class="month-pill is-active shrink-0 rounded-full px-5 py-2 text-sm font-semibold" data-month="2026-08">2026-08</button>
-        
+    <div class="rise-in rise-in-3 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="panel rounded-2xl p-5 text-center">
+        <div class="tnum text-4xl font-black text-emerald-600">11</div>
+        <div class="panel-head mt-2">覆盖天数</div>
       </div>
-    </div>
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      
-      <div class="day-card is-today group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周五</span>
-          <span class="rounded-full border border-emerald-300 bg-emerald-100 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">今日</span>
-          
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">14</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">17</span> 场</span>
-          <a href="daily/2026-08-14.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五001</span>
-            <span class="min-w-0 flex-1 truncate">东京绿茵 vs 柏太阳神</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五002</span>
-            <span class="min-w-0 flex-1 truncate">VPS瓦萨 vs TPS土尔库</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五003</span>
-            <span class="min-w-0 flex-1 truncate">荷尔斯泰因 vs 圣保利</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五004</span>
-            <span class="min-w-0 flex-1 truncate">布伦瑞克 vs 波鸿</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五005</span>
-            <span class="min-w-0 flex-1 truncate">新未来城体育 vs 费哈</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五006</span>
-            <span class="min-w-0 flex-1 truncate">埃尔夫斯堡 vs 瓦斯特拉斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五007</span>
-            <span class="min-w-0 flex-1 truncate">罗森博格 vs 维京</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五008</span>
-            <span class="min-w-0 flex-1 truncate">达曼协作 vs 利雅得体育</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五009</span>
-            <span class="min-w-0 flex-1 truncate">利雅得新月 vs 费萨里哈曼</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五010</span>
-            <span class="min-w-0 flex-1 truncate">特尔斯达 vs 鹿特丹斯巴达</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五011</span>
-            <span class="min-w-0 flex-1 truncate">瓦尔韦克 vs 多德勒支</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五012</span>
-            <span class="min-w-0 flex-1 truncate">赫拉克勒斯 vs 邓伯什</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五013</span>
-            <span class="min-w-0 flex-1 truncate">阿纳西 vs 罗德兹</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五014</span>
-            <span class="min-w-0 flex-1 truncate">兰斯 vs USL敦刻尔克</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五015</span>
-            <span class="min-w-0 flex-1 truncate">圣埃蒂安 vs 克莱蒙</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五016</span>
-            <span class="min-w-0 flex-1 truncate">狼队 vs 布莱克本</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五017</span>
-            <span class="min-w-0 flex-1 truncate">葡萄牙体育 vs 吉马良斯</span>
-          </div>
-          
-        </div>
+      <div class="panel rounded-2xl p-5 text-center">
+        <div class="tnum text-4xl font-black text-slate-800">6573</div>
+        <div class="panel-head mt-2">总比赛</div>
       </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周四</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">13</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">10</span> 场</span>
-          <a href="daily/2026-08-13.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四001</span>
-            <span class="min-w-0 flex-1 truncate">艾卜哈 vs 哈森姆</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四002</span>
-            <span class="min-w-0 flex-1 truncate">克拉约瓦大学 vs 古比斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四003</span>
-            <span class="min-w-0 flex-1 truncate">帕福斯 vs 萨尔茨堡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四004</span>
-            <span class="min-w-0 flex-1 truncate">维京古尔 vs 图恩</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四005</span>
-            <span class="min-w-0 flex-1 truncate">利雅得青年人 vs 卡达西亚</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四006</span>
-            <span class="min-w-0 flex-1 truncate">格拉斯哥流浪者 vs 比亚韦斯托克雅盖隆</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四007</span>
-            <span class="min-w-0 flex-1 truncate">安德莱赫特 vs 塞萨洛尼基</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四008</span>
-            <span class="min-w-0 flex-1 truncate">哈茨 vs 本菲卡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四009</span>
-            <span class="min-w-0 flex-1 truncate">米拉索 vs 基多体育大学</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四010</span>
-            <span class="min-w-0 flex-1 truncate">罗萨里奥中央 vs 科林蒂安</span>
-          </div>
-          
-        </div>
+      <div class="panel rounded-2xl p-5 text-center">
+        <div class="tnum text-4xl font-black text-amber-600">266</div>
+        <div class="panel-head mt-2">有信号（买入）</div>
       </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周三</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">12</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">3</span> 场</span>
-          <a href="daily/2026-08-12.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三001</span>
-            <span class="min-w-0 flex-1 truncate">巴黎圣日耳曼 vs 阿斯顿维拉</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三002</span>
-            <span class="min-w-0 flex-1 truncate">普拉腾斯 vs 科金博</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三003</span>
-            <span class="min-w-0 flex-1 truncate">帕尔梅拉斯 vs 波特诺山丘</span>
-          </div>
-          
-        </div>
+      <div class="panel rounded-2xl p-5 text-center">
+        <div class="tnum text-4xl font-black text-gradient">4%</div>
+        <div class="panel-head mt-2">总占比</div>
       </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周二</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">11</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">10</span> 场</span>
-          <a href="daily/2026-08-11.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二001</span>
-            <span class="min-w-0 flex-1 truncate">江原FC vs 大阪钢巴</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二002</span>
-            <span class="min-w-0 flex-1 truncate">阿拉木图凯拉特 vs 索非亚列夫斯基</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二003</span>
-            <span class="min-w-0 flex-1 truncate">博德闪耀 vs 圣吉罗斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二004</span>
-            <span class="min-w-0 flex-1 truncate">萨巴赫 vs 奥胡斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二005</span>
-            <span class="min-w-0 flex-1 truncate">奈梅亨 vs 奥林匹亚科斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二006</span>
-            <span class="min-w-0 flex-1 truncate">采列 vs 阿拉特亚美尼亚</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二007</span>
-            <span class="min-w-0 flex-1 truncate">布拉迪斯拉发 vs 米亚尔比</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二008</span>
-            <span class="min-w-0 flex-1 truncate">格拉茨风暴 vs 费内巴切</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二009</span>
-            <span class="min-w-0 flex-1 truncate">里昂 vs 布拉格斯巴达</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周二010</span>
-            <span class="min-w-0 flex-1 truncate">弗鲁米嫩塞 vs 门多萨独立</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周一</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">10</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">3</span> 场</span>
-          <a href="daily/2026-08-10.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周一001</span>
-            <span class="min-w-0 flex-1 truncate">天狼星 vs 布洛马波卡纳</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周一002</span>
-            <span class="min-w-0 flex-1 truncate">瓦斯特拉斯 vs 尤尔加登</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周一003</span>
-            <span class="min-w-0 flex-1 truncate">圣克拉拉 vs 葡萄牙国民</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周日</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">09</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">24</span> 场</span>
-          <a href="daily/2026-08-09.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日001</span>
-            <span class="min-w-0 flex-1 truncate">东京绿茵 vs 川崎前锋</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日002</span>
-            <span class="min-w-0 flex-1 truncate">长崎成功丸 vs 京都不死鸟</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日003</span>
-            <span class="min-w-0 flex-1 truncate">山形山神 vs 枥木市FC</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日004</span>
-            <span class="min-w-0 flex-1 truncate">鹿特丹斯巴达 vs 费耶诺德</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日005</span>
-            <span class="min-w-0 flex-1 truncate">圣保利 vs 菲尔特</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日006</span>
-            <span class="min-w-0 flex-1 truncate">纽伦堡 vs 德累斯顿</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日007</span>
-            <span class="min-w-0 flex-1 truncate">哈马比 vs 赫根</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日008</span>
-            <span class="min-w-0 flex-1 truncate">古比斯 vs TPS土尔库</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日009</span>
-            <span class="min-w-0 flex-1 truncate">兹沃勒 vs 阿贾克斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日010</span>
-            <span class="min-w-0 flex-1 truncate">格罗宁根 vs 乌德勒支</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日011</span>
-            <span class="min-w-0 flex-1 truncate">利勒斯特罗姆 vs 罗森博格</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日012</span>
-            <span class="min-w-0 flex-1 truncate">图尔库国际 vs 拉赫蒂</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日013</span>
-            <span class="min-w-0 flex-1 truncate">哈尔姆斯塔德 vs 哥德堡盖斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日014</span>
-            <span class="min-w-0 flex-1 truncate">哥德堡 vs 卡尔马</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日015</span>
-            <span class="min-w-0 flex-1 truncate">海伦芬 vs 特温特</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日016</span>
-            <span class="min-w-0 flex-1 truncate">汉坎 vs 奥勒松</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日017</span>
-            <span class="min-w-0 flex-1 truncate">奥卢 vs 赫尔辛基</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日018</span>
-            <span class="min-w-0 flex-1 truncate">波尔图 vs 艾华卡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日019</span>
-            <span class="min-w-0 flex-1 truncate">克里斯蒂安松 vs 莫尔德</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日020</span>
-            <span class="min-w-0 flex-1 truncate">本菲卡 vs 维塞乌</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日021</span>
-            <span class="min-w-0 flex-1 truncate">吉维森特 vs 里奥阿维</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日022</span>
-            <span class="min-w-0 flex-1 truncate">摩里伦斯 vs 布拉加</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日023</span>
-            <span class="min-w-0 flex-1 truncate">桑托斯 vs 巴拉纳竞技</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周日024</span>
-            <span class="min-w-0 flex-1 truncate">弗拉门戈 vs 维多利亚</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周六</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">08</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">25</span> 场</span>
-          <a href="daily/2026-08-08.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六001</span>
-            <span class="min-w-0 flex-1 truncate">大阪樱花 vs 冈山绿雉</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六002</span>
-            <span class="min-w-0 flex-1 truncate">RB大宫松鼠 vs 新泻天鹅</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六003</span>
-            <span class="min-w-0 flex-1 truncate">FC安养 vs 大田市民</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六004</span>
-            <span class="min-w-0 flex-1 truncate">全北现代 vs 济州SK</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六005</span>
-            <span class="min-w-0 flex-1 truncate">金泉尚武 vs FC首尔</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六006</span>
-            <span class="min-w-0 flex-1 truncate">瓦勒伦加 vs 博德闪耀</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六007</span>
-            <span class="min-w-0 flex-1 truncate">女王公园巡游者 vs 米尔沃尔</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六008</span>
-            <span class="min-w-0 flex-1 truncate">奥尔格里特 vs 索尔纳</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六009</span>
-            <span class="min-w-0 flex-1 truncate">西汉姆联 vs 朴茨茅斯</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六010</span>
-            <span class="min-w-0 flex-1 truncate">斯旺西 vs 伯明翰</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六011</span>
-            <span class="min-w-0 flex-1 truncate">维京 vs 萨普斯堡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六012</span>
-            <span class="min-w-0 flex-1 truncate">奈梅亨 vs 特尔斯达</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六013</span>
-            <span class="min-w-0 flex-1 truncate">马里迪莫 vs 卡萨比亚</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六014</span>
-            <span class="min-w-0 flex-1 truncate">米亚尔比 vs 埃尔夫斯堡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六015</span>
-            <span class="min-w-0 flex-1 truncate">雅罗 vs VPS瓦萨</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六016</span>
-            <span class="min-w-0 flex-1 truncate">前进之鹰 vs 威廉二世</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六017</span>
-            <span class="min-w-0 flex-1 truncate">吉马良斯 vs 阿罗卡</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六018</span>
-            <span class="min-w-0 flex-1 truncate">埃因霍温 vs 福图纳锡塔德</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六019</span>
-            <span class="min-w-0 flex-1 truncate">波城 vs 阿纳西</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六020</span>
-            <span class="min-w-0 flex-1 truncate">蒙彼利埃 vs 第戎</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六021</span>
-            <span class="min-w-0 flex-1 truncate">南特 vs 红星</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六022</span>
-            <span class="min-w-0 flex-1 truncate">阿尔克马尔 vs 海牙</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六023</span>
-            <span class="min-w-0 flex-1 truncate">格雷米奥 vs 圣保罗</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六024</span>
-            <span class="min-w-0 flex-1 truncate">阿马多拉 vs 葡萄牙体育</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周六025</span>
-            <span class="min-w-0 flex-1 truncate">博塔弗戈 vs 弗鲁米嫩塞</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周五</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">07</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">10</span> 场</span>
-          <a href="daily/2026-08-07.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五001</span>
-            <span class="min-w-0 flex-1 truncate">横滨水手 vs 鹿岛鹿角</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五002</span>
-            <span class="min-w-0 flex-1 truncate">大阪钢巴 vs 浦和红钻</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五003</span>
-            <span class="min-w-0 flex-1 truncate">塞伊奈约基 vs 格尼斯坦</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五004</span>
-            <span class="min-w-0 flex-1 truncate">桑德菲杰 vs KFUM奥斯陆</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五005</span>
-            <span class="min-w-0 flex-1 truncate">坎布尔 vs SBV精英</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五006</span>
-            <span class="min-w-0 flex-1 truncate">奥斯 vs 布雷达</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五007</span>
-            <span class="min-w-0 flex-1 truncate">埃门 vs 罗达JC</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五008</span>
-            <span class="min-w-0 flex-1 truncate">波鸿 vs 柏林赫塔</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五009</span>
-            <span class="min-w-0 flex-1 truncate">米德尔斯堡 vs 雷克瑟姆</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周五010</span>
-            <span class="min-w-0 flex-1 truncate">埃斯托里尔 vs 法马利康</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周四</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">06</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">5</span> 场</span>
-          <a href="daily/2026-08-06.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四001</span>
-            <span class="min-w-0 flex-1 truncate">维多利亚 vs 巴拉纳竞技</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四002</span>
-            <span class="min-w-0 flex-1 truncate">古比斯 vs 克拉约瓦大学</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四003</span>
-            <span class="min-w-0 flex-1 truncate">比亚韦斯托克雅盖隆 vs 格拉斯哥流浪者</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四004</span>
-            <span class="min-w-0 flex-1 truncate">塞萨洛尼基 vs 安德莱赫特</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周四005</span>
-            <span class="min-w-0 flex-1 truncate">本菲卡 vs 哈茨</span>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="day-card  group relative overflow-hidden rounded-2xl p-6 " data-month="2026-08">
-        <div class="flex items-start justify-between">
-          <span class="text-sm font-medium text-slate-600">周三</span>
-          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] text-slate-400">已归档</span>
-        </div>
-        <div class="tnum mt-4 text-6xl font-black leading-none text-slate-800">05</div>
-        <div class="mt-2 text-xs tracking-[0.2em] text-slate-500">2026 年 8 月</div>
-        <div class="mt-6 h-px w-full bg-gradient-to-r from-emerald-400/50 to-transparent"></div>
-        <div class="mt-4 flex items-center justify-between text-sm">
-          <span class="flex items-center gap-2 text-slate-500"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="tnum font-bold text-slate-700">3</span> 场</span>
-          <a href="daily/2026-08-05.html" class="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 transition hover:bg-emerald-100">每日汇总 →</a>
-          
-        </div>
-        <div class="nice-scroll mt-3 max-h-[124px] space-y-1 overflow-y-auto pr-1">
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三001</span>
-            <span class="min-w-0 flex-1 truncate">弗鲁米嫩塞 vs 瓦斯科达伽马</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三002</span>
-            <span class="min-w-0 flex-1 truncate">奥胡斯 vs 萨巴赫</span>
-          </div>
-          
-          <div class="flex items-center gap-1.5 rounded-md px-1.5 py-[5px] text-[11px] text-slate-500">
-            <span class="tnum shrink-0">周三003</span>
-            <span class="min-w-0 flex-1 truncate">费内巴切 vs 格拉茨风暴</span>
-          </div>
-          
-        </div>
-      </div>
-      
     </div>
   </div>
 </section>
 
-<footer class="border-t border-slate-200/80 px-6 py-10">
-  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-    <div class="flex items-center gap-2.5 text-sm text-slate-500"><span class="grid h-6 w-6 place-items-center rounded-md bg-emerald-100 text-xs">⚽</span><span>© 2026 Football Report · 自动生成 · 纯脚本计算</span></div>
+<!-- 操盘面板（2026-08-15：下注/仓位/营收） -->
+<section class="relative scroll-mt-24 px-6 py-6">
+  <div class="mx-auto max-w-7xl">
+    <div class="panel rounded-2xl p-6">
+      <div class="panel-head mb-4">操盘面板 · 本金 ¥10,000（模拟盘）</div>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div class="text-center">
+          <div class="tnum text-3xl font-black text-slate-800">221</div>
+          <div class="mt-1 text-[11px] font-bold text-slate-400">总下注</div>
+        </div>
+        <div class="text-center">
+          <div class="tnum text-3xl font-black text-slate-800">¥22100</div>
+          <div class="mt-1 text-[11px] font-bold text-slate-400">总下注金额</div>
+        </div>
+        <div class="text-center">
+          <div class="tnum text-3xl font-black text-slate-400">0 注 · ¥0</div>
+          <div class="mt-1 text-[11px] font-bold text-slate-400">当前仓位（在途）</div>
+        </div>
+        <div class="text-center">
+          <div class="tnum text-3xl font-black text-emerald-600">+¥5526</div>
+          <div class="mt-1 text-[11px] font-bold text-slate-400">当前营收（已结算）</div>
+        </div>
+        <div class="text-center">
+          <div class="tnum text-3xl font-black text-emerald-600">55.3%</div>
+          <div class="mt-1 text-[11px] font-bold text-slate-400">本金收益率</div>
+        </div>
+      </div>
+      <div class="mt-3 text-[11px] text-slate-400">命中 149/221 · 规则：按信号 BUY · 低赔过滤(单选≥1.5/双选≥1.3) · 固定+Alpha仓位 · 忽略大小球 · 赛前15min自动下注</div>
+    </div>
   </div>
-</footer>
-<script>
-// 月份筛选：点击 pill 只显示该月日期卡片
-(function () {
-  var pills = document.querySelectorAll('.month-pill');
-  var cards = document.querySelectorAll('.day-card');
-  pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      var m = p.dataset.month;
-      pills.forEach(function (x) { x.classList.remove('is-active', 'font-semibold'); x.classList.add('text-slate-500'); });
-      p.classList.add('is-active', 'font-semibold'); p.classList.remove('text-slate-500');
-      cards.forEach(function (c) {
-        c.style.display = (c.dataset.month === m || m === 'all') ? '' : 'none';
-      });
-    });
-  });
-})();
-</script>
+</section>
+
+<section id="archive" class="relative scroll-mt-24 px-6 py-12 md:py-16">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-6 flex items-center gap-3">
+      <h2 class="text-xl font-black tracking-tight text-slate-800">历史归档</h2>
+      <span class="text-xs text-slate-400">每日有信号占比 · 点击查看详情</span>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <a href="daily/2026-08-05.html" class="day-card is-today rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-05</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            20 / 368 · 5%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 5%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>368 场</span>
+          <span>买入 20 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-06.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-06</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            12 / 235 · 5%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 5%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>235 场</span>
+          <span>买入 12 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-07.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-07</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            22 / 518 · 4%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 4%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>518 场</span>
+          <span>买入 22 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-08.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-08</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            77 / 1672 · 5%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 5%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>1672 场</span>
+          <span>买入 77 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-09.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-09</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            57 / 751 · 8%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 8%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>751 场</span>
+          <span>买入 57 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-10.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-10</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            11 / 177 · 6%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 6%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>177 场</span>
+          <span>买入 11 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-11.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-11</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            20 / 338 · 6%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 6%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>338 场</span>
+          <span>买入 20 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-12.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-12</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            20 / 431 · 5%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 5%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>431 场</span>
+          <span>买入 20 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-13.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-13</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            12 / 216 · 6%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 6%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>216 场</span>
+          <span>买入 12 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-14.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-14</span>
+          <span class="tnum text-xs font-bold text-emerald-600">
+            15 / 550 · 3%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 3%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>550 场</span>
+          <span>买入 15 场</span>
+        </div>
+      </a>
+      
+      <a href="daily/2026-08-15.html" class="day-card  rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-black tracking-tight text-slate-800">2026-08-15</span>
+          <span class="tnum text-xs font-bold text-slate-400">
+            0 / 1317 · 0%
+          </span>
+        </div>
+        <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div class="h-full rounded-full bg-slate-300" style="width: 0%"></div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+          <span>1317 场</span>
+          <span>买入 0 场</span>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
