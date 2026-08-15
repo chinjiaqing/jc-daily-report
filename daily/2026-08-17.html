@@ -1,0 +1,3404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>每日汇总 · 2026-08-17 · Football Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #f4f8f5; color: #1e293b; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+  .bg-layer { position: fixed; inset: 0; z-index: -10; pointer-events: none;
+    background: radial-gradient(1100px 560px at 50% -12%, rgba(16,185,129,.09), transparent 62%), radial-gradient(900px 480px at 92% 108%, rgba(251,191,36,.06), transparent 60%), repeating-linear-gradient(90deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), repeating-linear-gradient(0deg, rgba(13,148,136,.035) 0 1px, transparent 1px 88px), #f4f8f5; }
+  .text-gradient { background: linear-gradient(100deg,#065f46 15%,#059669 55%,#0d9488 85%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  .rise-in { animation: rise-in .9s cubic-bezier(.22,1,.36,1) both; }
+  .rise-in-1 { animation-delay: .08s; } .rise-in-2 { animation-delay: .18s; } .rise-in-3 { animation-delay: .28s; } .rise-in-4 { animation-delay: .38s; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.07); }
+  .panel-head { letter-spacing: .22em; font-size: 11px; font-weight: 700; color: rgba(5,150,105,.85); }
+  .day-card { background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9); box-shadow: 0 4px 20px -6px rgba(15,118,110,.08); transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s; }
+  .day-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,.55); box-shadow: 0 20px 44px -14px rgba(16,185,129,.30); }
+  .day-card.is-today { background: linear-gradient(160deg, rgba(209,250,229,.7), rgba(255,255,255,.95)); border-color: rgba(16,185,129,.55); box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 16px 40px -14px rgba(16,185,129,.28); }
+  .month-pill { border: 1px solid rgba(226,232,240,.95); background: rgba(255,255,255,.85); box-shadow: 0 1px 4px -1px rgba(15,118,110,.08); transition: all .25s; }
+  .month-pill:hover { border-color: rgba(16,185,129,.5); color: #047857; }
+  .month-pill.is-active { background: linear-gradient(120deg,#059669,#10b981); border-color: #059669; color: #fff; box-shadow: 0 8px 20px -6px rgba(5,150,105,.45); }
+  .tag-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 600; border: 1px solid; box-shadow: 0 1px 3px -1px rgba(15,23,42,.06); cursor: default; transition: transform .15s, box-shadow .15s; }
+  .tag-chip::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--dot, currentColor); flex-shrink: 0; }
+  .tag-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px -4px rgba(15,23,42,.16); }
+  .nice-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  .nice-scroll::-webkit-scrollbar { width: 4px; }
+  .nice-scroll::-webkit-scrollbar-track { background: transparent; }
+  .nice-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  @keyframes dot-blink { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+  .dot-blink { animation: dot-blink 2.6s ease-in-out infinite; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #f4f8f5; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; border: 2px solid #f4f8f5; }
+  ::selection { background: rgba(16,185,129,.25); color: #064e3b; }
+  /* 侧边锚点导航：仅超宽屏（>1300px）显示 */
+  .side-nav { position: fixed; right: 14px; top: 50%; z-index: 40; display: none; flex-direction: column; gap: 2px;
+    transform: translateY(-50%); width: 108px; padding: 8px 6px; border-radius: 16px;
+    background: rgba(255,255,255,.92); border: 1px solid rgba(226,232,240,.9);
+    box-shadow: 0 12px 36px -12px rgba(15,118,110,.18); backdrop-filter: blur(8px); }
+  @media (min-width: 1301px) { .side-nav { display: flex; } }
+  .nav-item { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px;
+    font-size: 12px; color: #64748b; transition: all .15s; white-space: nowrap; }
+  .nav-item:hover { color: #047857; background: rgba(209,250,229,.6); }
+  .nav-item.is-active { color: #047857; background: rgba(209,250,229,.85); font-weight: 700; }
+  .nav-back { margin-top: 4px; border-top: 1px solid rgba(226,232,240,.8); padding-top: 8px; font-weight: 700; color: #0f766e; }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="top"></div>
+<div class="bg-layer"></div>
+<header class="fixed top-0 inset-x-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <button type="button" onclick="history.length > 1 ? history.back() : (location.href = '../index.html')" class="group flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-emerald-600">
+      <svg class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      返回总览</button>
+    <a href="../index.html" class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 text-sm text-white shadow-md shadow-emerald-500/25">⚽</span>
+      <span class="text-sm font-bold tracking-wide text-slate-800">FOOTBALL SIGNALS</span></a>
+    <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">
+      <span class="tnum font-bold text-emerald-600">2026-08-17</span></div>
+  </div>
+</header>
+
+<style>
+  .rk{display:inline-flex;align-items:center;font-size:10px;padding:2px 8px;border-radius:999px;color:#fff;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+  .rk-ur{background:linear-gradient(135deg,#b8860b,#d4a017);box-shadow:0 0 6px rgba(212,160,23,.4)}
+  .rk-ssr{background:linear-gradient(135deg,#6d2a8a,#9b4dd6)}
+  .rk-sr{background:linear-gradient(135deg,#1f5a8a,#2f8fd6)}
+  .rk-r{background:linear-gradient(135deg,#2f7a52,#4fb47a)}
+  .rk-n{background:#8a8a80}
+  .match-card{background:rgba(255,255,255,.94);border:1px solid rgba(226,232,240,.9);border-radius:16px;box-shadow:0 4px 20px -6px rgba(15,118,110,.07);padding:16px 18px;margin-bottom:14px;transition:transform .25s,box-shadow .25s}
+  .match-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(15,118,110,.22)}
+  .match-card.has-sig{border-left:4px solid #b8860b}
+  .sub{color:#94a3b8;font-size:11px;font-weight:500}
+  .ev-pos{color:#b91c1c;font-weight:800}.ev-neg{color:#047857;font-weight:800}
+  .badge{border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap}
+  .b-buy{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+  .b-avoid{background:#7f1d1d}
+  .b-idle{background:#94a3b8}
+  .b-done{background:#334155}
+  .b-live{background:#b45309}
+  .filter-tab.is-active{background:linear-gradient(120deg,#059669,#10b981);border-color:#059669;color:#fff;box-shadow:0 8px 20px -6px rgba(5,150,105,.45)}
+  .alpha-chip{border-radius:999px;padding:3px 9px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .a-enter{background:linear-gradient(135deg,#b91c1c,#dc2626);box-shadow:0 2px 8px -2px rgba(220,38,38,.4)}
+  .a-watch{background:linear-gradient(135deg,#d97706,#f59e0b)}
+  .a-idle{background:#94a3b8}
+</style>
+
+<main class="mx-auto max-w-5xl px-5 pb-24 pt-28">
+  <div class="rise-in">
+    <p class="text-xs font-bold tracking-[0.3em] text-emerald-600">DAILY SUMMARY · QUANT SIGNALS</p>
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-17 · 每日信号</h1>
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">共 135 场</span>
+        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">买入 0 场 · 0%</span>
+      </div>
+    </div>
+    <p class="mt-3 text-xs text-slate-400">欧赔（VETO/弃守/客队弃守）+ 亚盘（狙击/升盘）+ 大小球（温床）三通道封板 · 裁判层合成买入方案</p>
+  </div>
+
+  <div class="rise-in rise-in-1 mt-6 mb-6 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-[11px] leading-relaxed text-slate-500">
+    <div class="flex flex-wrap items-center gap-1.5">
+      <b class="text-slate-700">🎴 信号</b>：
+      <span class="rk rk-ur">UR·神话 ≥90%</span>
+      <span class="rk rk-ssr">SSR·传说 80-89%</span>
+      <span class="rk rk-sr">SR·史诗 70-79%</span>
+      <span class="rk rk-r">R·稀有 60-69%</span>
+      
+    </div>
+  </div>
+
+  <!-- 当日操盘总览（2026-08-15） -->
+  <div class="rise-in rise-in-2 mt-6 rounded-2xl border border-emerald-100 bg-white/80 px-5 py-3.5 shadow-sm">
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <span class="text-xs font-black tracking-wide text-slate-700">当日操盘</span>
+      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">0</b> 注 · 投入 <b class="tnum text-slate-800">¥0</b></span>
+      <span class="text-xs text-slate-500">已结算 <b class="tnum text-slate-800">+¥0</b></span>
+      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">0/0</b></span>
+      
+    </div>
+  </div>
+
+  <!-- 筛选 Tab：全部 / 竞彩 / 有信号（2026-08-15） -->
+  <div class="rise-in rise-in-2 mt-6 mb-4 flex items-center gap-2">
+    <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">135</span></button>
+    <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">6</span></button>
+    <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">0</span></button>
+    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">0</span></button>
+    <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
+  </div>
+
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">21</span>
+        <span class="font-mono">2026-08-17 10:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">西雅图海湾人 <span class="text-xs font-normal text-slate-400">vs</span> 温哥华白浪</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2343</span>
+        <span class="font-mono">2026-08-17 10:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣何塞地震后备队 <span class="text-xs font-normal text-slate-400">vs</span> 圣路易斯市B队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">140</span>
+        <span class="font-mono">2026-08-17 11:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">蒂华纳 <span class="text-xs font-normal text-slate-400">vs</span> 蓝十字</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">927</span>
+        <span class="font-mono">2026-08-17 16:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">LNZ切尔卡瑟U21 <span class="text-xs font-normal text-slate-400">vs</span> 查诺莫斯U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 16:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">东孟加拉女足 <span class="text-xs font-normal text-slate-400">vs</span> 拉杰沙希明星FC女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1366</span>
+        <span class="font-mono">2026-08-17 16:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">印尼女足U16 <span class="text-xs font-normal text-slate-400">vs</span> 新加坡女足U17</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 17:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">四月女足 <span class="text-xs font-normal text-slate-400">vs</span> 金燕子女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 17:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">伊耶瓦底联女足 <span class="text-xs font-normal text-slate-400">vs</span> 裕廊女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">927</span>
+        <span class="font-mono">2026-08-17 18:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">基辅迪纳摩U21 <span class="text-xs font-normal text-slate-400">vs</span> 高华尤夫卡U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">927</span>
+        <span class="font-mono">2026-08-17 18:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">哈尔科夫U21 <span class="text-xs font-normal text-slate-400">vs</span> 顿涅茨克矿工U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 18:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">TSL女足 <span class="text-xs font-normal text-slate-400">vs</span> 金边皇冠女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1073</span>
+        <span class="font-mono">2026-08-17 18:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">墨尔本胜利青年队 <span class="text-xs font-normal text-slate-400">vs</span> 诺夫克特</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1073</span>
+        <span class="font-mono">2026-08-17 18:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布琳狮子 <span class="text-xs font-normal text-slate-400">vs</span> 北鹰阳光</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">447</span>
+        <span class="font-mono">2026-08-17 19:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布洛马波卡纳U21 <span class="text-xs font-normal text-slate-400">vs</span> 佐加顿斯U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">沙巴女足 <span class="text-xs font-normal text-slate-400">vs</span> 关岛流浪女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴纳特女足 <span class="text-xs font-normal text-slate-400">vs</span> 皇家廷布学院女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">亚洲学者学院女足 <span class="text-xs font-normal text-slate-400">vs</span> 阿穆尔女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿提哈德女足 <span class="text-xs font-normal text-slate-400">vs</span> 艾纳斯女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1264</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">斯旺西U21 <span class="text-xs font-normal text-slate-400">vs</span> 谢菲尔德联队U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2356</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">古里斯坦 <span class="text-xs font-normal text-slate-400">vs</span> 萨马尔罕沙洲</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2356</span>
+        <span class="font-mono">2026-08-17 20:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡什卡达里奥FA <span class="text-xs font-normal text-slate-400">vs</span> 撒马尔罕</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 20:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">新北航源女足 <span class="text-xs font-normal text-slate-400">vs</span> 无极限女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1539</span>
+        <span class="font-mono">2026-08-17 21:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">飓风队女足 <span class="text-xs font-normal text-slate-400">vs</span> 阿根廷独立女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1366</span>
+        <span class="font-mono">2026-08-17 21:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">约旦女足U17 <span class="text-xs font-normal text-slate-400">vs</span> 泰国女足U17</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">163</span>
+        <span class="font-mono">2026-08-17 22:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡利地亚雅典 <span class="text-xs font-normal text-slate-400">vs</span> 拉里萨</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1539</span>
+        <span class="font-mono">2026-08-17 22:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">社会体育协会女足 <span class="text-xs font-normal text-slate-400">vs</span> 圣罗伦素女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 22:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡雅FC女足 <span class="text-xs font-normal text-slate-400">vs</span> 伊尔比尔斯女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2635</span>
+        <span class="font-mono">2026-08-17 22:10</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">艾阿恩U23 <span class="text-xs font-normal text-slate-400">vs</span> 般尼亚斯U23</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2635</span>
+        <span class="font-mono">2026-08-17 22:10</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">艾查捷拉U23 <span class="text-xs font-normal text-slate-400">vs</span> 哈塔U23</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一001</span>
+        <span class="font-bold">13</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">格尼斯坦 <span class="text-xs font-normal text-slate-400">vs</span> 埃尔维斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">119</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">普莱西亚 <span class="text-xs font-normal text-slate-400">vs</span> 柔亚</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">163</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡迪沙斯 <span class="text-xs font-normal text-slate-400">vs</span> 阿里斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">351</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">斯洛云B队 <span class="text-xs font-normal text-slate-400">vs</span> 克曼尼</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">243</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">奥达里加 <span class="text-xs font-normal text-slate-400">vs</span> 格洛比纳</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">纳萨夫女足 <span class="text-xs font-normal text-slate-400">vs</span> 马斯特FC女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2077</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴姆卡通女足 <span class="text-xs font-normal text-slate-400">vs</span> 波米尔杜尚别女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1262</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布尔加斯1919 <span class="text-xs font-normal text-slate-400">vs</span> 索菲亚中央陆军B队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2702</span>
+        <span class="font-mono">2026-08-17 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">尼卡萨U21 <span class="text-xs font-normal text-slate-400">vs</span> 莱昂U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2702</span>
+        <span class="font-mono">2026-08-17 23:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">帕丘卡U21 <span class="text-xs font-normal text-slate-400">vs</span> 普埃布拉U21</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">136</span>
+        <span class="font-mono">2026-08-17 23:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">萨拉格斯基 <span class="text-xs font-normal text-slate-400">vs</span> 费伦茨瓦罗斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">124</span>
+        <span class="font-mono">2026-08-17 23:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">克卢日大学 <span class="text-xs font-normal text-slate-400">vs</span> 阿拉德联队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">613</span>
+        <span class="font-mono">2026-08-17 23:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡拉巴克 <span class="text-xs font-normal text-slate-400">vs</span> 沙马基</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1502</span>
+        <span class="font-mono">2026-08-17 23:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">中新地女足 <span class="text-xs font-normal text-slate-400">vs</span> TPS土尔库女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">475</span>
+        <span class="font-mono">2026-08-17 23:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">赫尔辛基女足 <span class="text-xs font-normal text-slate-400">vs</span> 古比斯女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">217</span>
+        <span class="font-mono">2026-08-17 23:45</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">希奥利艾 <span class="text-xs font-normal text-slate-400">vs</span> 帕纳瓦兹</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">290</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">特里内茨 <span class="text-xs font-normal text-slate-400">vs</span> 乌斯季</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">83</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">比萨 <span class="text-xs font-normal text-slate-400">vs</span> 恩波利</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">131</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">华纳斯巴达 <span class="text-xs font-normal text-slate-400">vs</span> 塞普特姆里</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">469</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">诺亚FC <span class="text-xs font-normal text-slate-400">vs</span> 艾拉斯克特</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">533</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">拜基卡拉 <span class="text-xs font-normal text-slate-400">vs</span> 格兹拉联</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">563</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">葛吉拉 <span class="text-xs font-normal text-slate-400">vs</span> 斯帕里</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">640</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">安瓦尔SA <span class="text-xs font-normal text-slate-400">vs</span> 吉达国民</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1043</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">诺梅联合U21 <span class="text-xs font-normal text-slate-400">vs</span> 卡里鲁B队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1482</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">莫利诺斯 <span class="text-xs font-normal text-slate-400">vs</span> 科莫西奥</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1407</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布兰B队 <span class="text-xs font-normal text-slate-400">vs</span> 奥斯图恩</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1407</span>
+        <span class="font-mono">2026-08-18 00:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">斯托尔桑 <span class="text-xs font-normal text-slate-400">vs</span> 阿萨纳B队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">217</span>
+        <span class="font-mono">2026-08-18 00:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">迪祖戈斯 <span class="text-xs font-normal text-slate-400">vs</span> 苏杜瓦</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">640</span>
+        <span class="font-mono">2026-08-18 00:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿尔泰 <span class="text-xs font-normal text-slate-400">vs</span> 卡达西亚</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">640</span>
+        <span class="font-mono">2026-08-18 00:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿尔兹拉费 <span class="text-xs font-normal text-slate-400">vs</span> 利雅得体育</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">235</span>
+        <span class="font-mono">2026-08-18 00:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">科斯特罗马斯巴达 <span class="text-xs font-normal text-slate-400">vs</span> 乌法</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">217</span>
+        <span class="font-mono">2026-08-18 00:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">黑格尔曼 <span class="text-xs font-normal text-slate-400">vs</span> 瑞特瑞埃</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">83</span>
+        <span class="font-mono">2026-08-18 00:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">萨索洛 <span class="text-xs font-normal text-slate-400">vs</span> 切塞纳</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1562</span>
+        <span class="font-mono">2026-08-18 00:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣地亚哥早晨 <span class="text-xs font-normal text-slate-400">vs</span> AC科林纳</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">33</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">希洪竞技 <span class="text-xs font-normal text-slate-400">vs</span> 沙巴度尔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一002</span>
+        <span class="font-bold">26</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">赫根 <span class="text-xs font-normal text-slate-400">vs</span> 哈尔姆斯塔德</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">157</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">费尔格拉斯 <span class="text-xs font-normal text-slate-400">vs</span> AVS俱乐部</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">7</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布隆德比 <span class="text-xs font-normal text-slate-400">vs</span> 桑德捷斯基</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">221</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿尔卡 <span class="text-xs font-normal text-slate-400">vs</span> 涅波沃米采</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">711</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">海法马卡比 <span class="text-xs font-normal text-slate-400">vs</span> 哈浦尔耶路撒冷</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">711</span>
+        <span class="font-mono">2026-08-18 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">拉马甘夏普尔 <span class="text-xs font-normal text-slate-400">vs</span> 比达耶路撒冷</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">923</span>
+        <span class="font-mono">2026-08-18 01:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">致雅兹拉 <span class="text-xs font-normal text-slate-400">vs</span> 雅蒙克</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">923</span>
+        <span class="font-mono">2026-08-18 01:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">苏拉比卡 <span class="text-xs font-normal text-slate-400">vs</span> Al沙希尔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">923</span>
+        <span class="font-mono">2026-08-18 01:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">伯根 <span class="text-xs font-normal text-slate-400">vs</span> 阿尔沙米亚</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">923</span>
+        <span class="font-mono">2026-08-18 01:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">运动队 <span class="text-xs font-normal text-slate-400">vs</span> 科海坦</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1436</span>
+        <span class="font-mono">2026-08-18 01:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">华纳斯堡斯 <span class="text-xs font-normal text-slate-400">vs</span> 维纳什堡</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2</span>
+        <span class="font-mono">2026-08-18 01:45</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">里奥夸尔托学生队 <span class="text-xs font-normal text-slate-400">vs</span> 图库曼竞技</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">17</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">格拉夫夏普 <span class="text-xs font-normal text-slate-400">vs</span> 阿尔克马尔青年队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">17</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿贾克斯青年队 <span class="text-xs font-normal text-slate-400">vs</span> 埃门</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">17</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">乌德勒支青年队 <span class="text-xs font-normal text-slate-400">vs</span> 维特斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">138</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">RFC列日 <span class="text-xs font-normal text-slate-400">vs</span> 法兰波垒斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">129</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">诺维帕扎尔 <span class="text-xs font-normal text-slate-400">vs</span> 伏伊伏丁那</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">163</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">伊拉克里斯 <span class="text-xs font-normal text-slate-400">vs</span> 维洛斯NFC</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">166</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">瓦路尔 <span class="text-xs font-normal text-slate-400">vs</span> 阿古雷利</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">381</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">格林达维克 <span class="text-xs font-normal text-slate-400">vs</span> 格洛塔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">381</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">IR雷克雅未克 <span class="text-xs font-normal text-slate-400">vs</span> 嘉德维克</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">381</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">雷克尼 <span class="text-xs font-normal text-slate-400">vs</span> 艾格尔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">562</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">德锡 <span class="text-xs font-normal text-slate-400">vs</span> 博凯列</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">423</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">全男孩竞技 <span class="text-xs font-normal text-slate-400">vs</span> 新芝加哥</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">640</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布赖代先锋 <span class="text-xs font-normal text-slate-400">vs</span> 利雅得新月</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">640</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">亚达禾 <span class="text-xs font-normal text-slate-400">vs</span> 费哈</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1358</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣卡埃塔诺 <span class="text-xs font-normal text-slate-400">vs</span> 圣安德雷</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1461</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">西班牙语中央队 <span class="text-xs font-normal text-slate-400">vs</span> 科尔多瓦罗萨里奥中央队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1461</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">西班牙语体育会 <span class="text-xs font-normal text-slate-400">vs</span> 萨卡兹斯帕斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1461</span>
+        <span class="font-mono">2026-08-18 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">罗萨里奥雄狮 <span class="text-xs font-normal text-slate-400">vs</span> 康巴塞雷斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">131</span>
+        <span class="font-mono">2026-08-18 02:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">埃尔塔 <span class="text-xs font-normal text-slate-400">vs</span> 索菲亚火车头</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">30</span>
+        <span class="font-mono">2026-08-18 02:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">萨姆松体育 <span class="text-xs font-normal text-slate-400">vs</span> 哥兹塔比</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">124</span>
+        <span class="font-mono">2026-08-18 02:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布加勒斯特星队 <span class="text-xs font-normal text-slate-400">vs</span> 博托沙尼</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">130</span>
+        <span class="font-mono">2026-08-18 02:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">贝特曼 <span class="text-xs font-normal text-slate-400">vs</span> 波卢斯堡</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">533</span>
+        <span class="font-mono">2026-08-18 02:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">哈姆伦斯巴达 <span class="text-xs font-normal text-slate-400">vs</span> 莫斯塔FC</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2627</span>
+        <span class="font-mono">2026-08-18 02:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">坦迪尔 <span class="text-xs font-normal text-slate-400">vs</span> 门多萨</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">83</span>
+        <span class="font-mono">2026-08-18 02:45</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">克雷莫纳 <span class="text-xs font-normal text-slate-400">vs</span> 桑普多利亚</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">298</span>
+        <span class="font-mono">2026-08-18 02:45</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">车姆斯福特 <span class="text-xs font-normal text-slate-400">vs</span> 艾贝斯费特联</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一004</span>
+        <span class="font-bold">31</span>
+        <span class="font-mono">2026-08-18 03:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">拉科鲁尼亚 <span class="text-xs font-normal text-slate-400">vs</span> 埃尔切</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一003</span>
+        <span class="font-bold">37</span>
+        <span class="font-mono">2026-08-18 03:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡迪夫城 <span class="text-xs font-normal text-slate-400">vs</span> 雷克瑟姆</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1957</span>
+        <span class="font-mono">2026-08-18 03:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">莱里亚U23 <span class="text-xs font-normal text-slate-400">vs</span> 辛达卡拉U23</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2627</span>
+        <span class="font-mono">2026-08-18 03:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">斯伯迪沃贝尔格拉诺 <span class="text-xs font-normal text-slate-400">vs</span> 贝尔格拉诺防卫队(VR)</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一005</span>
+        <span class="font-bold">23</span>
+        <span class="font-mono">2026-08-18 03:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡萨比亚 <span class="text-xs font-normal text-slate-400">vs</span> 本菲卡</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">166</span>
+        <span class="font-mono">2026-08-18 03:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">弗拉姆 <span class="text-xs font-normal text-slate-400">vs</span> 加尔扎拜尔星</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">381</span>
+        <span class="font-mono">2026-08-18 03:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿费查尔丁 <span class="text-xs font-normal text-slate-400">vs</span> HK科帕沃格</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">381</span>
+        <span class="font-mono">2026-08-18 03:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">特罗图尔 <span class="text-xs font-normal text-slate-400">vs</span> 费基尔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">83</span>
+        <span class="font-mono">2026-08-18 03:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴勒莫 <span class="text-xs font-normal text-slate-400">vs</span> 莱切</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">33</span>
+        <span class="font-mono">2026-08-18 03:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">阿尔梅里亚 <span class="text-xs font-normal text-slate-400">vs</span> 埃登斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1076</span>
+        <span class="font-mono">2026-08-18 03:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">十一月三日队 <span class="text-xs font-normal text-slate-400">vs</span> 谭贝塔里竞技</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2</span>
+        <span class="font-mono">2026-08-18 04:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">拉努斯 <span class="text-xs font-normal text-slate-400">vs</span> 阿根廷独立</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1482</span>
+        <span class="font-mono">2026-08-18 04:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">山度士纳斯卡 <span class="text-xs font-normal text-slate-400">vs</span> 阿里萨瓦努科</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">250</span>
+        <span class="font-mono">2026-08-18 05:05</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">布卡拉曼加竞技 <span class="text-xs font-normal text-slate-400">vs</span> 帕斯托</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">611</span>
+        <span class="font-mono">2026-08-18 06:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣塔克鲁兹 <span class="text-xs font-normal text-slate-400">vs</span> 坎尔托塔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">611</span>
+        <span class="font-mono">2026-08-18 06:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">科比亚波 <span class="text-xs font-normal text-slate-400">vs</span> 库里科</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1076</span>
+        <span class="font-mono">2026-08-18 06:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">卡巴列罗JLM <span class="text-xs font-normal text-slate-400">vs</span> 塔库里</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2</span>
+        <span class="font-mono">2026-08-18 06:15</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">萨斯菲尔德 <span class="text-xs font-normal text-slate-400">vs</span> 防卫者</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card has-jc   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一006</span>
+        <span class="font-bold">4</span>
+        <span class="font-mono">2026-08-18 07:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴西国际 <span class="text-xs font-normal text-slate-400">vs</span> 瑞模贝雷</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1817</span>
+        <span class="font-mono">2026-08-18 07:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">莱昂女足 <span class="text-xs font-normal text-slate-400">vs</span> 克雷塔罗女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1347</span>
+        <span class="font-mono">2026-08-18 07:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">费罗维里亚 <span class="text-xs font-normal text-slate-400">vs</span> 帕桑度</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1347</span>
+        <span class="font-mono">2026-08-18 07:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴西瓜拉尼 <span class="text-xs font-normal text-slate-400">vs</span> 派瑞加RS</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">250</span>
+        <span class="font-mono">2026-08-18 07:10</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">百万富翁 <span class="text-xs font-normal text-slate-400">vs</span> 卡利体育会</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">596</span>
+        <span class="font-mono">2026-08-18 08:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">马卡拉 <span class="text-xs font-normal text-slate-400">vs</span> 基多天主大学</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1817</span>
+        <span class="font-mono">2026-08-18 08:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">托卢卡女足 <span class="text-xs font-normal text-slate-400">vs</span> 阿特拉斯女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">2</span>
+        <span class="font-mono">2026-08-18 08:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">甘拿斯亚门多萨 <span class="text-xs font-normal text-slate-400">vs</span> 塔勒瑞斯</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">415</span>
+        <span class="font-mono">2026-08-18 08:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">帕莱斯蒂诺 <span class="text-xs font-normal text-slate-400">vs</span> 华奇巴托</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">611</span>
+        <span class="font-mono">2026-08-18 08:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">迪帕特斯 <span class="text-xs font-normal text-slate-400">vs</span> 雷科莱塔体育</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1169</span>
+        <span class="font-mono">2026-08-18 08:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">巴瑞库拉 <span class="text-xs font-normal text-slate-400">vs</span> 奎迪奥</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">140</span>
+        <span class="font-mono">2026-08-18 09:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">内卡萨 <span class="text-xs font-normal text-slate-400">vs</span> 莱昂</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1817</span>
+        <span class="font-mono">2026-08-18 09:05</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">拿根亚女足 <span class="text-xs font-normal text-slate-400">vs</span> 蒙特瑞女足</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">1494</span>
+        <span class="font-mono">2026-08-18 09:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">陶罗 <span class="text-xs font-normal text-slate-400">vs</span> CD阿拉比</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card    ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">504</span>
+        <span class="font-mono">2026-08-18 10:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣何塞体育 <span class="text-xs font-normal text-slate-400">vs</span> 贝伦蝎子</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+      
+    </div>
+  </div>
+  
+</main>
+<script>
+  // 筛选 Tab：全部 / 竞彩 / 有信号（2026-08-15）
+  (function () {
+    var cards = document.querySelectorAll(".match-card");
+    var note = document.getElementById("filter-note");
+    var tabs = document.querySelectorAll(".filter-tab");
+    function apply(f) {
+      var show = 0;
+      cards.forEach(function (c) {
+        var ok = f === "all" || (f === "jc" && c.classList.contains("has-jc")) || (f === "sig" && c.classList.contains("has-sig")) || (f === "bet" && c.classList.contains("has-bet"));
+        c.style.display = ok ? "" : "none";
+        if (ok) show++;
+      });
+      if (note) note.textContent = f === "all" ? "全部 " + show + " 场" : f === "jc" ? "竞彩 " + show + " 场" : f === "sig" ? "有信号 " + show + " 场" : "已下注 " + show + " 场";
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () {
+        tabs.forEach(function (x) { x.classList.remove("is-active"); });
+        t.classList.add("is-active");
+        apply(t.getAttribute("data-filter"));
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
