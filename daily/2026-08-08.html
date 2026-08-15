@@ -117,9 +117,9 @@
   <div class="rise-in rise-in-2 mt-6 rounded-2xl border border-emerald-100 bg-white/80 px-5 py-3.5 shadow-sm">
     <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
       <span class="text-xs font-black tracking-wide text-slate-700">当日操盘</span>
-      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">136</b> 注 · 投入 <b class="tnum text-slate-800">¥6800</b></span>
-      <span class="text-xs text-slate-500">已结算 <b class="tnum text-red-600">+¥242.5</b></span>
-      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">50/136</b></span>
+      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">67</b> 注 · 投入 <b class="tnum text-slate-800">¥6700</b></span>
+      <span class="text-xs text-slate-500">已结算 <b class="tnum text-red-600">+¥874</b></span>
+      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">27/67</b></span>
       
     </div>
   </div>
@@ -129,7 +129,7 @@
     <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">1672</span></button>
     <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">25</span></button>
     <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">225</span></button>
-    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">68</span></button>
+    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">67</span></button>
     <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
   </div>
 
@@ -227,7 +227,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig has-bet has-ev">
+  <div class="match-card  has-sig  has-ev">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -240,14 +240,6 @@
       <span class="text-[15px] font-bold text-slate-800">克罗伊登国王后备队 <span class="text-xs font-normal text-slate-400">vs</span> 斯特尔特狮后备队</span>
       <span class="tnum text-sm font-black text-slate-700">3:1</span>
       <span class="ml-auto flex items-center gap-2">
-        
-        
-        
-        <span class="badge b-idle" title="下注赔率 1.98 · 已结算 未中">下注 客胜 1.98 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 4.54 · 已结算 未中">下注 平局 4.54 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
         
         
       </span>
@@ -1396,7 +1388,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -1432,7 +1424,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -1468,7 +1460,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -2063,11 +2055,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.35 · 已结算 命中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥67.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.9 · 已结算 未中">下注 平局 3.9 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.9 · 已结算 未中">下注 平局 3.9 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -2546,11 +2535,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.05 · 已结算 未中">下注 客胜 2.05 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 4.1 · 已结算 未中">下注 平局 4.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.05 · 已结算 未中">下注 客胜 2.05 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -4325,11 +4311,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.45 · 已结算 未中">下注 客胜 2.45 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 平局 3.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 平局 3.1 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -5025,11 +5008,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.1 · 已结算 未中">下注 客胜 2.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.7 · 已结算 命中">下注 平局 3.7 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥135</span>
+        <span class="badge b-idle" title="下注赔率 2.1 · 已结算 未中">下注 客胜 2.1 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -5353,11 +5333,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.35 · 已结算 命中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥67.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -5654,7 +5631,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -5960,11 +5937,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥57.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥115</span>
         
         
       </span>
@@ -6861,11 +6835,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.35 · 已结算 未中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -7069,7 +7040,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -7508,7 +7479,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -7690,11 +7661,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.5 · 已结算 命中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥75</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.2 · 已结算 未中">下注 平局 3.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.2 · 已结算 未中">下注 平局 3.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -7770,11 +7738,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 主胜 3.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.2 · 已结算 命中">下注 平局 3.2 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥110</span>
+        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 主胜 3.1 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -7787,7 +7752,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -8609,11 +8574,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥60</span>
-        
-        <span class="badge b-idle" title="下注赔率 4 · 已结算 未中">下注 平局 4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥120</span>
         
         
       </span>
@@ -8972,7 +8934,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -9407,11 +9369,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.3 · 已结算 未中">下注 客胜 2.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -9606,11 +9565,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 主胜 2.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 主胜 2.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -9623,7 +9579,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -9757,7 +9713,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -10259,11 +10215,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.16 · 已结算 未中">下注 客胜 2.16 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.27 · 已结算 命中">下注 平局 3.27 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥113.5</span>
+        <span class="badge b-idle" title="下注赔率 2.16 · 已结算 未中">下注 客胜 2.16 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -12414,7 +12367,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -13774,11 +13727,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.55 · 已结算 未中">下注 客胜 2.55 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.25 · 已结算 命中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥112.5</span>
+        <span class="badge b-buy" title="下注赔率 3.25 · 已结算 命中">下注 平局 3.25 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥225</span>
         
         
       </span>
@@ -15466,11 +15416,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.35 · 已结算 命中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥67.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -16764,7 +16711,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -17079,7 +17026,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -17177,7 +17124,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -17994,11 +17941,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 客胜 3.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 客胜 3.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -18740,11 +18684,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.37 · 已结算 命中">下注 客胜 2.37 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥68.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.01 · 已结算 未中">下注 平局 3.01 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.01 · 已结算 未中">下注 平局 3.01 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -18877,11 +18818,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥57.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.75 · 已结算 未中">下注 平局 3.75 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥115</span>
         
         
       </span>
@@ -19851,11 +19789,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.5 · 已结算 未中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.5 · 已结算 未中">下注 平局 3.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.5 · 已结算 未中">下注 平局 3.5 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -19895,11 +19830,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.75 · 已结算 未中">下注 客胜 2.75 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -25993,7 +25925,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -26557,11 +26489,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -26672,7 +26601,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -26863,7 +26792,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -26937,7 +26866,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -27153,11 +27082,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.45 · 已结算 命中">下注 客胜 2.45 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥72.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -27454,7 +27380,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -27553,11 +27479,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.7 · 已结算 未中">下注 平局 3.7 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -27855,11 +27778,8 @@
         <span class="alpha-chip a-watch" title="Alpha 因子：OBSERVE">Alpha 35</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.1 · 已结算 命中">下注 主胜 2.1 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥55</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.9 · 已结算 未中">下注 平局 3.9 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.1 · 已结算 命中">下注 主胜 2.1 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥110</span>
         
         
       </span>
@@ -27872,7 +27792,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -28054,11 +27974,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.93 · 已结算 未中">下注 客胜 2.93 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3 · 已结算 命中">下注 平局 3 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥100</span>
+        <span class="badge b-buy" title="下注赔率 3 · 已结算 命中">下注 平局 3 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥200</span>
         
         
       </span>
@@ -28386,7 +28303,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -28444,11 +28361,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.8 · 已结算 命中">下注 主胜 2.8 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥90</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.8 · 已结算 命中">下注 主胜 2.8 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥180</span>
         
         
       </span>
@@ -28461,7 +28375,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -28488,11 +28402,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.5 · 已结算 未中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥120</span>
+        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥240</span>
         
         
       </span>
@@ -28718,11 +28629,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -28953,11 +28861,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.38 · 已结算 命中">下注 主胜 2.38 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥69</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.5 · 已结算 未中">下注 平局 3.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.38 · 已结算 命中">下注 主胜 2.38 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥138</span>
         
         
       </span>
@@ -28970,7 +28875,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -29099,7 +29004,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -29193,11 +29098,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.5 · 已结算 未中">下注 平局 3.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -29237,11 +29139,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥57.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.15 · 已结算 命中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥115</span>
         
         
       </span>
@@ -29684,11 +29583,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.1 · 已结算 未中">下注 客胜 2.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.6 · 已结算 命中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥130</span>
+        <span class="badge b-idle" title="下注赔率 2.1 · 已结算 未中">下注 客胜 2.1 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -32760,11 +32656,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.3 · 已结算 未中">下注 客胜 2.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥120</span>
+        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥240</span>
         
         
       </span>
@@ -33052,11 +32945,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.3 · 已结算 未中">下注 客胜 2.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.5 · 已结算 命中">下注 平局 3.5 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥125</span>
+        <span class="badge b-buy" title="下注赔率 3.5 · 已结算 命中">下注 平局 3.5 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥250</span>
         
         
       </span>
@@ -33127,11 +33017,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥60</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥120</span>
         
         
       </span>
@@ -33579,11 +33466,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.19 · 已结算 命中">下注 客胜 2.19 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥59.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.38 · 已结算 未中">下注 平局 3.38 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.19 · 已结算 命中">下注 客胜 2.19 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥119</span>
         
         
       </span>
@@ -33916,7 +33800,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -36365,11 +36249,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥60</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥120</span>
         
         
       </span>
@@ -36750,11 +36631,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.21 · 已结算 未中">下注 客胜 2.21 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.41 · 已结算 命中">下注 平局 3.41 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥120.5</span>
+        <span class="badge b-idle" title="下注赔率 2.21 · 已结算 未中">下注 客胜 2.21 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -36923,11 +36801,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.5 · 已结算 命中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥75</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.3 · 已结算 未中">下注 平局 3.3 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -36972,11 +36847,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.5 · 已结算 命中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥75</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -37047,11 +36919,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-idle" title="下注赔率 2.3 · 已结算 未中">下注 客胜 2.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -37162,7 +37031,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -39063,11 +38932,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.7 · 已结算 未中">下注 客胜 2.7 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.1 · 已结算 命中">下注 平局 3.1 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥105</span>
+        <span class="badge b-buy" title="下注赔率 3.1 · 已结算 命中">下注 平局 3.1 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥210</span>
         
         
       </span>
@@ -39448,11 +39314,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.35 · 已结算 未中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.1 · 已结算 命中">下注 平局 3.1 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥105</span>
+        <span class="badge b-buy" title="下注赔率 3.1 · 已结算 命中">下注 平局 3.1 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥210</span>
         
         
       </span>
@@ -40179,11 +40042,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.15 · 已结算 未中">下注 客胜 2.15 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -41597,7 +41457,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -41653,11 +41513,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 10</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.1 · 已结算 命中">下注 客胜 2.1 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥55</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.7 · 已结算 未中">下注 平局 3.7 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.1 · 已结算 命中">下注 客胜 2.1 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥110</span>
         
         
       </span>
@@ -41728,11 +41585,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.6 · 已结算 命中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥130</span>
+        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -42153,7 +42007,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -42375,7 +42229,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -42872,11 +42726,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.35 · 已结算 命中">下注 客胜 2.35 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥67.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.6 · 已结算 未中">下注 平局 3.6 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -42925,7 +42776,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -43763,11 +43614,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.38 · 已结算 命中">下注 客胜 2.38 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥69</span>
-        
-        <span class="badge b-idle" title="下注赔率 2.88 · 已结算 未中">下注 平局 2.88 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.88 · 已结算 未中">下注 平局 2.88 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -44034,11 +43882,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.8 · 已结算 未中">下注 客胜 2.8 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 2.8 · 已结算 未中">下注 平局 2.8 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.8 · 已结算 未中">下注 平局 2.8 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -44397,7 +44242,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -44433,7 +44278,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -44469,7 +44314,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -44913,7 +44758,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -45095,11 +44940,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.5 · 已结算 未中">下注 客胜 2.5 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3 · 已结算 命中">下注 平局 3 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥100</span>
+        <span class="badge b-buy" title="下注赔率 3 · 已结算 命中">下注 平局 3 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥200</span>
         
         
       </span>
@@ -45924,11 +45766,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.25 · 已结算 未中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -46603,11 +46442,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.25 · 已结算 命中">下注 平局 3.25 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥112.5</span>
+        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -46745,11 +46581,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.45 · 已结算 命中">下注 客胜 2.45 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥72.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3 · 已结算 未中">下注 平局 3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3 · 已结算 未中">下注 平局 3 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -46949,11 +46782,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.4 · 已结算 未中">下注 客胜 2.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.7 · 已结算 命中">下注 平局 3.7 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥135</span>
+        <span class="badge b-buy" title="下注赔率 3.7 · 已结算 命中">下注 平局 3.7 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥270</span>
         
         
       </span>
@@ -47033,7 +46863,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -47069,7 +46899,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -48034,7 +47864,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -48154,11 +47984,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.55 · 已结算 命中">下注 客胜 2.55 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥77.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -48384,11 +48211,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥60</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.2 · 已结算 命中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥120</span>
         
         
       </span>
@@ -48561,7 +48385,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -48779,11 +48603,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.25 · 已结算 命中">下注 客胜 2.25 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥62.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.25 · 已结算 命中">下注 客胜 2.25 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥125</span>
         
         
       </span>
@@ -48854,11 +48675,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.75 · 已结算 命中">下注 平局 3.75 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥137.5</span>
+        <span class="badge b-idle" title="下注赔率 2.25 · 已结算 未中">下注 客胜 2.25 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -49569,11 +49387,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 主胜 3.4 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥120</span>
-        
-        <span class="badge b-idle" title="下注赔率 2.88 · 已结算 未中">下注 平局 2.88 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 3.4 · 已结算 命中">下注 主胜 3.4 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥240</span>
         
         
       </span>
@@ -49586,7 +49401,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -49658,7 +49473,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -50088,11 +49903,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.3 · 已结算 未中">下注 客胜 2.3 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 3.39 · 已结算 命中">下注 平局 3.39 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥119.5</span>
+        <span class="badge b-buy" title="下注赔率 3.39 · 已结算 命中">下注 平局 3.39 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥239</span>
         
         
       </span>
@@ -50385,11 +50197,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.2 · 已结算 未中">下注 平局 3.2 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.2 · 已结算 未中">下注 客胜 2.2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -50779,7 +50588,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -50935,11 +50744,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 2.45 · 已结算 未中">下注 客胜 2.45 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 2.88 · 已结算 命中">下注 平局 2.88 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥94</span>
+        <span class="badge b-buy" title="下注赔率 2.88 · 已结算 命中">下注 平局 2.88 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥188</span>
         
         
       </span>
@@ -51241,7 +51047,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -51308,7 +51114,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -51402,11 +51208,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.55 · 已结算 命中">下注 主胜 2.55 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥77.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 平局 3.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 2.55 · 已结算 命中">下注 主胜 2.55 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥155</span>
         
         
       </span>
@@ -51419,7 +51222,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘）</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘）</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -51544,11 +51347,8 @@
         
         
         
-        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 客胜 3.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
-        
-        <span class="badge b-buy" title="下注赔率 2.9 · 已结算 命中">下注 平局 2.9 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥95</span>
+        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 客胜 3.1 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -52418,7 +52218,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -52672,11 +52472,8 @@
         <span class="alpha-chip a-watch" title="Alpha 因子：OBSERVE">Alpha 30</span>
         
         
-        <span class="badge b-buy" title="下注赔率 5 · 已结算 命中">下注 客胜 5 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥200</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.1 · 已结算 未中">下注 平局 3.1 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-buy" title="下注赔率 5 · 已结算 命中">下注 客胜 5 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥400</span>
         
         
       </span>
@@ -52725,7 +52522,7 @@
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span>
+        <span class="font-semibold text-emerald-700">主队上盘·轻仓，防平</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
       </span>
       
       
@@ -53196,11 +52993,8 @@
         
         
         
-        <span class="badge b-buy" title="下注赔率 2.63 · 已结算 命中">下注 客胜 2.63 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥81.5</span>
-        
-        <span class="badge b-idle" title="下注赔率 2.9 · 已结算 未中">下注 平局 2.9 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 2.9 · 已结算 未中">下注 平局 2.9 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -53369,11 +53163,8 @@
         <span class="alpha-chip a-idle" title="Alpha 因子：WAIT">Alpha 20</span>
         
         
-        <span class="badge b-buy" title="下注赔率 2.7 · 已结算 命中">下注 客胜 2.7 × ¥50</span>
-        <span class="ev-pos text-sm font-mono">+¥85</span>
-        
-        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥50</span>
-        <span class="ev-neg text-sm font-mono">¥-50</span>
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
