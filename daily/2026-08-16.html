@@ -117,10 +117,10 @@
   <div class="rise-in rise-in-2 mt-6 rounded-2xl border border-emerald-100 bg-white/80 px-5 py-3.5 shadow-sm">
     <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
       <span class="text-xs font-black tracking-wide text-slate-700">当日操盘</span>
-      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">10</b> 注 · 投入 <b class="tnum text-slate-800">¥1000</b></span>
-      <span class="text-xs text-slate-500">已结算 <b class="tnum text-emerald-600">¥-100</b></span>
-      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">0/1</b></span>
-      <span class="text-xs text-slate-500">在途 <b class="tnum text-amber-600">9 注 · ¥900</b></span>
+      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">67</b> 注 · 投入 <b class="tnum text-slate-800">¥6700</b></span>
+      <span class="text-xs text-slate-500">已结算 <b class="tnum text-emerald-600">¥-200</b></span>
+      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">0/2</b></span>
+      <span class="text-xs text-slate-500">在途 <b class="tnum text-amber-600">65 注 · ¥6500</b></span>
     </div>
   </div>
 
@@ -129,7 +129,7 @@
     <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">828</span></button>
     <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">28</span></button>
     <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">208</span></button>
-    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">10</span></button>
+    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">67</span></button>
     <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
   </div>
 
@@ -1161,7 +1161,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card   has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -1174,6 +1174,11 @@
       <span class="text-[15px] font-bold text-slate-800">黄金海岸联合U23 <span class="text-xs font-normal text-slate-400">vs</span> 伊斯顿沙伯U23</span>
       <span class="tnum text-sm font-black text-slate-700">0:0</span>
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.98 · 已结算 未中">下注 主胜 1.98 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
         
         
       </span>
@@ -1359,7 +1364,7 @@
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">布里斯班骑士 <span class="text-xs font-normal text-slate-400">vs</span> 摩顿城精英后备队</span>
       
@@ -1394,7 +1399,7 @@
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">格兰 <span class="text-xs font-normal text-slate-400">vs</span> 卡伦德拉</span>
       
@@ -1429,7 +1434,7 @@
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">米切尔顿 <span class="text-xs font-normal text-slate-400">vs</span> 南国老鹰</span>
       
@@ -1440,7 +1445,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2/4.2/2.6</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.95/4.1/2.7</span>
       
       
       
@@ -1452,14 +1457,14 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig  ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">西南昆士兰达雷 <span class="text-xs font-normal text-slate-400">vs</span> 南部联合</span>
       
@@ -1470,9 +1475,14 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 平博 1.44/4.6/4.74</span>
+      <span class="font-mono text-slate-400">胜平负 · 平博 1.44/4.75/4.83</span>
       
       
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+      </span>
       
       
       
@@ -1489,7 +1499,7 @@
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">塔林加流浪 <span class="text-xs font-normal text-slate-400">vs</span> 圣佛德流浪</span>
       
@@ -1519,7 +1529,7 @@
         
         <span class="font-bold">澳昆甲2</span>
         <span class="font-mono">2026-08-16 13:45</span>
-        
+        <span class="badge b-live">进行中</span>
       </div>
       <span class="text-[15px] font-bold text-slate-800">佛吉尼亚联 <span class="text-xs font-normal text-slate-400">vs</span> 松山</span>
       
@@ -1625,7 +1635,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.9/4.1/1.9</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 3/4.33/1.8</span>
       
       
       
@@ -1897,7 +1907,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -1909,6 +1919,11 @@
       <span class="text-[15px] font-bold text-slate-800">FC贝卡 <span class="text-xs font-normal text-slate-400">vs</span> CSA布加勒斯特星</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.25 · 在途">下注 客胜 2.25 × ¥100</span>
+        
         
         
       </span>
@@ -2082,7 +2097,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -2096,12 +2111,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.15 · 在途 · 信号 弱势弃守（消逝升级）">下注 客胜 2.15 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.7/3.6/2.15</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -2384,11 +2404,6 @@
       
       
       
-      <span class="inline-flex items-center gap-1.5">
-        <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">博冷·客队赢 · 客不败</span>
-      </span>
-      
       
       
       
@@ -2397,7 +2412,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -2411,12 +2426,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.3 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.3 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.6/3.3/2.6</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -2457,7 +2477,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -2469,6 +2489,11 @@
       <span class="text-[15px] font-bold text-slate-800">查布拉迪斯拉华 <span class="text-xs font-normal text-slate-400">vs</span> 特伦辛II队</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.15 · 在途">下注 主胜 2.15 × ¥100</span>
+        
         
         
       </span>
@@ -3207,7 +3232,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3219,6 +3244,11 @@
       <span class="text-[15px] font-bold text-slate-800">拉杜尼亚河 <span class="text-xs font-normal text-slate-400">vs</span> 加泽戈尔茨</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.2 · 在途">下注 客胜 2.2 × ¥100</span>
+        
         
         
       </span>
@@ -3392,7 +3422,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3404,6 +3434,11 @@
       <span class="text-[15px] font-bold text-slate-800">朴迪莫伦斯 <span class="text-xs font-normal text-slate-400">vs</span> 维泽拉</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.2 · 在途">下注 客胜 2.2 × ¥100</span>
+        
         
         
       </span>
@@ -3462,7 +3497,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3474,6 +3509,11 @@
       <span class="text-[15px] font-bold text-slate-800">萨尼克 <span class="text-xs font-normal text-slate-400">vs</span> 格鲁达兹</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.1 · 在途">下注 主胜 2.1 × ¥100</span>
+        
         
         
       </span>
@@ -3692,7 +3732,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3704,6 +3744,11 @@
       <span class="text-[15px] font-bold text-slate-800">纳卡伊利里亚 <span class="text-xs font-normal text-slate-400">vs</span> 奥雷布洛西里安斯卡</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.4 · 在途">下注 主胜 2.4 × ¥100</span>
+        
         
         
       </span>
@@ -3882,7 +3927,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3894,6 +3939,11 @@
       <span class="text-[15px] font-bold text-slate-800">卢宾扎格勒比B队 <span class="text-xs font-normal text-slate-400">vs</span> 琴斯托霍瓦B队</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.67 · 在途">下注 主胜 1.67 × ¥100</span>
+        
         
         
       </span>
@@ -4327,7 +4377,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -4339,6 +4389,11 @@
       <span class="text-[15px] font-bold text-slate-800">蔚山HD <span class="text-xs font-normal text-slate-400">vs</span> 江原FC</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.38 · 在途">下注 主胜 2.38 × ¥100</span>
+        
         
         
       </span>
@@ -4717,7 +4772,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -4729,6 +4784,11 @@
       <span class="text-[15px] font-bold text-slate-800">弗洛 <span class="text-xs font-normal text-slate-400">vs</span> 拉纳</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.2 · 在途">下注 客胜 2.2 × ¥100</span>
+        
         
         
       </span>
@@ -5202,7 +5262,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5214,6 +5274,11 @@
       <span class="text-[15px] font-bold text-slate-800">阿纳巴庄那女足 <span class="text-xs font-normal text-slate-400">vs</span> 史达女足</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.8 · 在途">下注 客胜 2.8 × ¥100</span>
+        
         
         
       </span>
@@ -5602,7 +5667,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5614,6 +5679,11 @@
       <span class="text-[15px] font-bold text-slate-800">汉诺威96 <span class="text-xs font-normal text-slate-400">vs</span> 沃尔夫斯堡</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.45 · 在途">下注 主胜 2.45 × ¥100</span>
+        
         
         
       </span>
@@ -5757,7 +5827,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5769,6 +5839,11 @@
       <span class="text-[15px] font-bold text-slate-800">佛山南狮 <span class="text-xs font-normal text-slate-400">vs</span> 石家庄功夫</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 3 · 在途">下注 平局 3 × ¥100</span>
+        
         
         
       </span>
@@ -5827,7 +5902,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5839,6 +5914,11 @@
       <span class="text-[15px] font-bold text-slate-800">广东铭途 <span class="text-xs font-normal text-slate-400">vs</span> 武汉三镇B队</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.97 · 在途">下注 平局 2.97 × ¥100</span>
+        
         
         
       </span>
@@ -5987,7 +6067,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5999,6 +6079,11 @@
       <span class="text-[15px] font-bold text-slate-800">赣州瑞狮 <span class="text-xs font-normal text-slate-400">vs</span> 广州蒲公英</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.8 · 在途">下注 平局 2.8 × ¥100</span>
+        
         
         
       </span>
@@ -6082,7 +6167,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc has-sig  ">
+  <div class="match-card has-jc has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -6096,12 +6181,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.5 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.5 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.9/3.5/2.3</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -6572,7 +6662,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -6586,12 +6676,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.6 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.6 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.8/3.6/2.3</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -6872,7 +6967,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -6884,6 +6979,11 @@
       <span class="text-[15px] font-bold text-slate-800">菲提亚 <span class="text-xs font-normal text-slate-400">vs</span> 拉格斯维德</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.25 · 在途">下注 客胜 2.25 × ¥100</span>
+        
         
         
       </span>
@@ -7512,7 +7612,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -7526,12 +7626,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.05 · 在途 · 信号 弱势弃守（消逝升级）">下注 客胜 2.05 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 平博 2.58/4.01/2.05</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -7922,7 +8027,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -7934,6 +8039,11 @@
       <span class="text-[15px] font-bold text-slate-800">格兰库拉后备队 <span class="text-xs font-normal text-slate-400">vs</span> PPJ罗霍拉赫蒂</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.8 · 在途">下注 主胜 1.8 × ¥100</span>
+        
         
         
       </span>
@@ -8057,7 +8167,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc has-sig  ">
+  <div class="match-card has-jc has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -8071,12 +8181,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.7 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.7 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.63/3.7/2.45</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -8147,7 +8262,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -8159,6 +8274,11 @@
       <span class="text-[15px] font-bold text-slate-800">梅塔利斯特1925 <span class="text-xs font-normal text-slate-400">vs</span> 顿涅茨克矿工</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.53 · 在途">下注 客胜 1.53 × ¥100</span>
+        
         
         
       </span>
@@ -8332,7 +8452,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -8344,6 +8464,11 @@
       <span class="text-[15px] font-bold text-slate-800">UNA <span class="text-xs font-normal text-slate-400">vs</span> 伯克尔</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.38 · 在途">下注 主胜 2.38 × ¥100</span>
+        
         
         
       </span>
@@ -8432,7 +8557,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -8446,12 +8571,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.45/3.1/2.55</span>
-      
+      <span class="font-mono text-slate-400">胜平负 · 365 2.45/3/2.63</span>
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -8557,7 +8687,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -8571,12 +8701,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.8 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.8 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.4/3.8/2.3</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -8992,7 +9127,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card    ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -9013,11 +9148,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 3.7/3.9/1.7</span>
       
       
-      
-      <span class="inline-flex items-center gap-1.5">
-        <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">顺势防守，客队不败 · 客不败</span>
-      </span>
       
       
       
@@ -9222,7 +9352,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -9234,6 +9364,11 @@
       <span class="text-[15px] font-bold text-slate-800">卡斯比阿克套 <span class="text-xs font-normal text-slate-400">vs</span> 叶利迈塞米</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.95 · 在途">下注 客胜 1.95 × ¥100</span>
+        
         
         
       </span>
@@ -9257,7 +9392,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -9269,6 +9404,11 @@
       <span class="text-[15px] font-bold text-slate-800">圣帕特里克 <span class="text-xs font-normal text-slate-400">vs</span> 沙姆洛克流浪</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.25 · 在途">下注 主胜 2.25 × ¥100</span>
+        
         
         
       </span>
@@ -9357,7 +9497,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -9371,12 +9511,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.4 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.4 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.55/3.4/2.3</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -10987,7 +11132,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -10999,6 +11144,11 @@
       <span class="text-[15px] font-bold text-slate-800">孔特罗尔奥连塔多 <span class="text-xs font-normal text-slate-400">vs</span> 布宜诺斯艾利斯</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.88 · 在途">下注 平局 2.88 × ¥100</span>
+        
         
         
       </span>
@@ -11022,7 +11172,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -11036,12 +11186,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.1 · 在途 · 信号 弱势弃守（消逝升级）">下注 客胜 2.1 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.7/3.75/2.1</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -11492,7 +11647,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -11506,12 +11661,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.4 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.4 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.45/3.4/2.38</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -11707,7 +11867,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -11719,6 +11879,11 @@
       <span class="text-[15px] font-bold text-slate-800">利恩比 <span class="text-xs font-normal text-slate-400">vs</span> 中日德兰</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 4.1 · 在途">下注 主胜 4.1 × ¥100</span>
+        
         
         
       </span>
@@ -11742,7 +11907,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -11754,6 +11919,11 @@
       <span class="text-[15px] font-bold text-slate-800">胡尼克拉科夫 <span class="text-xs font-normal text-slate-400">vs</span> 历基亚B队</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 3.4 · 在途">下注 平局 3.4 × ¥100</span>
+        
         
         
       </span>
@@ -13007,7 +13177,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc has-sig  ">
+  <div class="match-card has-jc has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -13019,6 +13189,11 @@
       <span class="text-[15px] font-bold text-slate-800">葡萄牙国民 <span class="text-xs font-normal text-slate-400">vs</span> 埃斯托里尔</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 3.3 · 在途">下注 平局 3.3 × ¥100</span>
+        
         
         
       </span>
@@ -13132,7 +13307,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -13144,6 +13319,11 @@
       <span class="text-[15px] font-bold text-slate-800">雷克斯欧斯 <span class="text-xs font-normal text-slate-400">vs</span> 通德拉</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.38 · 在途">下注 主胜 2.38 × ¥100</span>
+        
         
         
       </span>
@@ -13167,7 +13347,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -13181,12 +13361,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.71 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.71 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 平博 2.73/3.71/2.41</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -13427,7 +13612,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -13439,6 +13624,11 @@
       <span class="text-[15px] font-bold text-slate-800">哈纳卡B队 <span class="text-xs font-normal text-slate-400">vs</span> 布雷拉夫</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.25 · 在途">下注 客胜 2.25 × ¥100</span>
+        
         
         
       </span>
@@ -13912,7 +14102,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -13926,12 +14116,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.41 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3.41 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 平博 2.95/3.41/2.5</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -14007,7 +14202,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc has-sig  ">
+  <div class="match-card has-jc has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -14019,6 +14214,11 @@
       <span class="text-[15px] font-bold text-slate-800">莫尔德 <span class="text-xs font-normal text-slate-400">vs</span> 特罗姆瑟</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.1 · 在途">下注 主胜 2.1 × ¥100</span>
+        
         
         
       </span>
@@ -14447,7 +14647,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -14459,6 +14659,11 @@
       <span class="text-[15px] font-bold text-slate-800">本纳特凯 <span class="text-xs font-normal text-slate-400">vs</span> 贺拉戴克B队</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.1 · 在途">下注 主胜 2.1 × ¥100</span>
+        
         
         
       </span>
@@ -16212,7 +16417,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -16224,6 +16429,11 @@
       <span class="text-[15px] font-bold text-slate-800">TS银河 <span class="text-xs font-normal text-slate-400">vs</span> 金箭</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.81 · 在途">下注 平局 2.81 × ¥100</span>
+        
         
         
       </span>
@@ -16647,7 +16857,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -16659,6 +16869,11 @@
       <span class="text-[15px] font-bold text-slate-800">伊斯坦布尔巴萨克塞尔 <span class="text-xs font-normal text-slate-400">vs</span> 高卡尔利</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.53 · 在途">下注 主胜 1.53 × ¥100</span>
+        
         
         
       </span>
@@ -18012,7 +18227,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -18026,12 +18241,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.15 · 在途 · 信号 升盘提纯（消逝升级）">下注 主胜 2.15 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.15/3.5/2.88</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-sr">SR</span><span class="font-semibold text-emerald-700">买入主队（上盘） · 主不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -18327,7 +18547,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -18339,6 +18559,11 @@
       <span class="text-[15px] font-bold text-slate-800">梅赫伦 <span class="text-xs font-normal text-slate-400">vs</span> 标准列日</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 3.3 · 在途">下注 平局 3.3 × ¥100</span>
+        
         
         
       </span>
@@ -18427,7 +18652,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -18439,6 +18664,11 @@
       <span class="text-[15px] font-bold text-slate-800">卡尔达斯 <span class="text-xs font-normal text-slate-400">vs</span> 卢西塔诺艾芙拉</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 3.1 · 在途">下注 平局 3.1 × ¥100</span>
+        
         
         
       </span>
@@ -18807,7 +19037,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -18819,6 +19049,11 @@
       <span class="text-[15px] font-bold text-slate-800">维也纳快速 <span class="text-xs font-normal text-slate-400">vs</span> 格拉茨AK</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.7 · 在途">下注 主胜 1.7 × ¥100</span>
+        
         
         
       </span>
@@ -19631,7 +19866,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -19643,6 +19878,11 @@
       <span class="text-[15px] font-bold text-slate-800">洛默尔 <span class="text-xs font-normal text-slate-400">vs</span> 沙勒罗瓦</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.25 · 在途">下注 客胜 2.25 × ¥100</span>
+        
         
         
       </span>
@@ -20150,7 +20390,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -20162,6 +20402,11 @@
       <span class="text-[15px] font-bold text-slate-800">防卫者体育 <span class="text-xs font-normal text-slate-400">vs</span> 利物浦蒙特维多</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.69 · 在途">下注 主胜 2.69 × ¥100</span>
+        
         
         
       </span>
@@ -20490,7 +20735,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -20502,6 +20747,11 @@
       <span class="text-[15px] font-bold text-slate-800">麦加统一 <span class="text-xs font-normal text-slate-400">vs</span> 利雅得青年人</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.65 · 在途">下注 客胜 1.65 × ¥100</span>
+        
         
         
       </span>
@@ -20555,7 +20805,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -20569,12 +20819,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.88/3/2.3</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -21747,7 +22002,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -21759,6 +22014,11 @@
       <span class="text-[15px] font-bold text-slate-800">胡内多阿拉 <span class="text-xs font-normal text-slate-400">vs</span> 克卢日</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.57 · 在途">下注 主胜 2.57 × ¥100</span>
+        
         
         
       </span>
@@ -21817,7 +22077,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -21831,12 +22091,17 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3 · 在途 · 信号 弱势弃守（消逝升级）">下注 平局 3 × ¥100</span>
+        
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.8/3/2.38</span>
-      
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-ssr">SSR</span><span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
       
       
       
@@ -21907,7 +22172,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -21919,6 +22184,11 @@
       <span class="text-[15px] font-bold text-slate-800">康赛普森吉姆纳西亚 <span class="text-xs font-normal text-slate-400">vs</span> 维莱拉斯港</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.53 · 在途">下注 主胜 1.53 × ¥100</span>
+        
         
         
       </span>
@@ -22247,7 +22517,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -22259,6 +22529,11 @@
       <span class="text-[15px] font-bold text-slate-800">科布雷索 <span class="text-xs font-normal text-slate-400">vs</span> 康塞普西翁</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 2.53 · 在途">下注 主胜 2.53 × ¥100</span>
+        
         
         
       </span>
@@ -22682,7 +22957,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -22694,6 +22969,11 @@
       <span class="text-[15px] font-bold text-slate-800">卢捷诺体育会 <span class="text-xs font-normal text-slate-400">vs</span> 亚松森自由</span>
       
       <span class="ml-auto flex items-center gap-2">
+        
+        
+        
+        <span class="badge b-idle" title="下注赔率 1.95 · 在途">下注 客胜 1.95 × ¥100</span>
+        
         
         
       </span>

@@ -96,7 +96,7 @@
       <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-06 · 每日信号</h1>
       <div class="flex flex-wrap items-center gap-2">
         <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">共 235 场</span>
-        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">买入 10 场 · 4%</span>
+        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">买入 23 场 · 10%</span>
       </div>
     </div>
     <p class="mt-3 text-xs text-slate-400">欧赔（VETO/弃守/客队弃守）+ 亚盘（狙击/升盘）+ 大小球（温床）三通道封板 · 裁判层合成买入方案</p>
@@ -117,9 +117,9 @@
   <div class="rise-in rise-in-2 mt-6 rounded-2xl border border-emerald-100 bg-white/80 px-5 py-3.5 shadow-sm">
     <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
       <span class="text-xs font-black tracking-wide text-slate-700">当日操盘</span>
-      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">10</b> 注 · 投入 <b class="tnum text-slate-800">¥1000</b></span>
-      <span class="text-xs text-slate-500">已结算 <b class="tnum text-red-600">+¥345</b></span>
-      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">5/10</b></span>
+      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">23</b> 注 · 投入 <b class="tnum text-slate-800">¥2300</b></span>
+      <span class="text-xs text-slate-500">已结算 <b class="tnum text-red-600">+¥221</b></span>
+      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">11/23</b></span>
       
     </div>
   </div>
@@ -128,8 +128,8 @@
   <div class="rise-in rise-in-2 mt-6 mb-4 flex items-center gap-2">
     <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">235</span></button>
     <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">5</span></button>
-    <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">10</span></button>
-    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">10</span></button>
+    <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">23</span></button>
+    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">23</span></button>
     <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
   </div>
 
@@ -2354,7 +2354,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -2369,11 +2369,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.8 · 已结算 未中">下注 主胜 2.8 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.9/3/2.35</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">ah</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -2961,7 +2977,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -2976,11 +2992,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 1.7 · 已结算 命中">下注 客胜 1.7 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥70</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 4.5/3.5/1.7</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -3036,7 +3068,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3051,6 +3083,11 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 1.53 · 已结算 命中">下注 客胜 1.53 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥53</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
@@ -3058,10 +3095,21 @@
       <span class="font-mono text-slate-400">胜平负 · 365 5/3.75/1.57</span>
       
       
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
+      </span>
+      
+      
+      
+      
+      
+      
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3076,11 +3124,32 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 1.73 · 已结算 命中">下注 主胜 1.73 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥73</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.73/4/3.75</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">ah</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+      </span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
       
       
     </div>
@@ -3502,7 +3571,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3517,11 +3586,22 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 3.5 · 已结算 命中 · 信号 升盘提纯（消逝升级）">下注 平局 3.5 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥250</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.5/3.5/2.4</span>
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-sr">SR</span><span class="font-semibold text-emerald-700">买入主队（上盘） · 主不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
+      
+      
+      
+      
+      
       
       
     </div>
@@ -3677,7 +3757,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3692,11 +3772,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2 · 已结算 未中">下注 客胜 2 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 3/3.5/2</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -3902,7 +3998,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
+  <div class="match-card has-jc has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3917,11 +4013,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 1.55 · 已结算 未中">下注 主胜 1.55 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.57/3.8/5.5</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -4152,7 +4264,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -4167,11 +4279,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 3.4 · 已结算 未中 · 信号 升盘提纯（消逝升级）">下注 平局 3.4 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.25/3.4/2.7</span>
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-sr">SR</span><span class="font-semibold text-emerald-700">买入主队（上盘） · 主不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -4902,7 +5030,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -4917,6 +5045,11 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 1.95 · 已结算 未中">下注 主胜 1.95 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
@@ -4924,10 +5057,26 @@
       <span class="font-mono text-slate-400">胜平负 · 365 1.91/3.9/3.3</span>
       
       
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">ah</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+      </span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
+      
+      
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -4942,11 +5091,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 1.75 · 已结算 命中">下注 主胜 1.75 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥75</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.67/3.6/5</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -5743,7 +5908,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5758,11 +5923,22 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 2.6 · 已结算 未中 · 信号 升盘提纯（消逝升级）">下注 主胜 2.6 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.6/3.5/2.5</span>
+      <span class="inline-flex items-center gap-1.5" title="信号曾出现（REFER_UPGRADE），临场状态"><span class="rk rk-sr">SR</span><span class="font-semibold text-emerald-700">买入主队（上盘） · 主不败</span><span class="text-[11px] text-slate-400">⏳消逝</span></span>
+      
+      
+      
+      
+      
       
       
     </div>
@@ -5868,7 +6044,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -5883,11 +6059,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-buy" title="下注赔率 1.55 · 已结算 命中">下注 主胜 1.55 × ¥100</span>
+        <span class="ev-pos text-sm font-mono">+¥55</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.55/4.33/5.25</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
@@ -6043,7 +6235,7 @@
     </div>
   </div>
   
-  <div class="match-card    ">
+  <div class="match-card  has-sig has-bet ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -6058,11 +6250,27 @@
       <span class="ml-auto flex items-center gap-2">
         
         
+        
+        <span class="badge b-idle" title="下注赔率 1.6 · 已结算 未中">下注 主胜 1.6 × ¥100</span>
+        <span class="ev-neg text-sm font-mono">¥-100</span>
+        
+        
       </span>
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.6/3.9/5.25</span>
+      
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
+      </span>
+      
+      
+      
+      
       
       
     </div>
