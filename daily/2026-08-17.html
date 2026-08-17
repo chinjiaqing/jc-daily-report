@@ -113,29 +113,17 @@
     </div>
   </div>
 
-  <!-- 当日操盘总览（2026-08-15） -->
-  <div class="rise-in rise-in-2 mt-6 rounded-2xl border border-emerald-100 bg-white/80 px-5 py-3.5 shadow-sm">
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-      <span class="text-xs font-black tracking-wide text-slate-700">当日操盘</span>
-      <span class="text-xs text-slate-500">下注 <b class="tnum text-slate-800">1</b> 注 · 投入 <b class="tnum text-slate-800">¥100</b></span>
-      <span class="text-xs text-slate-500">已结算 <b class="tnum text-slate-800">+¥0</b></span>
-      <span class="text-xs text-slate-500">命中 <b class="tnum text-slate-800">0/0</b></span>
-      <span class="text-xs text-slate-500">在途 <b class="tnum text-amber-600">1 注 · ¥100</b></span>
-    </div>
-  </div>
-
   <!-- 筛选 Tab：全部 / 竞彩 / 有信号（2026-08-15） -->
   <div class="rise-in rise-in-2 mt-6 mb-4 flex items-center gap-2">
     <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">53</span></button>
     <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">6</span></button>
     <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">17</span></button>
-    <button type="button" data-filter="bet" class="filter-tab rounded-full border border-red-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-red-500 hover:text-red-700">已下注 <span class="tnum text-slate-400">1</span></button>
     <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
   </div>
 
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -156,7 +144,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 3.9/3.8/1.9</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span>
@@ -170,23 +157,19 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig has-bet ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
         <span class="font-bold">墨西联</span>
         <span class="font-mono">2026-08-17 11:00</span>
-        <span class="badge b-live">进行中</span>
+        <span class="badge b-done">完场</span>
+        
       </div>
       <span class="text-[15px] font-bold text-slate-800">蒂华纳 <span class="text-xs font-normal text-slate-400">vs</span> 蓝十字</span>
-      
+      <span class="tnum text-sm font-black text-slate-700">2:1</span>
       <span class="ml-auto flex items-center gap-2">
-        
-        
-        
-        <span class="badge b-idle" title="下注赔率 2.88 · 在途">下注 主胜 2.88 × ¥100</span>
-        
         
         
       </span>
@@ -196,10 +179,9 @@
       <span class="font-mono text-slate-400">胜平负 · 365 2.88/3.25/2.45</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span>
       </span>
       
       
@@ -210,8 +192,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -236,12 +218,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -266,12 +247,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -296,12 +276,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -326,12 +305,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -356,12 +334,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一001</span>
@@ -386,12 +363,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -411,7 +387,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 1.48/3.8/5.5</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
@@ -425,8 +400,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -446,7 +421,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 15/8.5/1.14</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
@@ -460,8 +434,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -481,7 +455,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 6/4.2/1.5</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">防范，客队不败 · 客不败</span>
@@ -495,8 +468,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -521,12 +494,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -546,10 +518,9 @@
       <span class="font-mono text-slate-400">胜平负 · 平博 1.86/3.5/4.46</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span>
       </span>
       
       
@@ -565,8 +536,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -591,12 +562,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -616,7 +586,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 15/7.5/1.13</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
@@ -630,8 +599,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -651,7 +620,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 26/9.5/1.07</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
@@ -665,8 +633,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -691,12 +659,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -721,12 +688,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -751,12 +717,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一002</span>
@@ -781,12 +746,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -806,10 +770,9 @@
       <span class="font-mono text-slate-400">胜平负 · 平博 2.35/3.13/3.24</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span>
       </span>
       
       
@@ -820,8 +783,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -841,7 +804,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 1.42/4.5/7.5</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯主胜（客队弃守·单选） · 主胜</span>
@@ -855,8 +817,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -876,7 +838,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 3/2.88/2.7</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">平局，博胆 · 平局倾向</span>
@@ -890,8 +851,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -916,12 +877,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -946,12 +906,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -976,12 +935,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1006,12 +964,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1036,12 +993,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1061,7 +1017,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 2.8/3.25/2.5</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">平局，博胆 · 平局倾向</span>
@@ -1075,8 +1030,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1101,12 +1056,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1126,10 +1080,9 @@
       <span class="font-mono text-slate-400">胜平负 · 平博 2.31/2.76/3.83</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span>
       </span>
       
       
@@ -1140,8 +1093,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1161,7 +1114,6 @@
       <span class="font-mono text-slate-400">胜平负 · 365 19/9/1.09</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
         <span class="font-semibold text-emerald-700">【顺势】纯客胜（机构护盘·单选） · 客胜</span>
@@ -1175,8 +1127,8 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1201,12 +1153,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1226,10 +1177,9 @@
       <span class="font-mono text-slate-400">胜平负 · 365 1.73/3.6/4.75</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">ah</span>
-        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">买入主队（上盘） · 上盘</span>
       </span>
       
       
@@ -1240,8 +1190,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1266,12 +1216,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1291,10 +1240,9 @@
       <span class="font-mono text-slate-400">胜平负 · 365 1.53/3.8/5.5</span>
       
       
-      
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span><span class="text-[11px] font-normal text-slate-400">推荐：主胜</span>
+        <span class="font-semibold text-emerald-700">顺势，主队不败 · 主不败</span>
       </span>
       
       
@@ -1305,8 +1253,8 @@
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1331,12 +1279,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card  has-sig  ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card  has-sig ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1361,12 +1308,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一004</span>
@@ -1391,12 +1337,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一003</span>
@@ -1421,12 +1366,11 @@
       
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一005</span>
@@ -1445,12 +1389,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1469,12 +1412,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1493,12 +1435,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1517,12 +1458,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1541,12 +1481,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1565,12 +1504,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1589,12 +1527,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card has-jc   ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card has-jc  ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         <span class="rounded bg-amber-100 px-1.5 py-0.5 font-bold text-amber-700">周一006</span>
@@ -1613,12 +1550,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1637,12 +1573,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1661,12 +1596,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1685,12 +1619,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1709,12 +1642,11 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
-  <div class="match-card    ">
-    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章/下注标记） -->
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
         
@@ -1733,7 +1665,6 @@
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
-      
     </div>
   </div>
   
@@ -1747,11 +1678,11 @@
     function apply(f) {
       var show = 0;
       cards.forEach(function (c) {
-        var ok = f === "all" || (f === "jc" && c.classList.contains("has-jc")) || (f === "sig" && c.classList.contains("has-sig")) || (f === "bet" && c.classList.contains("has-bet"));
+        var ok = f === "all" || (f === "jc" && c.classList.contains("has-jc")) || (f === "sig" && c.classList.contains("has-sig"));
         c.style.display = ok ? "" : "none";
         if (ok) show++;
       });
-      if (note) note.textContent = f === "all" ? "全部 " + show + " 场" : f === "jc" ? "竞彩 " + show + " 场" : f === "sig" ? "有信号 " + show + " 场" : "已下注 " + show + " 场";
+      if (note) note.textContent = f === "all" ? "全部 " + show + " 场" : f === "jc" ? "竞彩 " + show + " 场" : "有信号 " + show + " 场";
     }
     tabs.forEach(function (t) {
       t.addEventListener("click", function () {

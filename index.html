@@ -77,7 +77,7 @@
   <div class="mx-auto max-w-7xl">
     <p class="rise-in mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold tracking-[0.25em] text-emerald-700 shadow-sm"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>QUANT SIGNALS</p>
     <h1 class="rise-in rise-in-1 text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl"><span class="text-slate-800">足彩红绿灯</span><br /><span class="text-gradient">抛开情绪，只看信号。</span></h1>
-    <p class="rise-in rise-in-2 mt-5 max-w-2xl text-sm leading-relaxed text-slate-500 md:text-base">三通道盘口异动交叉验证，低赔不出手，信号不明不进；赛前自动执行，赛后自动结算。</p>
+    <p class="rise-in rise-in-2 mt-5 max-w-2xl text-sm leading-relaxed text-slate-500 md:text-base">三通道盘口异动交叉验证，低赔不出手，信号不明不进；只做信号甄别，不碰情绪。</p>
   </div>
 </section>
 
@@ -100,136 +100,6 @@
         <div class="tnum text-4xl font-black text-gradient">17%</div>
         <div class="panel-head mt-2">总占比</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 操盘面板（2026-08-15：下注/仓位/营收） -->
-<section class="relative scroll-mt-24 px-6 py-6">
-  <div class="mx-auto max-w-7xl">
-    <div class="panel rounded-2xl p-6">
-      <div class="panel-head mb-4">操盘面板 · 本金 ¥10,000（模拟盘， 无风控版）</div>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
-        <div class="text-center">
-          <div class="tnum text-3xl font-black text-slate-800">245</div>
-          <div class="mt-1 text-[11px] font-bold text-slate-400">总下注</div>
-        </div>
-        <div class="text-center">
-          <div class="tnum text-3xl font-black text-slate-800">¥24,500</div>
-          <div class="mt-1 text-[11px] font-bold text-slate-400">总下注金额</div>
-        </div>
-        <div class="text-center">
-          <div class="tnum text-3xl font-black text-amber-600">1 注 · ¥100</div>
-          <div class="mt-1 text-[11px] font-bold text-slate-400">当前仓位（在途）</div>
-        </div>
-        <div class="text-center">
-          <div class="tnum text-3xl font-black text-red-600">+¥1,746</div>
-          <div class="mt-1 text-[11px] font-bold text-slate-400">当前营收（已结算）</div>
-        </div>
-        <div class="text-center">
-          <div class="tnum text-3xl font-black text-red-600">7.1%</div>
-          <div class="mt-1 text-[11px] font-bold text-slate-400">收益率（按总投入）</div>
-        </div>
-      </div>
-      <div class="mt-3 text-[11px] text-slate-400">命中 119/245 · 规则：按信号 BUY · 低赔过滤(单选≥1.5/双选≥1.3) · 固定+Alpha仓位 · 忽略大小球 · 赛前15min自动下注</div>
-    </div>
-  </div>
-</section>
-
-<!-- 信号统计模块（2026-08-16：按下注信号分别列出，alpha100 口径持续累计） -->
-<section class="relative scroll-mt-24 px-6 py-6">
-  <div class="mx-auto max-w-7xl">
-    <div class="panel rounded-2xl p-6">
-      <div class="flex items-center gap-3">
-        <div class="panel-head">信号统计 · 按下注信号分别列出</div>
-        <span class="text-[11px] text-slate-400">样本持续累计中</span>
-      </div>
-      <div class="mt-4 overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b border-slate-100 text-left text-[11px] font-bold tracking-wide text-slate-400">
-              <th class="py-2 pr-4">信号</th>
-              <th class="py-2 pr-4">信号数</th>
-              <th class="py-2 pr-4">下注数</th>
-              <th class="py-2 pr-4">下注金额</th>
-              <th class="py-2 pr-4">在途</th>
-              <th class="py-2 pr-4">命中率</th>
-              <th class="py-2 pr-4">营收金额</th>
-              <th class="py-2 pr-4">收益率</th>
-            </tr>
-          </thead>
-          <tbody>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">弱势弃守<span class="ml-1.5 text-[10px] font-semibold text-slate-400">SSS_GLOBAL_DRIFT</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">173</td>
-              <td class="tnum py-2 pr-4 text-slate-600">114</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥11,400</td>
-              <td class="tnum py-2 pr-4 text-slate-600">—</td>
-              <td class="tnum py-2 pr-4 text-slate-600">48.2%</td>
-              <td class="tnum py-2 pr-4 font-bold text-red-600">+¥1,705</td>
-              <td class="tnum py-2 pr-4 font-bold text-red-600">15%</td>
-            </tr>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">客队弃守<span class="ml-1.5 text-[10px] font-semibold text-slate-400">SSS_HOME_DRIFT</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">178</td>
-              <td class="tnum py-2 pr-4 text-slate-600">92</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥9,200</td>
-              <td class="tnum py-2 pr-4 text-slate-600">—</td>
-              <td class="tnum py-2 pr-4 text-slate-600">57.6%</td>
-              <td class="tnum py-2 pr-4 font-bold text-red-600">+¥1,463</td>
-              <td class="tnum py-2 pr-4 font-bold text-red-600">15.9%</td>
-            </tr>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">定盘星背离<span class="ml-1.5 text-[10px] font-semibold text-slate-400">SSS_VETO</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">18</td>
-              <td class="tnum py-2 pr-4 text-slate-600">16</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥1,600</td>
-              <td class="tnum py-2 pr-4 text-slate-600">—</td>
-              <td class="tnum py-2 pr-4 text-slate-600">43.8%</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">¥-127</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">-7.9%</td>
-            </tr>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">职业偷跑<span class="ml-1.5 text-[10px] font-semibold text-slate-400">SSR_S16_PIVOT</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">19</td>
-              <td class="tnum py-2 pr-4 text-slate-600">13</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥1,300</td>
-              <td class="tnum py-2 pr-4 text-slate-600">1 / ¥100</td>
-              <td class="tnum py-2 pr-4 text-slate-600">16.7%</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">¥-745</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">-57.3%</td>
-            </tr>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">升盘提纯<span class="ml-1.5 text-[10px] font-semibold text-slate-400">SR_S1_PURGE</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">11</td>
-              <td class="tnum py-2 pr-4 text-slate-600">6</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥600</td>
-              <td class="tnum py-2 pr-4 text-slate-600">—</td>
-              <td class="tnum py-2 pr-4 text-slate-600">16.7%</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">¥-355</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">-59.2%</td>
-            </tr>
-          
-            <tr class="border-b border-slate-50">
-              <td class="py-2 pr-4 font-bold text-slate-700">无信号<span class="ml-1.5 text-[10px] font-semibold text-slate-400">?</span></td>
-              <td class="tnum py-2 pr-4 text-slate-600">0</td>
-              <td class="tnum py-2 pr-4 text-slate-600">4</td>
-              <td class="tnum py-2 pr-4 text-slate-600">¥400</td>
-              <td class="tnum py-2 pr-4 text-slate-600">—</td>
-              <td class="tnum py-2 pr-4 text-slate-600">25%</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">¥-195</td>
-              <td class="tnum py-2 pr-4 font-bold text-emerald-600">-48.7%</td>
-            </tr>
-          
-          </tbody>
-        </table>
-      </div>
-      <div class="mt-3 text-[11px] text-slate-400">信号 = 裁判 BUY 场数 · 在途 = 未结算注（不计入命中率/营收）· 命中率 = 命中 / 已结算 · 收益率 = 营收 / 下注金额 · alpha100 口径，样本持续累计</div>
     </div>
   </div>
 </section>
