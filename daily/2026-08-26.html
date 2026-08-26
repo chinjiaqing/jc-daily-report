@@ -95,8 +95,8 @@
     <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
       <h1 class="text-3xl font-black tracking-tight text-slate-800 md:text-4xl">2026-08-26 · 每日信号</h1>
       <div class="flex flex-wrap items-center gap-2">
-        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">共 173 场</span>
-        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">买入 37 场 · 21%</span>
+        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-600">共 184 场</span>
+        <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">买入 37 场 · 20%</span>
       </div>
     </div>
     <p class="mt-3 text-xs text-slate-400">欧赔（VETO/弃守/客队弃守）+ 亚盘（狙击/升盘）+ 大小球（温床）三通道封板 · 裁判层合成买入方案</p>
@@ -115,12 +115,58 @@
 
   <!-- 筛选 Tab：全部 / 竞彩 / 有信号（2026-08-15） -->
   <div class="rise-in rise-in-2 mt-6 mb-4 flex items-center gap-2">
-    <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">173</span></button>
+    <button type="button" data-filter="all" class="filter-tab is-active rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">全部 <span class="tnum text-slate-400">184</span></button>
     <button type="button" data-filter="jc" class="filter-tab rounded-full border border-amber-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-400 hover:text-amber-700">竞彩 <span class="tnum text-slate-400">12</span></button>
     <button type="button" data-filter="sig" class="filter-tab rounded-full border border-amber-300 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 transition hover:border-amber-500 hover:text-amber-700">有信号 <span class="tnum text-slate-400">37</span></button>
     <span class="ml-auto text-[11px] text-slate-400" id="filter-note"></span>
   </div>
 
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">球会友谊</span>
+        <span class="font-mono">2026-08-26 16:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">婆罗洲FC <span class="text-xs font-normal text-slate-400">vs</span> 马都拉联</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">国际友谊</span>
+        <span class="font-mono">2026-08-26 17:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">意大利女足U20 <span class="text-xs font-normal text-slate-400">vs</span> 葡萄牙女足U20</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
   
   <div class="match-card   ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
@@ -168,7 +214,7 @@
     </div>
   </div>
   
-  <div class="match-card   ">
+  <div class="match-card  has-sig ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -187,6 +233,15 @@
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.22/5.25/9.5</span>
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">客队弃守镜像 · 主不败 · 主不败</span>
+        
+        
+      </span>
+      
       
     </div>
   </div>
@@ -310,7 +365,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.05/3.6/3.3</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.1/3.6/3.2</span>
       
     </div>
   </div>
@@ -434,7 +489,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.2/3.1/3.1</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.1/3.1/3.25</span>
       
     </div>
   </div>
@@ -457,12 +512,12 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.7/3.7/4</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.67/3.75/4.1</span>
       
     </div>
   </div>
   
-  <div class="match-card   ">
+  <div class="match-card  has-sig ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -480,12 +535,12 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.5/2.9/2.7</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.6/2.9/2.6</span>
       
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">准冷门震荡 · 客不败 · 客不败</span>
+        <span class="font-semibold text-emerald-700">弱势方弃守 · 客不败 · 客不败</span>
         
         
       </span>
@@ -967,7 +1022,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 平博 2.34/3.65/3.01</span>
+      <span class="font-mono text-slate-400">胜平负 · 平博 2.33/3.65/3.02</span>
       
     </div>
   </div>
@@ -990,7 +1045,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.48/4.1/6</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.48/4.1/6.25</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -1165,7 +1220,7 @@
     </div>
   </div>
   
-  <div class="match-card   ">
+  <div class="match-card  has-sig ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -1184,6 +1239,15 @@
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 1.01/29/41</span>
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">客队弃守镜像 · 主不败 · 主不败</span>
+        
+        
+      </span>
+      
       
     </div>
   </div>
@@ -1206,7 +1270,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 4.33/4.5/1.53</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 3.75/4.2/1.65</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -1348,7 +1412,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 7/4.2/1.33</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 7/4.33/1.33</span>
       
     </div>
   </div>
@@ -1624,7 +1688,7 @@
     </div>
   </div>
   
-  <div class="match-card   ">
+  <div class="match-card  has-sig ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -1642,7 +1706,16 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 11/7.5/1.17</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 11/8/1.17</span>
+      
+      
+      <span class="inline-flex items-center gap-1.5">
+        <span class="rk rk-ssr">eu</span>
+        <span class="font-semibold text-emerald-700">弱势方弃守 · 客不败 · 客不败</span>
+        
+        
+      </span>
+      
       
     </div>
   </div>
@@ -1688,16 +1761,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 17/10/1.09</span>
-      
-      
-      <span class="inline-flex items-center gap-1.5">
-        <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">弱势方弃守 · 客不败 · 客不败</span>
-        
-        
-      </span>
-      
+      <span class="font-mono text-slate-400">胜平负 · 365 13/9.5/1.13</span>
       
     </div>
   </div>
@@ -1868,6 +1932,52 @@
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 0/0/0</span>
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">斯尼杯</span>
+        <span class="font-mono">2026-08-26 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">斯科夫贾 <span class="text-xs font-normal text-slate-400">vs</span> 森卡尔</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">斯尼杯</span>
+        <span class="font-mono">2026-08-26 23:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">英特布罗格 <span class="text-xs font-normal text-slate-400">vs</span> 利蒂亚</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
       
     </div>
   </div>
@@ -2423,7 +2533,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 5.5/4/1.45</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 7/4.33/1.41</span>
       
     </div>
   </div>
@@ -2492,7 +2602,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 平博 2.5/3.47/2.74</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.38/3.3/2.55</span>
       
     </div>
   </div>
@@ -2593,7 +2703,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 3/3.6/2</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 3.1/3.8/2.05</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -2763,7 +2873,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 平博 1.61/4.47/4.44</span>
+      <span class="font-mono text-slate-400">胜平负 · 平博 1.59/4.51/4.56</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -2841,7 +2951,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 10/6.25/1.18</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 12/6.5/1.2</span>
       
     </div>
   </div>
@@ -2911,6 +3021,75 @@
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 0/0/0</span>
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">斯尼杯</span>
+        <span class="font-mono">2026-08-27 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">NK阿德利亚 <span class="text-xs font-normal text-slate-400">vs</span> 比列</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">球会友谊</span>
+        <span class="font-mono">2026-08-27 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">泰拿沙 <span class="text-xs font-normal text-slate-400">vs</span> 维拉诺瓦加图</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">球会友谊</span>
+        <span class="font-mono">2026-08-27 01:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">努曼西亚 <span class="text-xs font-normal text-slate-400">vs</span> 乌特波</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
       
     </div>
   </div>
@@ -3098,7 +3277,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 0/0/0</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.3/3.4/2.63</span>
       
     </div>
   </div>
@@ -3149,6 +3328,29 @@
     </div>
   </div>
   
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">球会友谊</span>
+        <span class="font-mono">2026-08-27 01:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">奥恩沙 <span class="text-xs font-normal text-slate-400">vs</span> 圣伊格纳西奥</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
   <div class="match-card  has-sig ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -3181,7 +3383,7 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig ">
+  <div class="match-card   ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3199,16 +3401,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.2/3/3.6</span>
-      
-      
-      <span class="inline-flex items-center gap-1.5">
-        <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">客队弃守镜像 · 主不败 · 主不败</span>
-        
-        
-      </span>
-      
+      <span class="font-mono text-slate-400">胜平负 · 平博 2.21/2.97/3.76</span>
       
     </div>
   </div>
@@ -3286,7 +3479,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 0/0/0</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.03/13/34</span>
       
     </div>
   </div>
@@ -3355,7 +3548,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.8/3.2/4.33</span>
+      <span class="font-mono text-slate-400">胜平负 · 平博 1.8/3.14/4.31</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3433,7 +3626,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.7/3.6/4.75</span>
+      <span class="font-mono text-slate-400">胜平负 · 立* 1.67/3.4/4.33</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3488,7 +3681,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.35/3.1/2.88</span>
+      <span class="font-mono text-slate-400">胜平负 · 香港马* 1.97/3.15/3.25</span>
       
     </div>
   </div>
@@ -3516,7 +3709,30 @@
     </div>
   </div>
   
-  <div class="match-card  has-sig ">
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">阿乙</span>
+        <span class="font-mono">2026-08-27 02:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">圣胡安圣马丁 <span class="text-xs font-normal text-slate-400">vs</span> 新芝加哥</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3535,15 +3751,6 @@
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       <span class="font-mono text-slate-400">胜平负 · 365 2.35/2.88/3.5</span>
-      
-      
-      <span class="inline-flex items-center gap-1.5">
-        <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">客队弃守镜像 · 主不败 · 主不败</span>
-        
-        
-      </span>
-      
       
     </div>
   </div>
@@ -3566,7 +3773,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.35/3.2/2.75</span>
+      <span class="font-mono text-slate-400">胜平负 · 平博 2.54/2.74/2.89</span>
       
     </div>
   </div>
@@ -3658,7 +3865,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.33/5/8.5</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.3/5.25/8.5</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3672,7 +3879,7 @@
     </div>
   </div>
   
-  <div class="match-card has-jc has-sig ">
+  <div class="match-card has-jc  ">
     <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <div class="flex items-center gap-2 text-[11px] text-slate-400">
@@ -3777,7 +3984,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.38/3.2/2.88</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.38/3/3</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3809,7 +4016,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.2/3.5/2.8</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.5/3.4/2.45</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3873,7 +4080,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 1.9/3.4/3.6</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 1.85/3.4/3.75</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3905,12 +4112,12 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 5.75/4.33/1.49</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 5.75/4.33/1.5</span>
       
       
       <span class="inline-flex items-center gap-1.5">
         <span class="rk rk-ssr">eu</span>
-        <span class="font-semibold text-emerald-700">弱势方弃守 · 客不败 · 客不败</span>
+        <span class="font-semibold text-emerald-700">定盘星背离 · 客不败 · 客不败</span>
         
         
       </span>
@@ -3937,7 +4144,7 @@
     </div>
     <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
     <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
-      <span class="font-mono text-slate-400">胜平负 · 365 2.6/3.2/2.4</span>
+      <span class="font-mono text-slate-400">胜平负 · 365 2.05/3.5/2.88</span>
       
       
       <span class="inline-flex items-center gap-1.5">
@@ -3946,6 +4153,29 @@
         
         
       </span>
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">球会友谊</span>
+        <span class="font-mono">2026-08-27 03:30</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">特内里费岛联 <span class="text-xs font-normal text-slate-400">vs</span> 特内里费B队</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
       
       
     </div>
@@ -4053,6 +4283,29 @@
         
       </div>
       <span class="text-[15px] font-bold text-slate-800">瓜亚基尔巴塞罗那 <span class="text-xs font-normal text-slate-400">vs</span> 德芬</span>
+      
+      <span class="ml-auto flex items-center gap-2">
+        
+        
+      </span>
+    </div>
+    <!-- 第 2 行：赔率 + 信号人话（多信号用分隔） -->
+    <div class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]">
+      
+      
+    </div>
+  </div>
+  
+  <div class="match-card   ">
+    <!-- 第 1 行：比赛信息（联赛/时间/番号 + 对阵 + 比分 + 徽章） -->
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+      <div class="flex items-center gap-2 text-[11px] text-slate-400">
+        
+        <span class="font-bold">厄瓜杯</span>
+        <span class="font-mono">2026-08-27 04:00</span>
+        
+      </div>
+      <span class="text-[15px] font-bold text-slate-800">波图维耶霍 <span class="text-xs font-normal text-slate-400">vs</span> 德芬</span>
       
       <span class="ml-auto flex items-center gap-2">
         
